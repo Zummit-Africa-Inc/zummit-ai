@@ -1,1 +1,1 @@
-# zummit-africa
+# Zummit Africa
