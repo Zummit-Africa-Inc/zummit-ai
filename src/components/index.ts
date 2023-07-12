@@ -8,3 +8,4 @@ export { default as Navbar } from "./shared/Navbar"
 
 // ui
 export { default as ChatBot } from "./ui/ChatBot"
+export { default as ChatButton } from "./ui/ChatButton"

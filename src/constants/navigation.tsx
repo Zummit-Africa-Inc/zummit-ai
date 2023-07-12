@@ -1,3 +1,4 @@
+import { FiFacebook, FiLinkedin, FiInstagram, FiTwitter } from "react-icons/fi"
 
 export const NAVIGATION = [
   {label: 'What you get', url: '/learn-more'},
@@ -21,4 +22,11 @@ export const FOOOTER = [
     {label: 'contact@zummitafrica.com', url: 'mailto:contact@zummitafrica.com'},
     {label: 'phone number', url: 'tel:'},
   ]},
+]
+
+export const COMMUNITY = [
+  {icon: <FiLinkedin />, url: "https://linkedin.com/company/zummit-africa/"},
+  {icon: <FiFacebook />, url: "https://facebook.com/"},
+  {icon: <FiTwitter />, url: "https://twitter.com/zummitafrica"},
+  {icon: <FiInstagram />, url: "https://instagram.com/"},
 ]
