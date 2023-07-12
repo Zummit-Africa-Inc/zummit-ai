@@ -1,7 +1,9 @@
 import { OPERATIONS, PORTFOLIO, PROCESS, PROCESS2, STACKS, TESTIMONIALS } from "./home"
 import { COMMUNITY, FOOOTER, NAVIGATION } from "./navigation"
+import { APPROACH, SECTORS } from "./learn-more"
 
 export {
+  APPROACH,
   COMMUNITY,
   FOOOTER,
   NAVIGATION,
@@ -9,6 +11,7 @@ export {
   PORTFOLIO,
   PROCESS,
   PROCESS2,
+  SECTORS,
   STACKS,
   TESTIMONIALS,
 }
