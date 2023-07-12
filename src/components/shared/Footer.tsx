@@ -22,8 +22,8 @@ const Footer = () => {
 						<div key={index} className="w-[250px] flex flex-col gap-4">
 							<p className="text-xl font-bold text-white">{title}</p>
               <div className="flex flex-col gap-[9px]">
-                {menu.map(({label, url}, index) => (
-                  <Link key={index} to={url} className="text-white/[75%] font-light capitalize">
+                {menu.map(({label, url}) => (
+                  <Link key={label} to={url} className="text-white/[75%] font-light capitalize">
                     {label}
                   </Link>
                 ))}
