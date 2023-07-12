@@ -1,7 +1,8 @@
 import { OPERATIONS, PORTFOLIO, PROCESS, PROCESS2, STACKS, TESTIMONIALS } from "./home"
-import { FOOOTER, NAVIGATION } from "./navigation"
+import { COMMUNITY, FOOOTER, NAVIGATION } from "./navigation"
 
 export {
+  COMMUNITY,
   FOOOTER,
   NAVIGATION,
   OPERATIONS,
