@@ -1,4 +1,4 @@
-import { FiFacebook, FiLinkedin, FiInstagram, FiTwitter } from "react-icons/fi"
+import { facebook, instagram, linkedin, twitter } from "assets/icons"
 
 export const NAVIGATION = [
   {label: 'What you get', url: '/learn-more'},
@@ -25,8 +25,8 @@ export const FOOOTER = [
 ]
 
 export const COMMUNITY = [
-  {icon: <FiLinkedin />, url: "https://linkedin.com/company/zummit-africa/"},
-  {icon: <FiFacebook />, url: "https://facebook.com/"},
-  {icon: <FiTwitter />, url: "https://twitter.com/zummitafrica"},
-  {icon: <FiInstagram />, url: "https://instagram.com/"},
+  {icon: linkedin, url: "https://linkedin.com/company/zummit-africa/"},
+  {icon: facebook, url: "https://facebook.com/"},
+  {icon: twitter, url: "https://twitter.com/zummitafrica"},
+  {icon: instagram, url: "https://instagram.com/"},
 ]

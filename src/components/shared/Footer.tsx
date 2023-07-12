@@ -19,7 +19,7 @@ const Footer = () => {
 					<div className="flex items-center gap-2">
 						{COMMUNITY.map((item, index) => (
 							<a key={index} href={item.url} target="_blank" className="text-xl text-secondary/[40%]">
-								{item.icon}
+								<img src={item.icon} alt="" className="w-6 aspect-[1/1]" />
 							</a>
 						))}
 					</div>

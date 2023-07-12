@@ -21,6 +21,7 @@ import {
 	TESTIMONIALS,
 } from "constants"
 import { Button, ChatBot, ChatButton, Footer, Navbar } from "components"
+import { ArrowRight } from "assets/icons-tsx"
 import { usePageTitle } from "hooks"
 
 const Home = () => {
@@ -144,8 +145,8 @@ const Home = () => {
 						))}
 					</div>
 				</div>
-				<Link to="/learn-more" className="font-bold text-primary">
-					Learn More &rarr;
+				<Link to="/learn-more" className="flex items-center gap-2 font-bold text-primary">
+					Learn More <ArrowRight />
 				</Link>
 			</section>
 			<hr className="h-[1px] w-full border border-gray-300" />
@@ -191,8 +192,8 @@ const Home = () => {
 						</div>
 					))}
 				</div>
-				<Link to="/portfolio" className="font-bold text-primary">
-					View More Projects &rarr;
+				<Link to="/portfolio" className="flex items-center gap-2 font-bold text-primary">
+					View More Projects <ArrowRight />
 				</Link>
 			</section>
 			<hr className="h-[1px] w-full border border-gray-300" />
