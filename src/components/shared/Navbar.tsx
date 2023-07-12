@@ -31,7 +31,7 @@ const Navbar = () => {
 							key={url}
 							to={url}
 							className={({ isActive }) =>
-								`${isActive ? "text-primary" : "text-gray-400"}`
+								`nav-link ${isActive ? "text-primary" : "text-gray-400"}`
 							}>
 							{label}
 						</NavLink>
