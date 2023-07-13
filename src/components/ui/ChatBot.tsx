@@ -1,3 +1,4 @@
+import { FiX } from "react-icons/fi"
 import { useFormik } from "formik"
 import * as Yup from "yup"
 
@@ -22,8 +23,8 @@ const ChatBot = (props: Props) => {
 		<div className="flex flex-col items-center justify-between fixed bottom-5 right-5 !z-20 h-[461px] w-[473px] rounded-[8px] border border-gray-300 bg-white">
 			<div className="flex w-full items-center justify-between border-b border-gray-300 px-6 py-3">
 				<img src={logo} alt="" className="w-[100px]" />
-				<button onClick={props.close} className="">
-					close
+				<button onClick={props.close} className="text-4xl text-gray-400">
+					<FiX />
 				</button>
 			</div>
 			<div className="flex h-full w-full flex-col overflow-y-scroll"></div>

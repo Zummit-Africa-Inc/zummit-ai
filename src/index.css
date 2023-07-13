@@ -51,7 +51,16 @@ input[type='file']::-webkit-file-upload-button {
 	display: none;
 }
 
-a, button {
+button {
+	@apply active:scale-[0.98];
+	border-radius: 8px;
+	font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+a {
 	@apply active:scale-[0.98];
 	border-radius: 8px;
 	font-weight: 500;
