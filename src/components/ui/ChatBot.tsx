@@ -1,3 +1,4 @@
+import { animated, useSpring } from "react-spring"
 import { FiX } from "react-icons/fi"
 import { useFormik } from "formik"
 import * as Yup from "yup"
@@ -9,6 +10,21 @@ interface Props {
 }
 
 const ChatBot = (props: Props) => {
+	const spring = useSpring({
+		from: {
+			width: "100px",
+			height: "100px",
+			borderRadius: "50%",
+			opacity: 0
+		},
+		to: {
+			width: "461px",
+			height: "473px",
+			borderRadius: "8px",
+			opacity: 1
+		},
+	})
+
   const schema = Yup.object({
     message: Yup.string().required("Please enter a message for the bot!")
   })
@@ -20,7 +36,7 @@ const ChatBot = (props: Props) => {
 	})
 
 	return (
-		<div className="flex flex-col items-center justify-between fixed bottom-5 right-5 !z-20 h-[461px] w-[473px] rounded-[8px] border border-gray-300 bg-white">
+		<animated.div style={spring} className="flex flex-col items-center justify-between fixed bottom-5 right-5 !z-20 h-[461px] w-[473px] rounded-[8px] border border-gray-300 bg-white">
 			<div className="flex w-full items-center justify-between border-b border-gray-300 px-6 py-3">
 				<img src={logo} alt="" className="w-[100px]" />
 				<button onClick={props.close} className="text-4xl text-gray-400">
@@ -42,7 +58,7 @@ const ChatBot = (props: Props) => {
 				</form>
         {errors.message && <p className="text-[10px] text-red-500">{errors.message}</p>}
 			</div>
-		</div>
+		</animated.div>
 	)
 }
 
