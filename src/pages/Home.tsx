@@ -21,12 +21,13 @@ import {
 	TESTIMONIALS,
 } from "constants"
 import { Button, ChatBot, ChatButton, Footer, Navbar } from "components"
+import { usePageTitle, useScrollToTop } from "hooks"
 import { ArrowRight } from "assets/icons-tsx"
-import { usePageTitle } from "hooks"
 
 const Home = () => {
 	const [isBotShown, setIsBotShown] = useState(false)
 	usePageTitle("Home")
+	useScrollToTop()
 
 	return (
 		<>

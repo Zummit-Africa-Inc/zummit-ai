@@ -1,13 +1,14 @@
 import { useState } from "react"
 
 import { Button, Footer, Navbar, TabPanel } from "components"
+import { usePageTitle, useScrollToTop } from "hooks"
 import { APPROACH, SECTORS } from "constants"
 import { learn_more } from "assets/images"
-import { usePageTitle } from "hooks"
 
 const LearnMore = () => {
 	const [tab, setTab] = useState(0)
 	usePageTitle("Learn More")
+	useScrollToTop()
 
 	return (
 		<>
