@@ -1,3 +1,4 @@
+import { animated, useInView } from "react-spring"
 import React, { useState } from "react"
 import { Link } from "react-router-dom"
 
@@ -28,6 +29,18 @@ const Home = () => {
 	const [isBotShown, setIsBotShown] = useState(false)
 	usePageTitle("Home")
 	useScrollToTop()
+
+	const [ref, springs] = useInView(() => ({
+		from: {
+			opacity: 0,
+			transform: "scale(0.5) rotate(180deg)"
+		},
+		to: {
+			opacity: 1,
+			transform: "scale(1) rotate(0)"
+		},
+		delay: 300,
+	}))
 
 	return (
 		<>
@@ -107,7 +120,7 @@ const Home = () => {
 							</div>
 						))}
 					</div>
-					<div className="grid-container h-full w-2/4">
+					<animated.div ref={ref} style={springs} className="grid-container h-full w-2/4">
 						<div className="top">
 							<img
 								src={top}
@@ -136,7 +149,7 @@ const Home = () => {
 								className="h-full w-full rounded-[8px] object-cover"
 							/>
 						</div>
-					</div>
+					</animated.div>
 					<div className="flex h-full w-1/4 flex-col justify-between">
 						{PROCESS2.slice(2, 4).map(({ description, label }, index) => (
 							<div key={index} className="flex flex-col gap-5">
@@ -242,9 +255,9 @@ const Home = () => {
 				</p>
 				<div className="mt-[50px] grid w-full grid-cols-3 items-center gap-5">
 					{STACKS.map((stack, index) => (
-						<div
+						<animated.div
 							key={index}
-							className="w-[full relative aspect-[2/1] cursor-pointer rounded-[8px] bg-black/20 duration-300 hover:scale-[1.02]">
+							className="w-[full relative aspect-[2/1] cursor-pointer rounded-[8px] bg-black/20 duration-300">
 							<img
 								src={stack.image}
 								alt={stack.label}
@@ -265,7 +278,7 @@ const Home = () => {
 									))}
 								</div>
 							</div>
-						</div>
+						</animated.div>
 					))}
 				</div>
 			</section>
