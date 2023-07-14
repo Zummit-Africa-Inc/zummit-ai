@@ -37,7 +37,7 @@ const LearnMore = () => {
 				<div className="grid w-full grid-cols-2 gap-x-[180px] gap-y-[120px]">
 					{APPROACH.map((item, index) => (
 						<div key={index} className="w-[387px]">
-							<div className="aspect-[1/1] w-10 rounded-[8px] bg-secondary"></div>
+							<div className="aspect-[1/1] w-10 rounded-lg bg-secondary"></div>
 							<p className="my-6 text-2xl font-bold text-[#333]">{item.label}:</p>
 							<p className="font-work font-light text-gray-400">{item.decription}</p>
 						</div>
@@ -69,15 +69,15 @@ const LearnMore = () => {
 								<p className="text-2xl text-[#333] font-bold">{sector.topic}</p>
 								<p className="text-gray-400 text-xl font-light">{sector.description}</p>
 							</div>
-							<div className="w-full aspect-[1/1] rounded-[8px]">
-								<img src={sector.image} alt="" className="w-full h-full object-cover rounded-[8px]" />
+							<div className="w-full aspect-[1/1] rounded-lg">
+								<img src={sector.image} alt="" className="w-full h-full object-cover rounded-lg" />
 							</div>
 						</div>
 					</TabPanel>
 				))}
 			</section>
 			<section className={`flex w-full flex-col items-center px-2 py-[99px] md:px-[120px] bg-ellipse bg-top`}>
-				<div className="flex w-full flex-col items-center justify-center rounded-[8px] border border-gray-300 py-10">
+				<div className="flex w-full flex-col items-center justify-center rounded-lg border border-gray-300 py-10">
 					<p className="text-[32px] font-bold text-secondary">
 						Let's Connect{" "}
 						<span className="text-primary">and Bring your ideas to life</span>

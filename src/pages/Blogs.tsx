@@ -46,7 +46,7 @@ const Blogs = () => {
         <div className="w-full flex flex-col gap-[203px] mt-[298px]">
           {posts.map((post) => (
             <div key={post.id} className="w-full flex items-center gap-[180px] even:flex-row-reverse">
-              <img src={post.imageUrl} alt="" className="w-[589px] aspect-[1.6/1] rounded-[8px] object-cover" />
+              <img src={post.imageUrl} alt="" className="w-[589px] aspect-[1.6/1] rounded-lg object-cover" />
               <div className="flex flex-col gap-6">
                 <p className="text-2xl text-[#333] font-bold">{post.title}</p>
                 <p className="text=lg text-gray-400">{post.content.substring(0, 200)}...</p>

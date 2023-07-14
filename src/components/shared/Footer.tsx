@@ -10,7 +10,7 @@ const Footer = () => {
 				<div className="flex flex-col">
 					<Link
 						to="/"
-						className="grid place-items-center rounded-[8px] bg-white px-4 py-[10px]">
+						className="grid place-items-center rounded-lg bg-white px-4 py-[10px]">
 						<img src={logo} alt="zummit africa logo" className="w-[121px]" />
 					</Link>
 					<p className="my-5 text-sm text-white/[75%]">
