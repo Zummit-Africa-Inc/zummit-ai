@@ -83,7 +83,7 @@ const Home = () => {
 				</div>
 			</section>
 			<hr className="h-[1px] w-full border border-gray-300" />
-			<section className="grid w-full grid-cols-2 gap-[110px] px-2 py-[99px] md:px-[120px] bg-ellipse bg-top">
+			<section className="grid w-full grid-cols-2 gap-[110px] px-2 py-[99px] md:px-[120px] bg-ellipse bg-bottom bg-no-repeat">
 				<div className="relative w-[487px]">
 					<img src={what} alt="" className="w-full" />
 					<div className="absolute left-0 top-0 flex h-full w-full flex-col justify-end bg-black/20 p-10 text-white">
@@ -283,7 +283,7 @@ const Home = () => {
 				</div>
 			</section>
 			<hr className="h-[1px] w-full border border-gray-300" />
-			<section className={`flex w-full flex-col items-center px-2 py-[99px] md:px-[120px] bg-ellipse bg-top`}>
+			<section className="flex w-full flex-col items-center px-2 py-[99px] md:px-[120px] bg-ellipse bg-top bg-no-repeat">
 				<div className="flex w-full flex-col items-center justify-center rounded-lg border border-gray-300 py-10">
 					<p className="text-[32px] font-bold text-secondary">
 						Let's Connect{" "}
