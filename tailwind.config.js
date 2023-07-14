@@ -7,6 +7,9 @@ export default {
       work: ['Work Sans', 'sans-serif'],
     },
     extend: {
+      backgroundImage: {
+        ellipse: "url('/ellipse.svg')",
+      },
       colors: {
         primary: '#081F4A',
         secondary: '#FFEA00',

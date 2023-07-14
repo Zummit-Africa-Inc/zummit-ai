@@ -1,8 +1,8 @@
-import { ComponentProps, MouseEventHandler } from "react"
+import { ComponentProps, MouseEventHandler, ReactNode } from "react"
 import { Link } from "react-router-dom"
 
 interface Props extends ComponentProps<"button"> {
-  label: string
+  label: string | ReactNode
   href?: string
   onClick?: MouseEventHandler<HTMLAnchorElement | HTMLButtonElement>
   to?: string

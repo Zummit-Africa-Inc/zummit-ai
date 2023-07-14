@@ -1,9 +1,10 @@
 
+import { usePageTitle, useScrollToTop } from "hooks"
 import { Footer, Navbar } from "components"
-import { usePageTitle } from "hooks"
 
 const Internship = () => {
   usePageTitle("Internship")
+  useScrollToTop()
   
   return (
     <>

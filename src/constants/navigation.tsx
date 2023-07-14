@@ -1,3 +1,4 @@
+import { facebook, instagram, linkedin, twitter } from "assets/icons"
 
 export const NAVIGATION = [
   {label: 'What you get', url: '/learn-more'},
@@ -21,4 +22,11 @@ export const FOOOTER = [
     {label: 'contact@zummitafrica.com', url: 'mailto:contact@zummitafrica.com'},
     {label: 'phone number', url: 'tel:'},
   ]},
+]
+
+export const COMMUNITY = [
+  {icon: linkedin, url: "https://linkedin.com/company/zummit-africa/"},
+  {icon: facebook, url: "https://facebook.com/"},
+  {icon: twitter, url: "https://twitter.com/zummitafrica"},
+  {icon: instagram, url: "https://instagram.com/"},
 ]

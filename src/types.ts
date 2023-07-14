@@ -1,3 +1,27 @@
-export type BlogPost = {
+export type User = {
 	id: string
+	firstName: string
+	lastName: string
+	email: string
+}
+
+export type Post = {
+	id: string
+	user_id: string
+	title: string
+	content: string
+	author: User
+	imageUrl: string
+	isPublished: boolean
+	createdAt: Date | string
+	updatedAt: Date | string
+}
+
+export type Project = {
+	id: string
+  title: string
+  content: string
+  imageUrl: string
+  isPublished: boolean
+  createdAt: Date | string
 }
