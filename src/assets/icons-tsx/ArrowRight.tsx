@@ -9,6 +9,7 @@ const ArrowRight = (props: Props) => {
 			height="14"
 			viewBox="0 0 14 14"
 			fill="none"
+			className={props.className}
 			xmlns="http://www.w3.org/2000/svg">
 			<g clipPath="url(#clip0_693_185)">
 				<path
