@@ -68,7 +68,7 @@ export const STACKS = [
 	{
 		label: "database technologies",
 		image: database,
-		description: ["MySQL", "Postgres", "NoSQL", "Firebase"],
+		description: ["SQL", "Postgres", "NoSQL", "Firebase"],
 	},
 	{
 		label: "artificial intelligence",
