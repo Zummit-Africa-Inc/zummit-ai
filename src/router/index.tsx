@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom"
 import { Suspense } from "react"
 
-import { Blog, Contact, Home, Internship, LearnMore, Portfolio } from "pages"
+import { Contact, Home, LearnMore, NotFound, Portfolio } from "pages"
 import { useConcurrentTransition } from "hooks"
 import { Loader } from "components"
 
@@ -14,9 +14,8 @@ const Router = () => {
         <Route path="/" element={<Home />} />
         <Route path="/contact-us" element={<Contact />} />
         <Route path="/learn-more" element={<LearnMore />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/internship" element={<Internship />} />
         <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Suspense>
   )
