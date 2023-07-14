@@ -125,28 +125,28 @@ const Home = () => {
 							<img
 								src={top}
 								alt=""
-								className="h-full w-full rounded-[8px] object-cover"
+								className="h-full w-full rounded-lg object-cover"
 							/>
 						</div>
 						<div className="right">
 							<img
 								src={right}
 								alt=""
-								className="h-full w-full rounded-[8px] object-cover"
+								className="h-full w-full rounded-lg object-cover"
 							/>
 						</div>
 						<div className="down">
 							<img
 								src={down}
 								alt=""
-								className="h-full w-full rounded-[8px] object-cover"
+								className="h-full w-full rounded-lg object-cover"
 							/>
 						</div>
 						<div className="left">
 							<img
 								src={left}
 								alt=""
-								className="h-full w-full rounded-[8px] object-cover"
+								className="h-full w-full rounded-lg object-cover"
 							/>
 						</div>
 					</animated.div>
@@ -177,7 +177,7 @@ const Home = () => {
 							<img
 								src={process.image}
 								alt={process.label}
-								className="my-5 h-[230px] w-full rounded-[8px] object-cover"
+								className="my-5 h-[230px] w-full rounded-lg object-cover"
 							/>
 							<p className="text-gray-400">{process.description}</p>
 						</div>
@@ -199,7 +199,7 @@ const Home = () => {
 							<img
 								src={item.image}
 								alt={item.label}
-								className="aspect-[1/1] w-full rounded-[8px] border object-cover"
+								className="aspect-[1/1] w-full rounded-lg border object-cover"
 							/>
 							<p className="mb-2 mt-5 text-2xl font-bold text-[#333]">{item.label}</p>
 							<p className="font-work font-light text-gray-400">{item.description}</p>
@@ -228,7 +228,7 @@ const Home = () => {
 					{TESTIMONIALS.map((testimonial, index) => (
 						<div
 							key={index}
-							className="w-full rounded-[8px] border border-gray-300 bg-gray-50 p-6">
+							className="w-full rounded-lg border border-gray-300 bg-gray-50 p-6">
 							<p className="text-sm text-[#333]">{testimonial.testimony}</p>
 							<div className="mt-6 flex items-center gap-2">
 								<img
@@ -257,11 +257,11 @@ const Home = () => {
 					{STACKS.map((stack, index) => (
 						<animated.div
 							key={index}
-							className="w-[full relative aspect-[2/1] cursor-pointer rounded-[8px] bg-black/20 duration-300">
+							className="w-[full relative aspect-[2/1] cursor-pointer rounded-lg bg-black/20 duration-300">
 							<img
 								src={stack.image}
 								alt={stack.label}
-								className="h-full w-full rounded-[8px] object-cover"
+								className="h-full w-full rounded-lg object-cover"
 							/>
 							<div className="absolute left-0 top-0 flex h-full w-full flex-col items-center justify-center">
 								<p className="font-work text-2xl font-bold uppercase text-white">
@@ -284,7 +284,7 @@ const Home = () => {
 			</section>
 			<hr className="h-[1px] w-full border border-gray-300" />
 			<section className={`flex w-full flex-col items-center px-2 py-[99px] md:px-[120px] bg-ellipse bg-top`}>
-				<div className="flex w-full flex-col items-center justify-center rounded-[8px] border border-gray-300 py-10">
+				<div className="flex w-full flex-col items-center justify-center rounded-lg border border-gray-300 py-10">
 					<p className="text-[32px] font-bold text-secondary">
 						Let's Connect{" "}
 						<span className="text-primary">and Bring your ideas to life</span>

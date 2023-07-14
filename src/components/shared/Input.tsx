@@ -17,7 +17,7 @@ const Input = (props: Props) => {
 				<textarea
 					id={props.id}
 					onChange={props.onChange}
-					className="h-[100px] w-full resize-none rounded-[8px] border border-gray-400 px-5 py-[10px]"></textarea>
+					className="h-[100px] w-full resize-none rounded-lg border border-gray-400 px-5 py-[10px]"></textarea>
 				{props.error && (
 					<span className="text-xs text-red-500">{props.error}</span>
 				)}
@@ -31,7 +31,7 @@ const Input = (props: Props) => {
 				{props.label}
 			</label>
 			<input
-				className="w-full min-w-[285px] rounded-[8px] border border-gray-400 px-5 py-[10px]"
+				className="w-full min-w-[285px] rounded-lg border border-gray-400 px-5 py-[10px]"
 				{...props}
 			/>
 			{props.error && (
