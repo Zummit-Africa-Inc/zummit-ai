@@ -76,7 +76,7 @@ const LearnMore = () => {
 					</TabPanel>
 				))}
 			</section>
-			<section className="flex w-full flex-col items-center px-2 py-[99px] md:px-[120px]">
+			<section className={`flex w-full flex-col items-center px-2 py-[99px] md:px-[120px] bg-ellipse bg-top`}>
 				<div className="flex w-full flex-col items-center justify-center rounded-[8px] border border-gray-300 py-10">
 					<p className="text-[32px] font-bold text-secondary">
 						Let's Connect{" "}
