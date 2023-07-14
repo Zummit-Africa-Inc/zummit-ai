@@ -31,7 +31,7 @@ const Navbar = () => {
 							key={url}
 							to={url}
 							className={({ isActive }) =>
-								`${isActive ? "text-primary" : "text-gray-400"}`
+								`nav-link ${isActive ? "text-primary" : "text-gray-400"}`
 							}>
 							{label}
 						</NavLink>
@@ -39,7 +39,7 @@ const Navbar = () => {
 				</div>
 				<Link
 					to="/contact-us"
-					className="rounded-[8px] border-2 border-primary px-5 py-2 text-primary">
+					className="rounded-lg border-2 border-primary px-5 py-2 text-primary">
 					Contact Us
 				</Link>
 			</div>

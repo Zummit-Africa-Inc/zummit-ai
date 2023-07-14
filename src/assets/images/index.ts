@@ -1,4 +1,6 @@
+import customre_care from "./customer-care.png"
 import adornment from "./hero-adornment.png"
+import learn_more from "./learn-more.png"
 import startup_1 from "./startup-1.png"
 import startup_2 from "./startup-2.png"
 import startup_3 from "./startup-3.png"
@@ -26,12 +28,14 @@ export {
   ai,
   backend,
   cloud,
+  customre_care,
   database,
   down,
   frontend,
   john,
   kolawole,
   left,
+  learn_more,
   linda,
   logo,
   mobile,

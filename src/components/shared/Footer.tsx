@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 
+import { COMMUNITY, FOOOTER } from "constants"
 import { logo } from "assets/images"
-import { FOOOTER } from "constants"
 
 const Footer = () => {
 	return (
@@ -10,12 +10,19 @@ const Footer = () => {
 				<div className="flex flex-col">
 					<Link
 						to="/"
-						className="grid place-items-center rounded-[8px] bg-white px-4 py-[10px]">
+						className="grid place-items-center rounded-lg bg-white px-4 py-[10px]">
 						<img src={logo} alt="zummit africa logo" className="w-[121px]" />
 					</Link>
 					<p className="my-5 text-sm text-white/[75%]">
 						Democratizing AI in Africa.
 					</p>
+					<div className="flex items-center gap-2">
+						{COMMUNITY.map((item, index) => (
+							<a key={index} href={item.url} target="_blank" className="text-xl text-secondary/[40%]">
+								<img src={item.icon} alt="" className="w-6 aspect-[1/1]" />
+							</a>
+						))}
+					</div>
 				</div>
 				<div className="flex items-center gap-[10px]">
 					{FOOOTER.map(({ menu, title }, index) => (
