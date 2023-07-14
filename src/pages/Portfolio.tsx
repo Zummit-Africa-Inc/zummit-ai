@@ -22,7 +22,7 @@ const Portfolio = () => {
           {PORTFOLIO.map((item, index) => (
             <div key={index} className="w-full flex items-center justify-between even:flex-row-reverse">
               <div className="w-[487px] h-[412px] rouded-[8px]">
-                <img src={item.image} alt="" className="w-full h-full rounded-[8px] object-cover" />
+                <img src={item.image} alt="" className="w-full h-full rounded-lg object-cover" />
               </div>
               <div className="w-[387px] flex flex-col gap-6">
                 <p className="text-2xl text-[#333] font-bold">{item.label}</p>
@@ -33,7 +33,7 @@ const Portfolio = () => {
         </div>
 			</section>
       <section className={`flex w-full flex-col items-center px-2 py-[99px] md:px-[120px] bg-ellipse bg-top`}>
-				<div className="flex w-full flex-col items-center justify-center rounded-[8px] border border-gray-300 py-10">
+				<div className="flex w-full flex-col items-center justify-center rounded-lg border border-gray-300 py-10">
 					<p className="text-[32px] font-bold text-secondary">
 						Let's Connect{" "}
 						<span className="text-primary">and Bring your ideas to life</span>

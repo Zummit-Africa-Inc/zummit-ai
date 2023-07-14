@@ -39,7 +39,7 @@ const Navbar = () => {
 				</div>
 				<Link
 					to="/contact-us"
-					className="rounded-[8px] border-2 border-primary px-5 py-2 text-primary">
+					className="rounded-lg border-2 border-primary px-5 py-2 text-primary">
 					Contact Us
 				</Link>
 			</div>

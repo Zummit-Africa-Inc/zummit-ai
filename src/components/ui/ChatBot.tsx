@@ -36,7 +36,7 @@ const ChatBot = (props: Props) => {
 	})
 
 	return (
-		<animated.div style={spring} className="flex flex-col items-center justify-between fixed bottom-5 right-5 !z-20 h-[461px] w-[473px] rounded-[8px] border border-gray-300 bg-white">
+		<animated.div style={spring} className="flex flex-col items-center justify-between fixed bottom-5 right-5 !z-20 h-[461px] w-[473px] rounded-lg border border-gray-300 bg-white">
 			<div className="flex w-full items-center justify-between border-b border-gray-300 px-6 py-3">
 				<img src={logo} alt="" className="w-[100px]" />
 				<button onClick={props.close} className="text-4xl text-gray-400">
