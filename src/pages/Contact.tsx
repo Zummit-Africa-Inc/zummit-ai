@@ -1,4 +1,5 @@
 import { useMutation } from "@tanstack/react-query"
+// import ReCAPTCHA from "react-google-recaptcha"
 import { useFormik } from "formik"
 
 import { Button, Footer, Input, Navbar, Spinner } from "components"
@@ -91,7 +92,7 @@ const Contact = () => {
 							onChange={handleChange}
 							error={errors.message}
 						/>
-						<div className="h-[72px] w-[302px] rounded-[3px] border border-gray-400 bg-gray-100"></div>
+						{/* <ReCAPTCHA sitekey="" onChange={(e) => console.log(e)} /> */}
 						<Button
 							label={isLoading ? <Spinner /> : "Send Message"}
 							type="submit"
