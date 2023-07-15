@@ -6,7 +6,7 @@ import { logo } from "assets/images"
 const Footer = () => {
 	return (
 		<footer className="w-full bg-black">
-			<div className="flex w-full items-start justify-between px-2 pb-32 pt-16 md:px-[120px] xl:px-[240px]">
+			<div className="flex w-full items-start justify-between px-2 pb-32 pt-16 md:px-[120px] 2xl:px-[240px]">
 				<div className="flex flex-col">
 					<Link
 						to="/"
@@ -43,7 +43,7 @@ const Footer = () => {
 					))}
 				</div>
 			</div>
-			<div className="flex w-full items-center border-t border-white/[15%] px-2 py-[26px] md:px-[120px] xl:px-[240px]">
+			<div className="flex w-full items-center border-t border-white/[15%] px-2 py-[26px] md:px-[120px] 2xl:px-[240px]">
 				<p className="text-sm text-white/[80%]">
 					Copyright &copy; {new Date().getFullYear()} ZummitAfrica. All rights
 					reserved.
