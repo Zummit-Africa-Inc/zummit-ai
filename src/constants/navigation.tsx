@@ -8,19 +8,19 @@ export const NAVIGATION = [
 
 export const FOOOTER = [
   {title: 'Et sed vel', menu: [
-    {label: 'accumsan ', url: '/'},
-    {label: 'hendrerit enim ', url: '/'},
-    {label: 'eu est eu  ', url: '/'},
+    {label: 'Accumsan ', url: '/'},
+    {label: 'Hendrerit enim ', url: '/'},
+    {label: 'Eu est eu  ', url: '/'},
   ]},
   {title: 'Know more', menu: [
-    {label: 'blog', url: '/blog'},
-    {label: 'internship', url: '/internship'},
-    {label: 'what you get', url: '/learn-more'},
+    {label: 'Blog', url: '/blog'},
+    {label: 'Internship', url: '/internship'},
+    {label: 'What you get', url: '/learn-more'},
   ]},
   {title: 'Get in touch', menu: [
-    {label: 'contact us', url: '/contact-us'},
+    {label: 'Contact us', url: '/contact-us'},
     {label: 'contact@zummitafrica.com', url: 'mailto:contact@zummitafrica.com'},
-    {label: 'phone number', url: 'tel:'},
+    {label: '+234000 000 0000', url: 'tel:'},
   ]},
 ]
 
