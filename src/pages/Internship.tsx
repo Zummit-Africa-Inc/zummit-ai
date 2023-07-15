@@ -1,6 +1,6 @@
 
+import { Footer, Navbar, PaddedBlock } from "components"
 import { usePageTitle, useScrollToTop } from "hooks"
-import { Footer, Navbar } from "components"
 
 const Internship = () => {
   usePageTitle("Internship")
@@ -9,6 +9,9 @@ const Internship = () => {
   return (
     <>
     <Navbar />
+    <PaddedBlock>
+      hello
+    </PaddedBlock>
     <Footer />
     </>
   )

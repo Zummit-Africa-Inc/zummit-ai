@@ -11,18 +11,8 @@ interface Props {
 
 const ChatBot = (props: Props) => {
 	const spring = useSpring({
-		from: {
-			width: "100px",
-			height: "100px",
-			borderRadius: "50%",
-			opacity: 0
-		},
-		to: {
-			width: "461px",
-			height: "473px",
-			borderRadius: "8px",
-			opacity: 1
-		},
+		from: { x: "100%" },
+		to: { x: "0%" }
 	})
 
   const schema = Yup.object({
