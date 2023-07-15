@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query"
 import { useState } from "react"
 import axios from "axios"
 
-import { Button, Footer, Navbar, SubscriptionModal } from "components"
+import { Button, Footer, Navbar, PaddedBlock, SubscriptionModal } from "components"
 import { usePageTitle, useScrollToTop } from "hooks"
 import { POSTS } from "constants"
 import { Post } from "types"
@@ -27,7 +27,8 @@ const Blogs = () => {
 		<>
     {isModalopen && <SubscriptionModal close={() => setIsModalopen(false)} />}
 			<Navbar />
-			<section className="flex w-full flex-col px-2 py-[99px] md:px-[120px]">
+      <PaddedBlock>
+			<section className="flex w-full flex-col py-[99px]">
         <div className="w-full">
           <p className="font-medium uppercase text-gray-400">our blog</p>
           <p className="mb-10 mt-[10px] w-4/5 text-[32px] font-bold text-[#333]">
@@ -55,6 +56,7 @@ const Blogs = () => {
           ))}
         </div>
 			</section>
+      </PaddedBlock>
 			<Footer />
 		</>
 	)
