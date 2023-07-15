@@ -21,7 +21,7 @@ const ChatButton = (props: Props) => {
 	return (
 		<button
 			onClick={props.open}
-			className={`fixed bottom-44 right-5 !z-20 items-center gap-2 rounded-[26px] bg-secondary px-8 py-4 md:right-[120px] xl:bottom-[180px] xl:right-[300px] ${
+			className={`fixed bottom-44 right-5 !z-20 items-center gap-2 rounded-[26px] bg-secondary px-8 py-4 md:right-[120px] xl:bottom-[185px] 2xl:right-[240px] ${
 				isVisible ? "flex" : "hidden"
 			}`}>
 			<img src={chat_bubble} alt="" />
