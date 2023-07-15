@@ -13,3 +13,6 @@ export { default as TabPanel } from "./shared/TabPanel"
 export { default as ChatBot } from "./ui/ChatBot"
 export { default as ChatButton } from "./ui/ChatButton"
 export { default as SubscriptionModal } from "./ui/SubscriptionModal"
+
+// containers
+export { default as PaddedBlock } from "./containers/PaddedBlock"

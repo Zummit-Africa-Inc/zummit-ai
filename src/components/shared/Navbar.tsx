@@ -18,7 +18,7 @@ const Navbar = () => {
 
 	return (
 		<nav
-			className={`left-0 top-0 !z-10 flex w-full items-center justify-between border-b border-gray-300 bg-white px-2 py-4 md:px-[120px] ${
+			className={`left-0 top-0 !z-10 flex w-full items-center justify-between border-b border-gray-300 bg-white px-2 py-4 md:px-[120px] xl:px-[240px] ${
 				scrolled ? "fixed" : "static"
 			}`}>
 			<Link to="/">
