@@ -5,6 +5,7 @@ import { v4 as uuidv4 } from "uuid"
 import { useFormik } from "formik"
 import * as Yup from "yup"
 
+import { PaperPlane } from "assets/icons-tsx"
 import { logo } from "assets/images"
 // import { useBotStore } from "store"
 import { CHATS } from "mock"
@@ -77,7 +78,7 @@ const ChatBot = (props: Props) => {
 			<div className="flex w-full flex-col items-center gap-2 rounded-b-[8px] bg-gray-200 px-6 py-3">
 				<form
 					onSubmit={handleSubmit}
-					className="w-full border border-gray-300 bg-white px-4 py-2">
+					className="w-full flex items-center border border-gray-300 bg-white px-4 py-2">
 					<input
 						type="text"
 						id="message"
@@ -85,6 +86,9 @@ const ChatBot = (props: Props) => {
 						className="w-full"
 						placeholder="Type you message here..."
 					/>
+					<button type="submit">
+						<PaperPlane />
+					</button>
 				</form>
 			</div>
 		</animated.div>
