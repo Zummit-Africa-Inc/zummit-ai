@@ -25,3 +25,10 @@ export type Project = {
   isPublished: boolean
   createdAt: Date | string
 }
+
+export type Chat = {
+	id: string
+	type: "bot" | "user"
+	content: string
+	createdAt: Date | string
+}

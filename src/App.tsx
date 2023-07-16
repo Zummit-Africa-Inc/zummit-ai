@@ -10,14 +10,12 @@ const App = () => {
 			<Helmet>
 				<title>Zummit Africa</title>
 				<meta name="description" content="" />
-
 				{/* Facebook OpenGraph */}
 				<meta property="og:type" content="website" />
 				<meta property="og:url" content="https://zummitafrica.com" />
 				<meta property="og:title" content="Zummit Africa" />
 				<meta property="og:description" content="" />
 				<meta property="og:image" content="https://res.cloudinary.com/pabloclueless/image/upload/v1689372657/webclip_jeas3l.png" />
-
 				{/* Twitter */}
 				<meta property="twitter:card" content="summary_large_image" />
 				<meta property="twitter:url" content="https://zummitafrica.com" />
