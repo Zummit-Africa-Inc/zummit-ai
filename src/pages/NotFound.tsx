@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom"
 
 import { Footer, Navbar, PaddedBlock } from "components"
-import not_found from "assets/images/not-found.png"
+import not_found from "/images/not-found.png"
 import { ArrowRight } from "assets/icons-tsx"
 import { usePageTitle } from "hooks"
 
 const NotFound = () => {
-	usePageTitle("Not found")
+	usePageTitle("Oops!")
 
 	return (
 		<>

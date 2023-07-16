@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Work+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Work+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -19,7 +19,7 @@
 
 * {
 	box-sizing: border-box;
-  font-family: 'DM Sans', sans-serif;
+	font-family: "DM Sans", sans-serif;
 	padding: 0;
 	margin: 0;
 }
@@ -29,13 +29,14 @@ html {
 }
 
 body {
-	background: #FFF;
+	background: #fff;
 	font-family: var(--primary-font);
 	overflow-x: hidden;
 	overflow-y: scroll;
 }
 
-input, textarea {
+input,
+textarea {
 	outline: none;
 }
 
@@ -43,11 +44,11 @@ input:-webkit-autofill {
 	transition: background-color 5000s ease-in-out 0s;
 }
 
-input[type='search']::-webkit-search-cancel-button {
+input[type="search"]::-webkit-search-cancel-button {
 	display: none;
 }
 
-input[type='file']::-webkit-file-upload-button {
+input[type="file"]::-webkit-file-upload-button {
 	display: none;
 }
 
@@ -55,9 +56,9 @@ button {
 	@apply active:scale-[0.98];
 	border-radius: 8px;
 	font-weight: 500;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 a {
@@ -75,7 +76,7 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type='number'] {
+input[type="number"] {
 	-moz-appearance: textfield;
 }
 
@@ -87,52 +88,70 @@ input[type='number'] {
 /* grid containe on home page */
 .grid-container {
 	display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-auto-columns: 1fr;
-  gap: 20px 20px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "top top top top top top top right right right"
-    "top top top top top top top right right right"
-    "top top top top top top top right right right"
-    "left left left . . . . right right right"
-    "left left left . . . . right right right"
-    "left left left . . . . right right right"
-    "left left left . . . . right right right"
-    "left left left down down down down down down down"
-    "left left left down down down down down down down"
-    "left left left down down down down down down down";
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-auto-columns: 1fr;
+	gap: 20px 20px;
+	grid-auto-flow: row;
+	grid-template-areas:
+		"top top top top top top top right right right"
+		"top top top top top top top right right right"
+		"top top top top top top top right right right"
+		"left left left . . . . right right right"
+		"left left left . . . . right right right"
+		"left left left . . . . right right right"
+		"left left left . . . . right right right"
+		"left left left down down down down down down down"
+		"left left left down down down down down down down"
+		"left left left down down down down down down down";
 }
 
-.top { grid-area: top; }
+.top {
+	grid-area: top;
+}
 
-.right { grid-area: right; }
+.right {
+	grid-area: right;
+}
 
-.down { grid-area: down; }
+.down {
+	grid-area: down;
+}
 
-.left { grid-area: left; }
+.left {
+	grid-area: left;
+}
+
+.top img,
+.right img,
+.down img,
+.left img {
+	width: 100%;
+	height: 100%;
+	border-radius: 8px;
+	object-fit: cover;
+}
 
 /* actives the hover effect on the bav links */
 .nav-link {
-  position: relative;
+	position: relative;
 }
 
-.nav-link::before{
-  content: '';
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 0;
-  height: 2px;
-	background: #9FAABE;
-  transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+.nav-link::before {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 0;
+	height: 2px;
+	background: #9faabe;
+	transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .nav-link:hover::before{
-    left: 0;
-    right: auto;
-    width: 100%;
-  }
+	.nav-link:hover::before {
+		left: 0;
+		right: auto;
+		width: 100%;
+	}
 }
