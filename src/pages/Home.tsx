@@ -132,32 +132,16 @@ const Home = () => {
 							style={springs}
 							className="grid-container h-full w-2/4">
 							<div className="top">
-								<img
-									src={top}
-									alt=""
-									className="h-full w-full rounded-lg object-cover"
-								/>
+								<img src={top} alt="" />
 							</div>
 							<div className="right">
-								<img
-									src={right}
-									alt=""
-									className="h-full w-full rounded-lg object-cover"
-								/>
+								<img src={right} alt="" />
 							</div>
 							<div className="down">
-								<img
-									src={down}
-									alt=""
-									className="h-full w-full rounded-lg object-cover"
-								/>
+								<img src={down} alt="" />
 							</div>
 							<div className="left">
-								<img
-									src={left}
-									alt=""
-									className="h-full w-full rounded-lg object-cover"
-								/>
+								<img src={left} alt="" />
 							</div>
 						</animated.div>
 						<div className="flex h-full w-1/4 flex-col justify-between">
