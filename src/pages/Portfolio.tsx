@@ -1,18 +1,33 @@
 import { useQuery } from "@tanstack/react-query"
+import { useState } from "react"
 import axios from "axios"
 
-import { Button, Footer, Navbar, PaddedBlock } from "components"
+import { Button, Footer, Navbar, PaddedBlock, Pagination } from "components"
 import { usePageTitle, useScrollToTop } from "hooks"
 import { PORTFOLIO } from "constants"
 
 const Portfolio = () => {
+	const [portfolio, setPortfolio] = useState(PORTFOLIO)
+	const [page, setPage] = useState(1)
 	usePageTitle("Portfolio")
 	useScrollToTop()
+
+  const renderData = () => {
+    const startIndex = (page - 1) * 6
+    const endIndex = startIndex + 6
+    const currentPage = portfolio.slice(startIndex, endIndex)
+    return currentPage
+  }
+
+  const onPageChange = (value: number) => setPage(value)
 
 	useQuery({
 		queryFn: () => axios.get(""),
 		queryKey: ["get portfolio"],
-		onSuccess: ({ data }) => console.log(data),
+		onSuccess: ({ data }) => {
+			console.log(data)
+			setPortfolio(data)
+		},
 		onError: (error) => console.log(error),
 		enabled: false,
 	})
@@ -30,25 +45,33 @@ const Portfolio = () => {
 						Here, you will find a diverse range of projects we have successfully
 						delivered, spanning various industries and addressing unique challenges.
 					</p>
-					<div className="mt-[143px] flex w-full flex-col gap-[124px]">
-						{PORTFOLIO.map((item, index) => (
+					<div className="mt-[143px] mb-[99px] flex w-4/5 flex-col gap-[124px]">
+						{renderData().map((item, index) => (
 							<div
 								key={index}
-								className="flex w-full items-center justify-between even:flex-row-reverse">
-								<div className="rouded-[8px] h-[412px] w-[487px]">
+								className="flex w-full items-end gap-[95px] even:flex-row-reverse">
+								<div className="rouded-[8px] h-[387px] w-[463px]">
 									<img
 										src={item.image}
 										alt=""
 										className="h-full w-full rounded-lg object-cover"
 									/>
 								</div>
-								<div className="flex w-[387px] flex-col gap-6">
+								<div className="flex w-[463px] flex-col gap-6">
 									<p className="text-2xl font-bold text-[#333]">{item.label}</p>
-									<p className="text=lg text-gray-400">{item.description}</p>
+									<div className="">
+										<p className="text-[#333] font-bold uppercase">the problem</p>
+										<p className="text=lg text-gray-400">{item.problem}</p>
+									</div>
+									<div className="">
+										<p className="text-[#333] font-bold uppercase">our solution</p>
+										<p className="text=lg text-gray-400">{item.problem}</p>
+									</div>
 								</div>
 							</div>
 						))}
 					</div>
+					<Pagination current={page} onPageChange={onPageChange} pageSize={3} total={portfolio.length} />
 				</section>
 				<section className="flex w-full flex-col items-center py-[99px]">
 					<div className="flex w-full flex-col items-center justify-center rounded-lg border border-gray-300 py-10">

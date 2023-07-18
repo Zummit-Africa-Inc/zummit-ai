@@ -1,4 +1,4 @@
-import { persist } from "zustand/middleware"
+import { devtools, persist } from "zustand/middleware"
 import { create } from "zustand"
 
 import { Chat } from "types"
@@ -10,13 +10,15 @@ interface BotStore {
 }
 
 export const useBotStore = create<BotStore>()(
-	persist((set) => ({
-    chats: [],
-    add: (payload) => set((state) => ({
-      chats: [...state.chats, payload]
-    })),
-    clear: () => set(() => ({
-      chats: []
-    }))
-  }), { name: "bot-store" })
+	devtools(
+    persist((set) => ({
+      chats: [],
+      add: (payload) => set((state) => ({
+        chats: [...state.chats, payload]
+      })),
+      clear: () => set(() => ({
+        chats: []
+      }))
+    }), { name: "bot-store" }),
+  { enabled: true, name: "bot-store" })
 )
