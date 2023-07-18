@@ -21,7 +21,7 @@ const ComingSoon = () => {
 						Coming <span className="text-secondary">Soon</span>
 					</p>
           <div className="my-[23px]">
-            <Timer deadline="December, 31, 2023" />
+            <Timer deadline="September, 01, 2023" />
           </div>
 					<p className="font-work text-xl text-gray-400">
 						Get notified when our blog goes live.

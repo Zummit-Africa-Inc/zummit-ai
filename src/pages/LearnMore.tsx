@@ -27,9 +27,9 @@ const LearnMore = () => {
 						combining creativity and empathy to craft intuitive and visually stunning
 						experiences.
 					</p>
-					<div className="relative mb-[117px] mt-[126px] w-full">
-						<img src={learn_more} alt="" className="w-full" />
-						<div className="absolute left-0 top-0 flex h-full w-full items-center justify-center bg-black/30 px-[43px] py-[37px]">
+					<div className="relative mb-[117px] mt-[126px] w-full rounded-lg">
+						<img src={learn_more} alt="" className="w-full rounded-lg" />
+						<div className="absolute left-0 top-0 flex h-full w-full items-center justify-center bg-black/30 px-[43px] py-[37px] rounded-lg">
 							<p className="text-[32px] font-bold text-white">
 								How we empower businesses <br />
 								with our Unique approach:
