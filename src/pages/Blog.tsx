@@ -5,7 +5,7 @@ import axios from "axios"
 
 import { Footer, Loader, Navbar, PaddedBlock } from "components"
 import { usePageTitle, useScrollToTop } from "hooks"
-import { POSTS } from "constants"
+import POSTS from "MOCK_DATA.json"
 // import { Post } from "types"
 
 const Blog = () => {
