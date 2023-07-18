@@ -132,7 +132,9 @@ const Blogs = () => {
             {renderData().map((post) => (
               <Link key={post.id} to={`/blog/${post.id}`} className="w-full flex flex-col gap-5">
                 <img src={post.imageUrl} alt="" className="w-full aspect-[1.6/1] rounded-lg" />
-                <p className="text-xl text-[#333] font-bold">{post.title.substring(0, 30)}</p>
+                <p className="text-xl text-[#333] font-bold">
+                  {post.title.length > 30 ? `${post.title.substring(0, 30)}...` : post.title}
+                </p>
                 <p className="text-gray-400 font-work">{post.content.substring(0, 100)}...</p>
                 <div className="flex items-center text-gray-400 font-work">
                   <img src={post.author.image} alt="" className="w-[32px] h-[32px] rounded-full object-cover" />
