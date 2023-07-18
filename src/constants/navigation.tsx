@@ -7,11 +7,11 @@ export const NAVIGATION = [
 ]
 
 export const FOOOTER = [
-  {title: 'Et sed vel', menu: [
-    {label: 'Accumsan ', url: '/'},
-    {label: 'Hendrerit enim ', url: '/'},
-    {label: 'Eu est eu  ', url: '/'},
-  ]},
+  // {title: 'Et sed vel', menu: [
+  //   {label: 'Accumsan ', url: '/'},
+  //   {label: 'Hendrerit enim ', url: '/'},
+  //   {label: 'Eu est eu  ', url: '/'},
+  // ]},
   {title: 'Know more', menu: [
     {label: 'Blog', url: '/blog'},
     {label: 'Internship', url: '/internship'},

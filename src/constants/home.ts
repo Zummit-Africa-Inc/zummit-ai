@@ -1,5 +1,6 @@
 import { ai, backend, cloud, database, frontend, john, kolawole, linda, mobile, process_1, process_2, process_3 } from "assets/images"
 import { chip, bulb, monitor, phone } from "assets/icons"
+import mockup from "assets/images/mockup.png"
 
 export const OPERATIONS = [
 	{
@@ -112,17 +113,23 @@ export const PORTFOLIO = [
 	{
 		label: "TechMart",
 		description: "A groundbreaking marketplace for phones, computers, and accessories, revolutionizing device purchases. It offers a wide product range, flexible payment options, and doorstep delivery. ",
-		image: ""
+		image: mockup,
+		problem: "Customers in the market for devices face various challenges when making purchases. They often encounter limited product options, rigid payment methods, and inconvenience in obtaining their devices.",
+		solution: "We provided a marketplace with an extensive product range from top brands where customers have a wide selection of options to choose from. We also offered flexible payment options, allowing customers to purchase their desired devices with ease.",
 	},
 	{
 		label: "KnowledgePro",
 		description: "An AI-powered app that caters to professionals' information needs, perfect for businessmen, students, and researchers seeking tailored insights and resources.",
-		image: ""
+		image: mockup,
+		problem: "Many professionals, including businessmen, students, and researchers, often struggle to find accurate and tailored information that aligns with their specific needs. ",
+		solution: "KnowledgePro is an app designed to address this challenge by providing professionals with personalized and relevant insights and resources. Leveraging advanced AI algorithms, the app curates information based on users' preferences and requirements.",
 	},
 	{
 		label: "Zapi AI",
 		description: "Zapi revolutions business solutions with AI. A marketplace offers tailored AI APIs to streamline operations, boost productivity, and stay competitive.",
-		image: ""
+		image: mockup,
+		problem: "Businesses often face challenges in finding and implementing the right AI solutions to streamline their operations and stay competitive.",
+		solution: "Zapi Marketplace addresses these challenges by revolutionizing business solutions with AI. With this pr",
 	},
 ]
 

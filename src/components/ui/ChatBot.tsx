@@ -69,7 +69,7 @@ const ChatBot = (props: Props) => {
 									? "rounded-tl-none bg-secondary text-primary"
 									: "rounded-tr-none bg-primary text-white"
 							}`}>
-							<span className="text-sm">{chat.content}</span>
+							<span className="text-sm font-medium">{chat.content}</span>
 						</div>
 						<div ref={bottomRef}></div>
 					</div>

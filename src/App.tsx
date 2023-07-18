@@ -1,10 +1,18 @@
 import { ErrorBoundary } from "react-error-boundary"
 import { Helmet } from "react-helmet-async"
+import { useEffect } from "react"
 
 import { ErrorFallback } from "components"
+import { useBotStore } from "store"
 import Router from "router"
 
 const App = () => {
+	const {clear} = useBotStore(store  => store)
+
+	useEffect(() => {
+		clear()
+	},[])
+	
 	return (
 		<>
 			<Helmet>

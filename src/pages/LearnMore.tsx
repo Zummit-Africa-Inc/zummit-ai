@@ -29,10 +29,10 @@ const LearnMore = () => {
 					</p>
 					<div className="relative mb-[117px] mt-[126px] w-full">
 						<img src={learn_more} alt="" className="w-full" />
-						<div className="absolute left-0 top-0 flex h-full w-full flex-col justify-end bg-black/30 px-[43px] py-[37px]">
+						<div className="absolute left-0 top-0 flex h-full w-full items-center justify-center bg-black/30 px-[43px] py-[37px]">
 							<p className="text-[32px] font-bold text-white">
 								How we empower businesses <br />
-								with our Unique approach
+								with our Unique approach:
 							</p>
 						</div>
 					</div>
