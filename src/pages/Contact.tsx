@@ -1,6 +1,9 @@
 import { useMutation } from "@tanstack/react-query"
 // import ReCAPTCHA from "react-google-recaptcha"
+import { useNavigate } from "react-router-dom"
+import { toast } from "react-toastify"
 import { useFormik } from "formik"
+import axios from "axios"
 
 import { Button, Footer, Input, Navbar, PaddedBlock, Spinner } from "components"
 import { usePageTitle, useScrollToTop } from "hooks"
@@ -17,15 +20,28 @@ const initialValues: ContactFormDto = {
 }
 
 const Contact = () => {
+	const navigate = useNavigate()
 	usePageTitle("Contact Us")
 	useScrollToTop()
 
-	const { isLoading } = useMutation({})
+	const { isLoading, mutateAsync } = useMutation({
+		mutationFn: (payload: ContactFormDto) => {
+			return axios.post(`${import.meta.env.VITE_API_URL}/api/contact`, payload)
+		},
+		mutationKey: ["submit contact form"],
+		onSuccess: ({data}) => {
+			toast.success(data.message)
+			navigate("/")
+		},
+		onError: (error) => console.log(error)
+	})
 
 	const { errors, handleChange, handleSubmit } = useFormik({
 		initialValues,
 		validationSchema: contactFormSchema,
-		onSubmit: (data) => console.log(data),
+		onSubmit: (data) => {
+			mutateAsync(data)
+		},
 	})
 
 	return (
