@@ -1,4 +1,6 @@
 import { ErrorBoundary } from "react-error-boundary"
+import { ToastContainer } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
 import { Helmet } from "react-helmet-async"
 import { useEffect } from "react"
 
@@ -35,6 +37,7 @@ const App = () => {
 				FallbackComponent={ErrorFallback}
 				onReset={() => typeof window !== undefined && window.location.reload()}>
 				<Router />
+				<ToastContainer />
 			</ErrorBoundary>
 		</>
 	)
