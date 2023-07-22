@@ -18,13 +18,15 @@ import {
 	Navbar,
 	PaddedBlock,
 } from "components"
+import { useEventTracker, usePageTitle, usePageTracker, useScrollToTop } from "hooks"
 import { down, left, right, top } from "assets/images"
-import { usePageTitle, useScrollToTop } from "hooks"
 import { ArrowRight } from "assets/icons-tsx"
 
 const Home = () => {
+	const registerEvent = useEventTracker("cta")
 	const [isBotShown, setIsBotShown] = useState(false)
 	usePageTitle("Home")
+	usePageTracker()
 	useScrollToTop()
 
 	const [ref, springs] = useInView(() => ({
@@ -50,11 +52,11 @@ const Home = () => {
 			<PaddedBlock>
 				<section className="grid w-full grid-cols-2 items-center gap-[122px] py-[99px]">
 					<div className="w-full">
-						<p className="text-[44px] font-bold text-[#333]">
+						<h1 className="text-[44px] font-bold text-[#333]">
 							Custom-Built <span className="text-secondary">Solutions</span> and{" "}
 							<span className="text-secondary">AI Integration</span> for Business
 							Transformation and Success.
-						</p>
+						</h1>
 						<p className="my-8 text-[#616161]">
 							Zummit Africa specializes in creating tailored solutions to transform
 							businesses by leveraging AI and delivering tailored products to reach
@@ -63,6 +65,7 @@ const Home = () => {
 						<Button
 							label="Contact Us"
 							to="/contact-us"
+							onClick={() => registerEvent("click", "contact us")}
 							className="bg-primary text-white"
 						/>
 					</div>
@@ -96,15 +99,15 @@ const Home = () => {
 				<section className="grid w-full grid-cols-2 gap-[110px] py-[99px]">
 					<div className="flex h-[572px] w-[487px] flex-col justify-end bg-black/20 bg-what p-10 text-white">
 						<p className="font-semibold uppercase">what we do</p>
-						<p className="text-[32px] font-bold">
+						<h2 className="text-[32px] font-bold">
 							Building software products quickly and efficiently.
-						</p>
+						</h2>
 					</div>
 					<div className="grid w-full grid-cols-2 items-center gap-x-[41px] gap-y-[50px]">
 						{OPERATIONS.map((item, index) => (
 							<div key={index} className="flex w-[227px] flex-col">
 								<img src={item.image} alt={item.label} className="w-[30px]" />
-								<p className="my-5 text-2xl font-bold text-[#333]">{item.label}</p>
+								<h4 className="my-5 text-2xl font-bold text-[#333]">{item.label}</h4>
 								<p className="font-light text-gray-400">{item.description}</p>
 							</div>
 						))}
@@ -115,14 +118,14 @@ const Home = () => {
 					<p className="mb-2 font-medium uppercase text-gray-400">
 						what sets us apart
 					</p>
-					<p className="texx-[#333] text-[32px] font-bold">
+					<h2 className="texx-[#333] text-[32px] font-bold">
 						AI is our <span className="text-secondary">superpower</span>.
-					</p>
+					</h2>
 					<div className="my-20 flex h-[471.78px] w-full items-center gap-x-24">
 						<div className="flex h-full w-1/4 flex-col justify-between">
 							{PROCESS2.slice(0, 2).map(({ description, label }, index) => (
 								<div key={index} className="flex flex-col gap-5">
-									<p className="text-[#333} text-2xl font-bold">{label}</p>
+									<h4 className="text-[#333} text-2xl font-bold">{label}</h4>
 									<p className="text-gray-400">{description}</p>
 								</div>
 							))}
@@ -147,7 +150,7 @@ const Home = () => {
 						<div className="flex h-full w-1/4 flex-col justify-between">
 							{PROCESS2.slice(2, 4).map(({ description, label }, index) => (
 								<div key={index} className="flex flex-col gap-5">
-									<p className="text-[#333} text-2xl font-bold">{label}</p>
+									<h4 className="text-[#333} text-2xl font-bold">{label}</h4>
 									<p className="text-gray-400">{description}</p>
 								</div>
 							))}
@@ -155,6 +158,7 @@ const Home = () => {
 					</div>
 					<Link
 						to="/learn-more"
+						onClick={() => registerEvent("click", "learn more")}
 						className="flex items-center gap-2 font-bold text-primary">
 						Learn More <ArrowRight />
 					</Link>
@@ -162,14 +166,14 @@ const Home = () => {
 				<hr className="h-[1px] w-full border border-gray-300" />
 				<section className="flex w-full flex-col py-[99px]">
 					<p className="mb-2 font-medium uppercase text-gray-400">our process</p>
-					<p className="texx-[#333] text-[32px] font-bold">
+					<h2 className="texx-[#333] text-[32px] font-bold">
 						Streamlined steps from <br />
 						<span className="text-secondary">Concept to Completion.</span>
-					</p>
+					</h2>
 					<div className="mt-[74px] grid w-full grid-cols-3 items-start gap-10">
 						{PROCESS.map((process, index) => (
 							<div key={index} className="flex w-full flex-col">
-								<p className="text-xl font-bold text-[#333]">{process.label}</p>
+								<h4 className="text-xl font-bold text-[#333]">{process.label}</h4>
 								<img
 									src={process.image}
 									alt={process.label}
@@ -182,9 +186,9 @@ const Home = () => {
 				</section>
 				<section className="flex w-full flex-col items-center py-[99px]">
 					<p className="font-medium uppercase text-gray-400">our projects</p>
-					<p className="texx-[#333] mb-4 mt-2 text-[32px] font-bold">
+					<h2 className="texx-[#333] mb-4 mt-2 text-[32px] font-bold">
 						Client Portfolio: <span className="text-secondary">Custom Products</span>
-					</p>
+					</h2>
 					<p className="w-2/5 text-center font-work font-light text-gray-400">
 						Each project is a testament to our expertise in addressing unique
 						challenges and delivering tailored solutions.
@@ -204,6 +208,7 @@ const Home = () => {
 					</div>
 					<Link
 						to="/portfolio"
+						onClick={() => registerEvent("click", "portfolio")}
 						className="flex items-center gap-2 font-bold text-primary">
 						View More Projects <ArrowRight />
 					</Link>
@@ -213,7 +218,7 @@ const Home = () => {
 					<p className="mb-2 font-medium uppercase text-gray-400">
 						client success stories
 					</p>
-					<p className="texx-[#333] text-[32px] font-bold">
+					<h2 className="texx-[#333] text-[32px] font-bold">
 						Hear what our{" "}
 						<span className="text-secondary">
 							{" "}
@@ -221,7 +226,7 @@ const Home = () => {
 							customers{" "}
 						</span>{" "}
 						have to say
-					</p>
+					</h2>
 					<div className="mt-[74px] grid w-full grid-cols-3 items-start gap-10">
 						{TESTIMONIALS.map((testimonial, index) => (
 							<div
@@ -246,11 +251,11 @@ const Home = () => {
 				<hr className="h-[1px] w-full border border-gray-300" />
 				<section className="flex w-full flex-col py-[99px]">
 					<p className="mb-2 font-medium uppercase text-gray-300">our tech stack</p>
-					<p className="texx-[#333] text-[32px] font-bold">
+					<h2 className="texx-[#333] text-[32px] font-bold">
 						Expertise <span className="text-secondary">Across Disciplines</span>:{" "}
 						<br />
 						Our Comprehensive Departments
-					</p>
+					</h2>
 					<div className="mt-[50px] grid w-full grid-cols-3 items-center gap-5">
 						{STACKS.map((stack, index) => (
 							<animated.div
@@ -283,10 +288,10 @@ const Home = () => {
 				<hr className="h-[1px] w-full border border-gray-300" />
 				<section className="flex w-full flex-col items-center py-[99px]">
 					<div className="flex w-full flex-col items-center justify-center rounded-lg border border-gray-300 py-10">
-						<p className="text-[32px] font-bold text-secondary">
+						<h3 className="text-[32px] font-bold text-secondary">
 							Let's Connect{" "}
 							<span className="text-primary">and Bring your ideas to life</span>
-						</p>
+						</h3>
 						<p className="mb-[32px] mt-[15px] font-work text-gray-400">
 							Click the button below to chat, book a meeting, or call our team
 							directly.
@@ -294,6 +299,7 @@ const Home = () => {
 						<Button
 							label="Talk to us"
 							to="/contact-us"
+							onClick={() => registerEvent("click", "contact us")}
 							className="bg-primary text-white"
 						/>
 					</div>

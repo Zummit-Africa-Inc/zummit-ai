@@ -25,8 +25,8 @@ export const FOOOTER = [
 ]
 
 export const COMMUNITY = [
-  {icon: linkedin, url: "https://linkedin.com/company/zummit-africa/"},
-  {icon: facebook, url: "https://facebook.com/"},
-  {icon: twitter, url: "https://twitter.com/zummitafrica"},
-  {icon: instagram, url: "https://instagram.com/"},
+  {name: "linkedin", icon: linkedin, url: "https://linkedin.com/company/zummit-africa/"},
+  {name: "facebook", icon: facebook, url: "https://facebook.com/"},
+  {name: "twitter", icon: twitter, url: "https://twitter.com/zummitafrica"},
+  {name: "instagram", icon: instagram, url: "https://instagram.com/"},
 ]

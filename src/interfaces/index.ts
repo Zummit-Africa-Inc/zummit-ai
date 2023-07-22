@@ -5,3 +5,14 @@ export interface ContactFormDto {
 	phone: string
 	subject: string
 }
+
+export interface PaginationDto<T> {
+	data: T[]
+	sort: string[]
+	meta: {
+		currentPage: number
+		itemsPerPage: number
+		totalItems: number
+		totalPages: number
+	}
+}
