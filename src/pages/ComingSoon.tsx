@@ -1,15 +1,32 @@
+import { useMutation } from "@tanstack/react-query"
+import { useLocation } from "react-router-dom"
 import { useFormik } from "formik"
+import axios from "axios"
 
+import { useEventTracker, usePageTitle, useScrollToTop, usePageTracker } from "hooks"
 import { Button, Footer, Navbar, PaddedBlock, Timer } from "components"
-import { usePageTitle, useScrollToTop } from "hooks"
 
 const ComingSoon = () => {
-	usePageTitle("Internship")
+	const location = useLocation()
+
+	const registerEvent = useEventTracker("cta")
+	usePageTitle(location.pathname)
+	usePageTracker()
 	useScrollToTop()
+
+	useMutation({
+		mutationFn: (email: string) => axios.post(`${import.meta.env.VITE_API_URL}/`, {email}),
+		mutationKey: ["newsltter subscription"],
+		onSuccess: ({data}) => console.log(data),
+		onError: (error) => console.log(error)
+	})
 
 	const { handleChange, handleSubmit } = useFormik({
 		initialValues: { email: "" },
-		onSubmit: (data) => console.log(data),
+		onSubmit: (data) => {
+			console.log(data)
+			registerEvent("form submission", "subscription")
+		},
 	})
 
 	return (
@@ -17,9 +34,9 @@ const ComingSoon = () => {
 			<Navbar />
 			<PaddedBlock>
 				<section className="pt-118px] flex w-full flex-col items-center pt-[118px] pb-[264px]">
-					<p className="text-7xl font-bold text-[#333]">
+					<h1 className="text-7xl font-bold text-[#333]">
 						Coming <span className="text-secondary">Soon</span>
-					</p>
+					</h1>
           <div className="my-[23px]">
             <Timer deadline="September, 01, 2023" />
           </div>
@@ -45,10 +62,10 @@ const ComingSoon = () => {
 				</section>
 				<section className="flex w-full flex-col items-center mb-[83px]">
 					<div className="flex w-full flex-col items-center justify-center rounded-lg border border-gray-300 py-10">
-						<p className="text-[32px] font-bold text-secondary">
+						<h2 className="text-[32px] font-bold text-secondary">
 							Let's Connect{" "}
 							<span className="text-primary">and Bring your ideas to life</span>
-						</p>
+						</h2>
 						<p className="mb-[32px] mt-[15px] font-work text-gray-400">
 							Click the button below to chat, book a meeting, or call our team
 							directly.

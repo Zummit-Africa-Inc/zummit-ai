@@ -10,6 +10,9 @@
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-text-size-adjust: 100%;
+
+	--color-primary: '#081F4A';
+	--color-secondary: '#FFEA00';
 }
 
 /* removes scrollbar */
@@ -154,4 +157,26 @@ input[type="number"] {
 		right: auto;
 		width: 100%;
 	}
+}
+
+/* typewriter caret */
+.caret {
+  border-right: 1px solid var(--color-primary); /* Simulate blinking cursor */
+  animation: typing 1s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--color-primary);
+  }
 }

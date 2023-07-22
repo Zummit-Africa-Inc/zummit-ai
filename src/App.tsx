@@ -3,6 +3,7 @@ import { ToastContainer } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 import { Helmet } from "react-helmet-async"
 import { useEffect } from "react"
+import ReactGA from "react-ga4"
 
 import { ErrorFallback } from "components"
 import { useBotStore } from "store"
@@ -10,6 +11,7 @@ import Router from "router"
 
 const App = () => {
 	const {clear} = useBotStore(store  => store)
+	ReactGA.initialize(`${import.meta.env.VITE_GA_KEY}`)
 
 	useEffect(() => {
 		clear()

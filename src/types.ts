@@ -30,6 +30,6 @@ export type Project = {
 export type Chat = {
 	id: string
 	type: "bot" | "user"
-	content: string
+	message: string
 	createdAt: Date | string
 }
