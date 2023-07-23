@@ -1,11 +1,13 @@
 import { Link, NavLink } from "react-router-dom"
 import { useEffect, useState } from "react"
 
+import { useEventTracker } from "hooks"
 import { NAVIGATION } from "constants"
 import { logo } from "assets/images"
 
 const Navbar = () => {
 	const [scrolled, setScrolled] = useState(false)
+	const registerEvent = useEventTracker("cta")
 
 	const handleScroll = () => {
 		window.scrollY > 700 ? setScrolled(true) : setScrolled(false)
@@ -30,6 +32,7 @@ const Navbar = () => {
 						<NavLink
 							key={url}
 							to={url}
+							onClick={() => registerEvent("click", `${url}`)}
 							className={({ isActive }) =>
 								`nav-link ${isActive ? "text-primary" : "text-gray-400"}`
 							}>
@@ -39,6 +42,7 @@ const Navbar = () => {
 				</div>
 				<Link
 					to="/contact-us"
+					onClick={() => registerEvent("click", "contact us")}
 					className="rounded-lg border-2 border-primary px-5 py-2 text-primary">
 					Contact Us
 				</Link>

@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom"
 
 import { COMMUNITY, FOOOTER } from "constants"
+import { useEventTracker } from "hooks"
 import { logo } from "assets/images"
 
 const Footer = () => {
+	const registerEvent = useEventTracker("cta")
+
 	return (
 		<footer className="w-full bg-black">
 			<div className="flex w-full items-start justify-between px-2 pb-32 pt-16 md:px-[120px] 2xl:px-[240px]">
@@ -22,8 +25,9 @@ const Footer = () => {
 								key={index}
 								href={item.url}
 								target="_blank"
+								onClick={() => registerEvent("follow link", `${item.url}`)}
 								className="text-xl text-secondary/[40%]">
-								<img src={item.icon} alt="" className="aspect-[1/1] w-6" />
+								<img src={item.icon} alt={`${item.name} link`} className="aspect-[1/1] w-6" />
 							</a>
 						))}
 					</div>
@@ -33,8 +37,8 @@ const Footer = () => {
 						<div key={index} className="flex w-[250px] flex-col gap-4">
 							<p className="text-xl font-bold text-white">{title}</p>
 							<div className="flex flex-col gap-[9px]">
-								{menu.map(({ label, url }) => (
-									<Link key={label} to={url} className="font-light text-white/[75%]">
+								{menu.map(({label, url}) => (
+									<Link key={label} to={url} onClick={() => registerEvent("click", `${url}`)} className="font-light text-white/[75%]">
 										{label}
 									</Link>
 								))}
