@@ -2,14 +2,16 @@ import { useQuery } from "@tanstack/react-query"
 import { useState } from "react"
 import axios from "axios"
 
+import { useEventTracker, usePageTitle, usePageTracker, useScrollToTop } from "hooks"
 import { Button, Footer, Navbar, PaddedBlock, Pagination } from "components"
-import { usePageTitle, useScrollToTop } from "hooks"
 import { PORTFOLIO } from "constants"
 
 const Portfolio = () => {
 	const [portfolio, setPortfolio] = useState(PORTFOLIO)
+	const registerEvent = useEventTracker("cta")
 	const [page, setPage] = useState(1)
 	usePageTitle("Portfolio")
+	usePageTracker()
 	useScrollToTop()
 
   const renderData = () => {
@@ -37,10 +39,10 @@ const Portfolio = () => {
 			<Navbar />
 			<PaddedBlock>
 				<section className="flex w-full flex-col items-center py-[99px]">
-					<p className="mb-6 mt-[10px] text-[32px] font-bold text-[#333]">
+					<h1 className="mb-6 mt-[10px] text-[32px] font-bold text-[#333]">
 						Showcasing a collection <br /> of products
 						<span className="text-secondary"> built by us.</span>
-					</p>
+					</h1>
 					<p className="w-full text-center font-work text-gray-400 md:w-[540px]">
 						Here, you will find a diverse range of projects we have successfully
 						delivered, spanning various industries and addressing unique challenges.
@@ -58,13 +60,13 @@ const Portfolio = () => {
 									/>
 								</div>
 								<div className="flex w-[463px] flex-col gap-6">
-									<p className="text-2xl font-bold text-[#333]">{item.label}</p>
+									<h3 className="text-2xl font-bold text-[#333]">{item.label}</h3>
 									<div className="">
-										<p className="text-[#333] font-bold uppercase">the problem</p>
+										<h5 className="text-[#333] font-bold uppercase">the problem</h5>
 										<p className="text=lg text-gray-400">{item.problem}</p>
 									</div>
 									<div className="">
-										<p className="text-[#333] font-bold uppercase">our solution</p>
+										<h5 className="text-[#333] font-bold uppercase">our solution</h5>
 										<p className="text=lg text-gray-400">{item.problem}</p>
 									</div>
 								</div>
@@ -75,10 +77,10 @@ const Portfolio = () => {
 				</section>
 				<section className="flex w-full flex-col items-center py-[99px]">
 					<div className="flex w-full flex-col items-center justify-center rounded-lg border border-gray-300 py-10">
-						<p className="text-[32px] font-bold text-secondary">
+						<h2 className="text-[32px] font-bold text-secondary">
 							Let's Connect{" "}
 							<span className="text-primary">and Bring your ideas to life</span>
-						</p>
+						</h2>
 						<p className="mb-[32px] mt-[15px] font-work text-gray-400">
 							Click the button below to chat, book a meeting, or call our team
 							directly.
@@ -86,6 +88,7 @@ const Portfolio = () => {
 						<Button
 							label="Talk to us"
 							to="/contact-us"
+							onClick={() => registerEvent("click", "contact us")}
 							className="bg-primary text-white"
 						/>
 					</div>

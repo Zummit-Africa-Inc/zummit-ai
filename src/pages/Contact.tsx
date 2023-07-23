@@ -5,8 +5,8 @@ import { toast } from "react-toastify"
 import { useFormik } from "formik"
 import axios from "axios"
 
+import { useEventTracker, usePageTitle, usePageTracker, useScrollToTop } from "hooks"
 import { Button, Footer, Input, Navbar, PaddedBlock, Spinner } from "components"
-import { usePageTitle, useScrollToTop } from "hooks"
 import { customre_care } from "assets/images"
 import { ContactFormDto } from "interfaces"
 import { contactFormSchema } from "utils"
@@ -20,13 +20,15 @@ const initialValues: ContactFormDto = {
 }
 
 const Contact = () => {
+	const registerEvent = useEventTracker("cta")
 	const navigate = useNavigate()
 	usePageTitle("Contact Us")
+	usePageTracker()
 	useScrollToTop()
 
 	const { isLoading, mutateAsync } = useMutation({
 		mutationFn: (payload: ContactFormDto) => {
-			return axios.post(`${import.meta.env.VITE_API_URL}/api/contact`, payload)
+			return axios.post(`${import.meta.env.VITE_API_URL}/contact`, payload)
 		},
 		mutationKey: ["submit contact form"],
 		onSuccess: ({data}) => {
@@ -41,6 +43,7 @@ const Contact = () => {
 		validationSchema: contactFormSchema,
 		onSubmit: (data) => {
 			mutateAsync(data)
+			registerEvent("form submission", "contact form")
 		},
 	})
 
@@ -50,20 +53,20 @@ const Contact = () => {
 			<PaddedBlock>
 				<section className="flex w-full flex-col py-[99px]">
 					<p className="font-medium uppercase text-gray-400">get in touch with us</p>
-					<p className="mb-6 mt-[10px] text-[32px] font-bold text-[#333]">
+					<h1 className="mb-6 mt-[10px] text-[32px] font-bold text-[#333]">
 						Leo nec mauris{" "}
 						<span className="text-secondary">
 							aenean sed <br /> sit posuere
 						</span>
 						volutpat nisl.
-					</p>
-					<p className="w-1/2 font-work text-xl text-gray-300">
+					</h1>
+					<h5 className="w-1/2 font-work text-xl text-gray-300">
 						Send in your inquiries and feedback and be sure we will respond as soon as
 						possible.
-					</p>
+					</h5>
 					<div className="mt-[98px] flex h-[551px] w-full items-center gap-[137px]">
 						<div className="grid h-full w-[466px] place-items-center rounded-[11px] bg-[#FBC93D]">
-							<img src={customre_care} alt="" className="h-[450px] w-[347px]" />
+							<img src={customre_care} alt="customer care agent" className="h-[450px] w-[347px]" />
 						</div>
 						<form onSubmit={handleSubmit} className="flex h-full flex-col gap-5">
 							<div className="flex items-center gap-[21px]">
