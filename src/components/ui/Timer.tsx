@@ -25,16 +25,16 @@ const Timer = (props: Props) => {
 
   return (
     <div className="flex items-center gap-4 font-work">
-      <p className="text-[40px] text-[#333] font-semibold">
-        {days}<span className="text-[32px] text-gray-400 font-normal ml-2">days</span>
+      <p className="text-[40px] text-ash-300 font-semibold">
+        {days}<span className="text-[32px] text-ash-200 font-normal ml-2">days</span>
       </p>
-      <span className="text-[40px] text-[#333]">:</span>
-      <p className="text-[40px] text-[#333] font-semibold">
-        {hours}<span className="text-[32px] text-gray-400 font-normal ml-2">hrs</span>
+      <span className="text-[40px] text-ash-300">:</span>
+      <p className="text-[40px] text-ash-300 font-semibold">
+        {hours}<span className="text-[32px] text-ash-200 font-normal ml-2">hrs</span>
       </p>
-      <span className="text-[40px] text-[#333]">:</span>
-      <p className="text-[40px] text-[#333] font-semibold">
-        {minutes}<span className="text-[32px] text-gray-400 font-normal ml-2">mins</span>
+      <span className="text-[40px] text-ash-300">:</span>
+      <p className="text-[40px] text-ash-300 font-semibold">
+        {minutes}<span className="text-[32px] text-ash-200 font-normal ml-2">mins</span>
       </p>
     </div>
   )

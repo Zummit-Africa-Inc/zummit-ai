@@ -1,10 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./src/**/*.{ts,tsx}', './index.html'],
+  content: ["./src/**/*.{ts,tsx}", "./index.html"],
   theme: {
     fontFamily: {
-      dm: ['DM Sans', 'sans-serif'],
-      work: ['Work Sans', 'sans-serif'],
+      dm: ["DM Sans", "sans-serif"],
+      work: ["Work Sans", "sans-serif"],
     },
     extend: {
       backgroundImage: {
@@ -16,8 +16,16 @@ export default {
         "what": "url('/images/what.png')",
       },
       colors: {
-        primary: '#081F4A',
-        secondary: '#FFEA00',
+        primary: "#081F4A",
+        secondary: {
+          100: "#FFEA00",
+          200: "#FBC93D",
+        },
+        ash: {
+          100: "#AFAFAF",
+          200: "#616161",
+          300: "#333",
+        }
       }
     },
   },

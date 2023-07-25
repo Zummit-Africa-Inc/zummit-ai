@@ -39,11 +39,11 @@ const Portfolio = () => {
 			<Navbar />
 			<PaddedBlock>
 				<section className="flex w-full flex-col items-center py-[99px]">
-					<h1 className="mb-6 mt-[10px] text-[32px] font-bold text-[#333]">
+					<h1 className="mb-6 mt-[10px] text-[32px] font-bold text-ash-300">
 						Showcasing a collection <br /> of products
-						<span className="text-secondary"> built by us.</span>
+						<span className="text-secondary-200"> built by us.</span>
 					</h1>
-					<p className="w-full text-center font-work text-gray-400 md:w-[540px]">
+					<p className="w-full text-center font-work text-ash-200 md:w-[540px]">
 						Here, you will find a diverse range of projects we have successfully
 						delivered, spanning various industries and addressing unique challenges.
 					</p>
@@ -60,14 +60,14 @@ const Portfolio = () => {
 									/>
 								</div>
 								<div className="flex w-[463px] flex-col gap-6">
-									<h3 className="text-2xl font-bold text-[#333]">{item.label}</h3>
+									<h3 className="text-2xl font-bold text-ash-300">{item.label}</h3>
 									<div className="">
-										<h5 className="text-[#333] font-bold uppercase">the problem</h5>
-										<p className="text=lg text-gray-400">{item.problem}</p>
+										<h5 className="text-ash-300 font-bold uppercase">the problem</h5>
+										<p className="text=lg text-ash-200">{item.problem}</p>
 									</div>
 									<div className="">
-										<h5 className="text-[#333] font-bold uppercase">our solution</h5>
-										<p className="text=lg text-gray-400">{item.problem}</p>
+										<h5 className="text-ash-300 font-bold uppercase">our solution</h5>
+										<p className="text=lg text-ash-200">{item.problem}</p>
 									</div>
 								</div>
 							</div>
@@ -76,12 +76,12 @@ const Portfolio = () => {
 					<Pagination current={page} onPageChange={onPageChange} pageSize={3} total={portfolio.length} />
 				</section>
 				<section className="flex w-full flex-col items-center py-[99px]">
-					<div className="flex w-full flex-col items-center justify-center rounded-lg border border-gray-300 py-10">
-						<h2 className="text-[32px] font-bold text-secondary">
+					<div className="flex w-full flex-col items-center justify-center rounded-lg border border-ash-200 py-10">
+						<h2 className="text-[32px] font-bold text-secondary-200">
 							Let's Connect{" "}
 							<span className="text-primary">and Bring your ideas to life</span>
 						</h2>
-						<p className="mb-[32px] mt-[15px] font-work text-gray-400">
+						<p className="mb-[32px] mt-[15px] font-work text-ash-200">
 							Click the button below to chat, book a meeting, or call our team
 							directly.
 						</p>
