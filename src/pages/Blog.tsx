@@ -1,36 +1,46 @@
 import { Link, useParams } from "react-router-dom"
-import { useQuery } from "@tanstack/react-query"
-import { useEffect, useState } from "react"
-import axios from "axios"
+import { useQueries } from "@tanstack/react-query"
+import axios, { AxiosResponse } from "axios"
+import { useState } from "react"
 
 import { Button, Footer, Loader, Navbar, PaddedBlock } from "components"
 import { usePageTitle, useScrollToTop } from "hooks"
 import { formatDate, randomize } from "utils"
 import { ArrowRight } from "assets/icons-tsx"
-import POSTS from "MOCK_DATA.json"
+import { PaginationDto } from "interfaces"
 import { Post } from "types"
 
 const Blog = () => {
+	const [posts, setPosts] = useState<PaginationDto<Post>>()
 	const [post, setPost] = useState<Post>()
 	const { id } = useParams()
 	usePageTitle("Blog")
 	useScrollToTop()
 
-	useEffect(() => {
-		const post = POSTS.find((post) => post.id === id)
-		setPost(post)
-	}, [])
-
-	useQuery({
-		queryFn: () => axios.get(""),
-		queryKey: ["get blogpost", id],
-		onSuccess: ({ data }) => {
-			console.log(data)
-		},
-		enabled: false,
+	const [postQuery] = useQueries({
+		queries: [
+			{
+				queryFn: () => axios.get(`${import.meta.env.VITE_API_URL}/blog/${id}`),
+				queryKey: ["get blogpost", id],
+				onSuccess: ({data}: AxiosResponse) => {
+					console.log(data)
+					setPost(data)
+				},
+				enabled: false,
+			},
+			{
+				queryFn: () => axios.get(`${import.meta.env.VITE_API_URL}/blog/all`),
+				queryKey: ["get blogposts"],
+				onSuccess: ({data}: AxiosResponse) => {
+					console.log(data)
+					setPosts(data)
+				},
+				enabled: false,
+			}
+		]
 	})
 
-	if (!post) return <Loader />
+	if (postQuery.isLoading) return <Loader />
 
 	return (
 		<>
@@ -42,26 +52,26 @@ const Blog = () => {
 							{post?.title}
 						</h2>
 						<div className="flex items-center font-work text-ash-200">
-							<img src={post.author.image} alt={post.author.firstName} className="h-[32px] w-[32px] rounded-full object-cover" />
-							<p className="ml-2 text-sm">{post.author.firstName}</p>
+							<img src={post?.author.image} alt={post?.author.firstName} className="h-[32px] w-[32px] rounded-full object-cover" />
+							<p className="ml-2 text-sm">{post?.author.firstName}</p>
 							<span className="mx-2">&bull;</span>
-							<p className="text-sm">{formatDate(post.createdAt)}</p>
+							<p className="text-sm">{post && formatDate(post.createdAt)}</p>
 						</div>
 					</div>
-					<img src={post.imageUrl} alt={post.title} className="mb-[69px] mt-[44px] aspect-[2.4/1] w-[834px] rounded-lg object-cover" />
+					<img src={post?.imageUrl} alt={post?.title} className="mb-[69px] mt-[44px] aspect-[2.4/1] w-[834px] rounded-lg object-cover" />
 					<div className="flex w-[692px] flex-col">
-						<p>{post.content}</p>
+						<p>{post?.content}</p>
 					</div>
 					<div className="mt-[56px] flex w-[692px] items-center gap-5">
 						<img
-							src={post.author.image}
-							alt={post.author.firstName}
+							src={post?.author.image}
+							alt={post?.author.firstName}
 							className="aspect-[1/1] w-[72px] rounded-full object-cover"
 						/>
 						<div className="flex flex-col">
 							<p className="font-work text-xs font-medium text-ash-200">WRITTEN BY</p>
-							<p className="text-2xl font-bold text-ash-300">{post.author.firstName}</p>
-							<p className="font-work text-sm text-ash-300">{post.author.firstName}</p>
+							<p className="text-2xl font-bold text-ash-300">{post?.author.firstName}</p>
+							<p className="font-work text-sm text-ash-300">{post?.author.firstName}</p>
 						</div>
 					</div>
 				</section>
@@ -70,7 +80,7 @@ const Blog = () => {
 						More from our blog
 					</h3>
 					<div className="w-ull grid grid-cols-3 items-center gap-[47px]">
-						{randomize(POSTS)?.slice(0, 3).map((post) => (
+						{posts && randomize(posts.data)?.slice(0, 3).map((post) => (
 							<Link key={post.id} to={`/blog/${post.id}`} className="w-full flex flex-col gap-5">
 								<img src={post.imageUrl} alt={post.title} className="w-full aspect-[1.6/1] rounded-lg" />
 								<h4 className="text-xl text-ash-300 font-bold">
