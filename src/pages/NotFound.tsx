@@ -16,7 +16,7 @@ const NotFound = () => {
 				<section className="flex w-full flex-col py-[99px]">
 					<div className="flex w-full flex-col items-center py-10">
 						<img src={not_found} alt="" className="w-full md:w-[400px]" />
-						<h2 className="my-5 w-1/2 text-center text-2xl font-bold text-[#333]">
+						<h2 className="my-5 w-1/2 text-center text-2xl font-bold text-ash-300">
 							The page you're looking for has either been moved or isn't available
 						</h2>
 						<Link to="/" className="flex items-center gap-2 font-bold text-primary">

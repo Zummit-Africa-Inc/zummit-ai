@@ -66,10 +66,10 @@ const ChatBot = (props: Props) => {
 	return (
 		<animated.div
 			style={spring}
-			className="fixed bottom-5 right-5 !z-20 flex h-[461px] w-[473px] flex-col items-center justify-between rounded-lg border border-gray-300 bg-white">
-			<div className="flex w-full items-center justify-between border-b border-gray-300 px-6 py-3">
+			className="fixed bottom-5 right-5 !z-20 flex h-[461px] w-[473px] flex-col items-center justify-between rounded-lg border border-ash-200 bg-white">
+			<div className="flex w-full items-center justify-between border-b border-ash-200 px-6 py-3">
 				<img src={logo} alt="zummit africa logo" className="w-[100px]" />
-				<button onClick={props.close} className="text-4xl text-gray-400">
+				<button onClick={props.close} className="text-4xl text-ash-200">
 					<FiX />
 				</button>
 			</div>
@@ -83,7 +83,7 @@ const ChatBot = (props: Props) => {
 						<div
 							className={`max-w-[65%] rounded-lg p-2 ${
 								chat.type === "bot"
-									? "rounded-tl-none bg-secondary text-primary"
+									? "rounded-tl-none bg-secondary-100 text-primary"
 									: "rounded-tr-none bg-primary text-white"
 							}`}>
 							<p className="text-sm font-medium">
@@ -96,7 +96,7 @@ const ChatBot = (props: Props) => {
 			<div className="flex w-full flex-col items-center gap-2 rounded-b-[8px] bg-gray-200 px-6 py-3">
 				<form
 					onSubmit={handleSubmit}
-					className="w-full flex items-center border border-gray-300 bg-white px-4 py-2">
+					className="w-full flex items-center border border-ash-200 bg-white px-4 py-2">
 					<input
 						type="text"
 						value={message}
@@ -105,7 +105,7 @@ const ChatBot = (props: Props) => {
 						placeholder="Type you message here..."
 					/>
 					<button type="submit">
-						{isLoading ? <Spinner className="border-[#333]" /> : <PaperPlane />}
+						{isLoading ? <Spinner className="border-ash-300" /> : <PaperPlane />}
 					</button>
 				</form>
 			</div>

@@ -32,7 +32,7 @@ const Pagination = (props: Props) => {
 					key={i}
 					onClick={() => props.onPageChange(i)}
 					className={`flex h-[33px] w-[29px] cursor-pointer items-center justify-center rounded-[5px] font-bold ${
-						props.current === i ? "bg-black text-white" : "text-gray-400"
+						props.current === i ? "bg-black text-white" : "text-ash-200"
 					}`}>
 					{i}
 				</li>
@@ -46,7 +46,7 @@ const Pagination = (props: Props) => {
 			<button
 				onClick={onPrevious}
 				disabled={props.current === 1}
-				className="flex w-[126px] items-center gap-2 border-2 border-primary/[0.2] px-[18px] py-[10px] text-gray-400 disabled:cursor-not-allowed disabled:bg-gray-400 disabled:text-black">
+				className="flex w-[126px] items-center gap-2 border-2 border-primary/[0.2] px-[18px] py-[10px] text-ash-200 disabled:cursor-not-allowed disabled:bg-ash-200 disabled:text-black">
 				<CaretLeft />
 				Previous
 			</button>
@@ -54,7 +54,7 @@ const Pagination = (props: Props) => {
 			<button
 				onClick={onNext}
 				disabled={props.current === totalPages}
-				className="flex w-[126px] items-center gap-2 border-2 border-primary/[0.2] px-[18px] py-[10px] text-gray-400 disabled:cursor-not-allowed disabled:bg-gray-400 disabled:text-black">
+				className="flex w-[126px] items-center gap-2 border-2 border-primary/[0.2] px-[18px] py-[10px] text-ash-200 disabled:cursor-not-allowed disabled:bg-ash-200 disabled:text-black">
 				Next
 				<CaretRight />
 			</button>

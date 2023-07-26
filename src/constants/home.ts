@@ -1,4 +1,4 @@
-import { ai, backend, cloud, database, frontend, john, kolawole, linda, mobile, process_1, process_2, process_3 } from "assets/images"
+import { ai, backend, cloud, database, frontend, mobile } from "assets/images"
 import { chip, bulb, monitor, phone } from "assets/icons"
 import mockup from "assets/images/mockup.png"
 
@@ -32,19 +32,19 @@ export const OPERATIONS = [
 export const PROCESS = [
 	{
 		label: "Discovery and Ideation",
-		image: process_1,
+		image: "https://s3-alpha-sig.figma.com/img/ef57/e571/770ae0ae9aca837c748978569c5c0e9a?Expires=1691366400&Signature=XsZRWnAENYhO83hz-AUNIQudN8dxulfo6DPzSA2uY1Z6mIjJOgLIqU4eUV-JSWM~OviL2UCSlmZSwsog4XltZ6ANbHa2qfXYeF6NMW6MPKXxnm~MIXAbRD~-VHXSj~uvb4gCy60PqNvi8q9D19cG9FHAYqwWI73fTqSGEFdvMna6JyErvZHWfhwDKtYyBejrm6RAXOrM59-v0VtW0dLU0cz~SlkalNwY8VyvOHok7ZpnZjW6QMMqvIN0Sh0ypU4XPUF2kgkkZXxUOQEzCEe58IuaFViyPaHc6spjRqMfcxh71WHmEF4hQ9TaLlOe1-yIgQUYiN6Qa57ou2HXEYAv8Q__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
 		description:
 			"Diving deep into understanding your business objectives, target audience, and specific challenges through comprehensive research and engaging conversations",
 	},
 	{
 		label: "Design and Development",
-		image: process_2,
+		image: "https://s3-alpha-sig.figma.com/img/056e/b513/99631e425f2d95f6181d127d729de390?Expires=1691366400&Signature=CEMkIHtxqlv2~24mSVDZttDOERckoQq1HuZNaqpG9bNG4QpUIrQ1zP~TOdZK18luPH6QyiO3x1KqvAwTSeB1NKpd5HvM8YYPEXKyaZ5PCXIhRGRTwjHSFp1GKG56D1XY5vyJqAmlhwZrhL1ub-k8ewEmG9RY4ms5usVa3NsUe4uXa6uYZUXbF8~3aWIqJ8bhizTvBGjkkUAXxihu-JyoKN6SjYAm3haLoHdhWrSFK8tpzbDT89LsG8zR4fdKqEyndmu8lOn0y-JoTQPiBVUFkJHUKKtQdTEbgoAIxzj1fzpiVqO6aMFUjvoGZHI35sXeJ1bjyizrp-t4mvy87i62RA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
 		description:
 			"Crafting intuitive user interfaces, seamless user experiences, and visually stunning designs using cutting-edge technologies and industry best practices.",
 	},
 	{
 		label: "Deployment and Optimization",
-		image: process_3,
+		image: "https://s3-alpha-sig.figma.com/img/c96a/8255/6148c936902f2fb88473dff4b6883ff1?Expires=1691366400&Signature=i8OOi9TFsXIg4neLB2Y2EvXnz8moiVMrpeufSAEcJbF4T6nX5Iua7SGsLDczLcaJb5WpU755etpgmA0YLWk-M2EPp9F9XxOegUae4PgOU3FnG9Zl-xsSlH37~U0Rz2SiPYXwbarzR6bfnhdRiA7OIArUQdek~Su0TgA2AzGxmrx-AKHe5uRjFaoDVWYevO3sGotXeIBXl7H4WhMEPC-ZtrsXTWJt57viEmWgHbv42F5xXeQcxj6puFgErKsE5KTbBb3HUj2CgXtcWrV8krdWRU624pwwAWQf7GaFnLn4VkXlWsrzWBq6HHxEBwVaZc3ZQ1em7UAbeSYZ72bpzP-kXg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
 		description:
 			"Overseeing seamless integration of the solution into your existing ecosystem. Analyzing user feedback and performance data post-deployment.",
 	},
@@ -139,20 +139,20 @@ export const TESTIMONIALS = [
 		Mattis et.`,
 		name: "Kolawole Sangotayo",
 		label: "Founder of TechStack",
-		image: kolawole
+		image: "https://s3-alpha-sig.figma.com/img/728c/3b1d/33fe647a46f9bf668322f8c1d94ed937?Expires=1691366400&Signature=QHJCeENGd5USw4A5Y24uXSceJo0aufoE2rULPujAR-006Yu~jG5Lf7qpM8sdX7mo1uzo6IWULqTMTQ49APAnSNSw~52sHo9VRUeDYGi0avYa04wID1g1Jn32i~fpbkSakgO2UN22i4e7NCbDJYOG5i3g~cpyf6j6qlw~MFqOnuBeplXAv~M73WFm~hRg3g978N8~zyndFSfAY5WrSfD2d7jcyNSKgQoytnBqUtk1LxqImpd6mfwGOfJRCrfXGKSP0eh2LlhZOvPcy7bdkc2Q60bpw9P32l4G-LYVxhJnTGpFFhmqnNkXm7A1cVeYQDB6OeOLGAQfrP5idxdqHPxiNQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
 	},
 	{
 		testimony: `Vitae duis aliquet lobortis in egestas. Maecenas natoque massa semper pellentesque habitasse ut nullam et. Donec ultricies cursus ut in nibh tortor. Diam venenatis cras maecenas neque leo dapibus. Massa euismod tortor vel vitae. Etiam urna egestas lorem libero nulla vestibulum. Amet enim aliquet ut sollicitudin pellentesque lorem.
 		Mattis et.`,
 		name: "Linda Onojah",
 		label: "Chief Executive at KnowledgePro",
-		image: linda
+		image: "https://s3-alpha-sig.figma.com/img/08e4/55fe/112b5aa889f8276e41832a747a9bda45?Expires=1691366400&Signature=pAh8TRnio19d8Ia1d0IGDn310LoxcpHOo3tHNo4niSzC~DZ4-3Bn39fHANdzQBwyXRBxGALsNyaTyhMRybZzfNn-L1UVcIfXcekn3Zn9CZ2rI6u9uG0bb6p3U~rwNs2rmQ4yRCJK8d4p59-Pcqr1NA5KqYuktYZVNXdhEGWJWaEuslHDtefyDlBS6W~mLV6qcrwQwduaq81FdHZYj7~uvy7ri3Fl-MOb-WRdCc0AKzKASXiSzv5~RPbkpARkHyGfoX96OxWL8QVl9T7aA-VhWYymsAP0j2lB~F3YWhc9AzlO6j4VA6Grf5BwBjDVYCY0itn3PIRT6eLSxjEwZltxWg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
 	},
 	{
 		testimony: `Vitae duis aliquet lobortis in egestas. Maecenas natoque massa semper pellentesque habitasse ut nullam et. Donec ultricies cursus ut in nibh tortor. Diam venenatis cras maecenas neque leo dapibus. Massa euismod tortor vel vitae. Etiam urna egestas lorem libero nulla vestibulum. Amet enim aliquet ut sollicitudin pellentesque lorem.
 		Mattis et.`,
 		name: "Oluwadaodu John",
 		label: "MD at DillyDash",
-		image: john
+		image: "https://s3-alpha-sig.figma.com/img/5209/3bd4/d799d9dcdef8bed39a1a5c13b8b1653c?Expires=1691366400&Signature=etJtI~lSnLu94NqInjhwbsBcL5BXixBGYKKCoVV0p2tQNsO2kQ5IOptvpb~kcgqRsYJzx7Q~D~LviSlPAVFEW~Yz97m1n~s8avbFMjH~QxzIQDDKJp-z524tWihQtqSZlysX0KGIRRtGr9e9yQgHJysyKOimLktBPQcIw2J0yBMqyPB85ub-qvx1Ndz69m9uWfVsQawAqIKlolHgtm-COiq0MHIujof9MBHYVqShsJZ3EiPARNNRLUGcWnm5t7Vn09VGeZPJ8L0kLIHk1LtgGm2x5J7Os8M69BrkcHMsvJz4bNlQAPtgrVnaVufloPn0EhpMP~3Q2b-v7poktrqICQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
 	},
 ]

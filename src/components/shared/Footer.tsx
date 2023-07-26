@@ -26,7 +26,7 @@ const Footer = () => {
 								href={item.url}
 								target="_blank"
 								onClick={() => registerEvent("follow link", `${item.url}`)}
-								className="text-xl text-secondary/[40%]">
+								className="text-xl text-secondary-200/[40%]">
 								<img src={item.icon} alt={`${item.name} link`} className="aspect-[1/1] w-6" />
 							</a>
 						))}
