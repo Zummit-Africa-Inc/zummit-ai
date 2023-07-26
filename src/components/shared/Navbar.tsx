@@ -20,7 +20,7 @@ const Navbar = () => {
 
 	return (
 		<nav
-			className={`left-0 top-0 !z-10 flex w-full items-center justify-between border-b border-gray-300 bg-white px-2 py-4 md:px-[120px] 2xl:px-[240px] ${
+			className={`left-0 top-0 !z-10 flex w-full items-center justify-between border-b border-ash-200 bg-white px-2 py-4 md:px-[120px] 2xl:px-[240px] ${
 				scrolled ? "fixed" : "static"
 			}`}>
 			<Link to="/">
@@ -34,7 +34,7 @@ const Navbar = () => {
 							to={url}
 							onClick={() => registerEvent("click", `${url}`)}
 							className={({ isActive }) =>
-								`nav-link ${isActive ? "text-primary" : "text-gray-400"}`
+								`nav-link ${isActive ? "text-primary" : "text-ash-100"}`
 							}>
 							{label}
 						</NavLink>
