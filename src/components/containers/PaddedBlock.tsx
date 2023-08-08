@@ -4,7 +4,7 @@ type Props = ComponentProps<"main">
 
 const PaddedBlock = (props: Props) => {
   return (
-    <main className="px-2 md:px-[120px] 2xl:px-[240px]">
+    <main className="px-5 md:px-[120px] 2xl:px-[240px]">
       {props.children}
     </main>
   )
