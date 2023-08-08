@@ -7,7 +7,7 @@ export const OPERATIONS = [
 		label: "Mobile Application Development",
 		image: phone,
 		description:
-			"We specialize in crafting feature-rich and visually stunning mobile apps for IOS and Andriod platforms.",
+			"We specialize in crafting feature-rich and visually stunning mobile apps for iOS and Andriod platforms.",
 	},
 	{
 		label: "Web Application Development",
