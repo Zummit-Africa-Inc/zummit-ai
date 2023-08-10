@@ -22,7 +22,7 @@ const Navbar = () => {
 
 	return (
 		<nav
-			className={`left-0 top-0 !z-10 flex w-full items-center justify-between border-b border-ash-200 bg-white px-5 py-4 md:px-[120px] 2xl:px-[240px] ${
+			className={`left-0 top-0 !z-10 flex w-full items-center justify-between border-b border-ash-200 bg-white px-5 py-4 lg:px-[120px] 2xl:px-[240px] ${
 				scrolled ? "fixed" : "static"
 			}`}>
 			<Link to="/">
@@ -32,7 +32,7 @@ const Navbar = () => {
 					className="w-[90px] md:w-[121px]"
 				/>
 			</Link>
-			<div className="hidden items-center gap-[30px] md:flex">
+			<div className="hidden items-center gap-[30px] lg:flex">
 				<div className="flex items-center gap-[30px]">
 					{NAVIGATION.map(({ label, url }) => (
 						<NavLink
@@ -55,7 +55,7 @@ const Navbar = () => {
 			</div>
 			<button
 				onClick={() => setIsMenuOpen((prev) => !prev)}
-				className="block text-3xl text-black transform transition-all duration-500 md:hidden">
+				className="block transform text-3xl text-black transition-all duration-500 lg:hidden">
 				{isMenuOpen ? <X /> : <List />}
 			</button>
 		</nav>

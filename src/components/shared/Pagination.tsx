@@ -42,7 +42,7 @@ const Pagination = (props: Props) => {
 	}
 
 	return (
-		<div className="flex select-none items-center gap-[202px] font-work">
+		<div className="flex select-none items-center gap-5 font-work md:gap-[202px]">
 			<button
 				onClick={onPrevious}
 				disabled={props.current === 1}

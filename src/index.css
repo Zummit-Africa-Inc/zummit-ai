@@ -11,8 +11,8 @@
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-text-size-adjust: 100%;
 
-	--color-primary: '#081F4A';
-	--color-secondary: '#FFEA00';
+	--color-primary: "#081F4A";
+	--color-secondary: "#FFEA00";
 }
 
 /* removes scrollbar */
@@ -21,7 +21,7 @@
 }
 
 * {
-	@apply box-border font-dm p-0 m-0;
+	@apply m-0 box-border p-0 font-dm;
 }
 
 html {
@@ -29,7 +29,7 @@ html {
 }
 
 body {
-	@apply bg-white overflow-x-hidden overflow-y-scroll;
+	@apply overflow-x-hidden overflow-y-scroll bg-white;
 }
 
 input,
@@ -50,11 +50,11 @@ input[type="file"]::-webkit-file-upload-button {
 }
 
 button {
-	@apply active:scale-[0.98] hover:bg-opacity-80 transition-all duration-500 flex items-center justify-center rounded-lg font-medium;
+	@apply flex items-center justify-center rounded-lg font-medium transition-all duration-500 hover:bg-opacity-80 active:scale-[0.98];
 }
 
 a {
-	@apply active:scale-[0.98] hover:bg-opacity-80 transition-all duration-500 rounded-lg font-medium;
+	@apply rounded-lg font-medium transition-all duration-500 hover:bg-opacity-80 active:scale-[0.98];
 }
 
 /* input:number reset */
@@ -116,7 +116,7 @@ input[type="number"] {
 .right img,
 .down img,
 .left img {
-	@apply w-full h-full rounded-lg object-cover;
+	@apply h-full w-full rounded-lg object-cover;
 }
 
 /* actives the hover effect on the bav links */
@@ -125,7 +125,7 @@ input[type="number"] {
 }
 
 .nav-link::before {
-	@apply content-[""] absolute bottom-0 right-0 w-0 h-[2px] bg-[#9FAABE] transition-transform transform duration-[650] ease-width;
+	@apply absolute bottom-0 right-0 h-[2px] w-0 transform bg-[#9FAABE] transition-transform duration-[650] ease-width content-[""];
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -137,21 +137,23 @@ input[type="number"] {
 /* typewriter caret */
 .caret {
 	@apply border-r-[1px] border-r-primary; /* Simulate blinking cursor */
-  animation: typing 1s steps(40, end), blink-caret 0.75s step-end infinite;
+	animation:
+		typing 1s steps(40, end),
+		blink-caret 0.75s step-end infinite;
 }
 
 @keyframes typing {
-  from {
-    width: 0;
-  }
+	from {
+		width: 0;
+	}
 }
 
 @keyframes blink-caret {
-  from,
-  to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: var(--color-primary);
-  }
+	from,
+	to {
+		border-color: transparent;
+	}
+	50% {
+		border-color: var(--color-primary);
+	}
 }
