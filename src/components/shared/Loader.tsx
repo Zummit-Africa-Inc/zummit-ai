@@ -1,10 +1,13 @@
+import "./styles/loader.css"
 
 const Loader = () => {
-  return (
-    <div className="w-screen h-screen grid place-items-center bg-white fixed top-0 left-0">
-      <div className="w-[30px] aspect-[1/1] rounded-full border-4 border-primary border-b-transparent animate-spin duration-500"></div>
-    </div>
-  )
+	return (
+		<div className="fixed left-0 top-0 grid h-screen w-screen place-items-center bg-white">
+			<svg viewBox="25 25 50 50" className="loader">
+				<circle r="20" cx="50" cy="50" className="loader-circle" />
+			</svg>
+		</div>
+	)
 }
 
 export default Loader

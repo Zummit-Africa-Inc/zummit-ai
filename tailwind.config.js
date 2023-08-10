@@ -7,6 +7,9 @@ export default {
       work: ["Work Sans", "sans-serif"],
     },
     extend: {
+      animation: {
+        dash: "dash 1s ease-in-out infinite",
+      },
       backgroundImage: {
         ellipse: "url('/ellipse.svg')",
         adornment: "url('/images/hero-adornment.png')",
@@ -26,7 +29,25 @@ export default {
           200: "#616161",
           300: "#333",
         }
-      }
+      },
+      keyframes: {
+        dash: {
+          "0%": {
+            strokeDasharray: "1, 200",
+            strokeDashoffset: 0,
+          },
+          "50%": {
+            strokeDasharray: "90, 200",
+            strokeDashoffset: "-35px",
+          },
+          "100%": {
+            strokeDashoffset: "-125px",
+          },
+        },
+      },
+      transitionTimingFunction: {
+        "width": "width cubic-bezier(0.25, 1, 0.5, 1)",
+      },
     },
   },
   plugins: [],

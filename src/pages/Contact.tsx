@@ -56,29 +56,33 @@ const Contact = () => {
 		<>
 			<Navbar />
 			<PaddedBlock>
-				<section className="flex w-full flex-col py-[99px]">
-					<p className="font-medium uppercase text-ash-200">get in touch with us</p>
-					<h1 className="mb-6 mt-[10px] text-[32px] font-bold text-ash-300">
+				<section className="flex w-full flex-col py-8 md:py-[99px]">
+					<p className="text-sm font-medium uppercase text-ash-200 md:text-base">
+						get in touch with us
+					</p>
+					<h1 className="mb-6 mt-[10px] text-2xl font-bold text-ash-300 md:text-[32px]">
 						Let&apos;s Create{" "}
 						<span className="text-secondary-200">
 							Extraordinary <br /> Solutions{" "}
 						</span>{" "}
 						together.
 					</h1>
-					<h5 className="w-1/2 font-work text-xl text-ash-200">
+					<h5 className="w-1/2 font-work text-sm text-ash-200 md:text-xl">
 						Send in your inquiries and feedback and be sure we will respond as soon as
 						possible.
 					</h5>
-					<div className="mt-[98px] flex h-[551px] w-full items-center gap-[137px]">
-						<div className="grid h-full w-[466px] place-items-center rounded-[11px] bg-[#FBC93D]">
+					<div className="mt-[98px] flex h-auto w-full flex-col items-center gap-10 lg:flex-row lg:items-start lg:gap-[137px]">
+						<div className="grid h-full w-full place-items-center rounded-[11px] bg-[#FBC93D] p-12 lg:w-[466px]">
 							<img
 								src={customre_care}
 								alt="customer care agent"
-								className="h-[450px] w-[347px]"
+								className="h-full w-full"
 							/>
 						</div>
-						<form onSubmit={handleSubmit} className="flex h-full flex-col gap-5">
-							<div className="flex items-center gap-[21px]">
+						<form
+							onSubmit={handleSubmit}
+							className="flex h-full w-full flex-col gap-5">
+							<div className="flex flex-wrap items-center gap-[21px]">
 								<Input
 									element="input"
 									label="Full Name"
@@ -96,7 +100,7 @@ const Contact = () => {
 									error={errors.email}
 								/>
 							</div>
-							<div className="flex items-center gap-[21px]">
+							<div className="flex flex-wrap items-center gap-[21px]">
 								<Input
 									element="input"
 									label="Phone"
@@ -125,7 +129,7 @@ const Contact = () => {
 							<Button
 								label={isLoading ? <Spinner /> : "Send Message"}
 								type="submit"
-								className="h-[42px] w-[152px] bg-primary text-white"
+								className="h-[42px] w-[152px] bg-primary py-4 text-white"
 								disabled={isLoading}
 							/>
 						</form>

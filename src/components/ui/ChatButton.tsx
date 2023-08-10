@@ -10,7 +10,11 @@ const ChatButton = (props: Props) => {
 	const [isVisible, setIsVisible] = useState(true)
 
 	const handleScroll = () => {
-		window.scrollY > 5200 ? setIsVisible(false) : setIsVisible(true)
+		if (window.innerWidth > 390) {
+			window.scrollY > 5200 ? setIsVisible(false) : setIsVisible(true)
+		} else {
+			setIsVisible(true)
+		}
 	}
 
 	useEffect(() => {
@@ -21,11 +25,13 @@ const ChatButton = (props: Props) => {
 	return (
 		<button
 			onClick={props.open}
-			className={`fixed bottom-44 right-5 !z-20 items-center gap-2 rounded-[26px] bg-secondary-100 px-8 py-4 md:right-[120px] xl:bottom-[185px] 2xl:right-[240px] ${
+			className={`fixed bottom-10 right-5 !z-20 items-center gap-2 rounded-[26px] bg-secondary-100 px-4 py-4 md:right-[120px] md:px-8 xl:bottom-[180px] 2xl:right-[240px] ${
 				isVisible ? "flex" : "hidden"
 			}`}>
-			<img src={chat_bubble} alt="chat icon" />
-			<span className="text-sm font-semibold text-primary">Chat with Our Bot</span>
+			<img src={chat_bubble} alt="chat icon" className="w-5 md:w-6" />
+			<span className="hidden text-sm font-semibold text-primary md:block">
+				Chat with Our Bot
+			</span>
 		</button>
 	)
 }

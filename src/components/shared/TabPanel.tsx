@@ -1,6 +1,6 @@
-import { ComponentProps } from 'react'
+import { ComponentProps } from "react"
 
-interface Props extends ComponentProps<'div'> {
+interface Props extends ComponentProps<"div"> {
 	index: number
 }
 
