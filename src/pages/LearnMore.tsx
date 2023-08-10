@@ -37,7 +37,11 @@ const LearnMore = () => {
 						experiences.
 					</h5>
 					<div className="relative mb-[117px] mt-[126px] w-full rounded-lg">
-						<img src={learn_more} alt="" className="w-full rounded-lg" />
+						<img
+							src={learn_more}
+							alt=""
+							className="aspect-[2/1] w-full rounded-lg object-cover lg:aspect-auto"
+						/>
 						<div className="absolute left-0 top-0 flex h-full w-full items-center justify-center rounded-lg bg-black/30 px-[43px] py-[37px]">
 							<p className="text-[32px] font-bold text-white">
 								How we empower businesses <br />
@@ -45,9 +49,9 @@ const LearnMore = () => {
 							</p>
 						</div>
 					</div>
-					<div className="grid w-full grid-cols-1 gap-x-0 gap-y-10 md:grid-cols-2 md:gap-x-[180px] md:gap-y-[120px]">
+					<div className="grid w-full grid-cols-1 gap-x-5 gap-y-10 md:grid-cols-2 lg:gap-x-[180px] lg:gap-y-[120px]">
 						{APPROACH.map((item, index) => (
-							<div key={index} className="w-full md:w-[387px]">
+							<div key={index} className="w-full lg:w-[387px]">
 								<div className="aspect-[1/1] w-10 rounded-lg bg-secondary-100 p-1">
 									<img src={item.icon} alt="" className="h-full w-full" />
 								</div>
@@ -93,7 +97,7 @@ const LearnMore = () => {
 									duration: 0.5,
 									easings: ["easeIn", "easeOut"],
 								}}
-								className="grid w-full grid-cols-1 items-center gap-10 md:w-[931px] md:grid-cols-2 md:gap-[180px]">
+								className="grid w-full grid-cols-1 items-center gap-10 lg:w-[931px] lg:grid-cols-2 lg:gap-[180px]">
 								<div className="flex flex-col gap-6">
 									<h5 className="text-xl font-bold text-ash-300 md:text-2xl">
 										{sector.topic}

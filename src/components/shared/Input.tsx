@@ -11,32 +11,32 @@ const Input = (props: Props) => {
 	if (props.element === "textarea") {
 		return (
 			<div className="flex w-full flex-col gap-[10px]">
-				<label htmlFor={props.id} className="font-semibold text-ash-300">
+				<label
+					htmlFor={props.id}
+					className="text-sm font-semibold text-ash-300 lg:text-base">
 					{props.label}
 				</label>
 				<textarea
 					id={props.id}
 					onChange={props.onChange}
 					className="h-[100px] w-full resize-none rounded-lg border border-ash-200 px-5 py-[10px]"></textarea>
-				{props.error && (
-					<span className="text-xs text-red-500">{props.error}</span>
-				)}
+				{props.error && <span className="text-xs text-red-500">{props.error}</span>}
 			</div>
 		)
 	}
 
 	return (
 		<div className="flex w-full flex-col gap-[10px]">
-			<label htmlFor={props.id} className="font-semibold text-ash-300">
+			<label
+				htmlFor={props.id}
+				className="text-sm font-semibold text-ash-300 lg:text-base">
 				{props.label}
 			</label>
 			<input
 				className="w-full min-w-[285px] rounded-lg border border-ash-200 px-5 py-[10px]"
 				{...props}
 			/>
-			{props.error && (
-				<span className="text-xs text-red-500">{props.error}</span>
-			)}
+			{props.error && <span className="text-xs text-red-500">{props.error}</span>}
 		</div>
 	)
 }

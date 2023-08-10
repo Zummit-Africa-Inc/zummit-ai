@@ -9,7 +9,7 @@ const Footer = () => {
 
 	return (
 		<footer className="w-full bg-black">
-			<div className="flex w-full flex-wrap items-start justify-between gap-10 px-5 pb-16 md:pb-32 pt-16 md:gap-0 md:px-[120px] 2xl:px-[240px]">
+			<div className="flex w-full flex-wrap items-start justify-between gap-10 px-5 pb-16 pt-16 md:gap-0 md:pb-32 lg:px-[120px] 2xl:px-[240px]">
 				<div className="flex flex-col">
 					<Link
 						to="/"
@@ -39,14 +39,14 @@ const Footer = () => {
 				<div className="flex flex-wrap items-center gap-10 md:gap-[10px]">
 					{FOOOTER.map(({ menu, title }, index) => (
 						<div key={index} className="flex w-[250px] flex-col gap-4">
-							<p className="text-lg md:text-xl font-bold text-white">{title}</p>
+							<p className="text-lg font-bold text-white md:text-xl">{title}</p>
 							<div className="flex flex-col gap-[9px]">
 								{menu.map(({ label, url }) => (
 									<Link
 										key={label}
 										to={url}
 										onClick={() => registerEvent("click", `${url}`)}
-										className="text-sm md:text-base font-light text-white/[75%]">
+										className="text-sm font-light text-white/[75%] md:text-base">
 										{label}
 									</Link>
 								))}
@@ -56,7 +56,7 @@ const Footer = () => {
 				</div>
 			</div>
 			<div className="flex w-full items-center border-t border-white/[15%] px-2 py-[26px] md:px-[120px] 2xl:px-[240px]">
-				<p className="w-full text-xs md:text-sm text-white/[80%] text-center">
+				<p className="w-full text-center text-xs text-white/[80%] md:text-sm">
 					Copyright &copy; {new Date().getFullYear()} ZummitAfrica. All rights
 					reserved.
 				</p>

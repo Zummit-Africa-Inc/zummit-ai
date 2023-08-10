@@ -36,7 +36,7 @@ const Home = () => {
 			)}
 			<Navbar />
 			<PaddedBlock>
-				<section className="grid w-full grid-cols-1 items-center gap-[122px] py-12 md:grid-cols-2 md:py-[99px]">
+				<section className="grid w-full grid-cols-1 items-center gap-[122px] py-12 md:py-[99px] lg:grid-cols-2">
 					<div className="w-full">
 						<h1 className="text-[26px] font-bold text-ash-300 md:text-[44px]">
 							Custom-Built <span className="text-secondary-200">Solutions</span> and{" "}
@@ -86,8 +86,8 @@ const Home = () => {
 			</PaddedBlock>
 			<hr className="h-[1px] w-full border border-ash-100" />
 			<PaddedBlock>
-				<section className="grid w-full grid-cols-1 gap-[110px] py-12 md:grid-cols-2 md:py-[99px]">
-					<div className="flex h-[411px] w-[320px] flex-col justify-end rounded-md bg-black/20 bg-what p-[22px] text-white md:h-[572px] md:w-[487px] md:p-10">
+				<section className="grid w-full grid-cols-1 gap-[110px] py-12 md:py-[99px] lg:grid-cols-2">
+					<div className="flex h-[411px] w-full flex-col justify-end rounded-md bg-black/20 bg-what bg-cover bg-bottom bg-no-repeat p-[22px] text-white lg:h-[572px] lg:w-[487px] lg:p-10">
 						<p className="text-sm font-semibold uppercase md:text-base">what we do</p>
 						<h2 className="text-2xl font-bold md:text-[32px]">
 							Building software products quickly and efficiently.
@@ -97,7 +97,7 @@ const Home = () => {
 						{OPERATIONS.map((item, index) => (
 							<div
 								key={index}
-								className="flex w-full flex-col px-6 md:w-[227px] md:px-0">
+								className="flex w-full flex-col px-6 md:px-0 lg:w-[227px]">
 								<img src={item.image} alt={item.label} className="w-[30px]" />
 								<h4 className="my-5 text-xl font-bold text-ash-300 md:text-2xl">
 									{item.label}
@@ -119,8 +119,8 @@ const Home = () => {
 					<h2 className="text-center text-2xl font-bold text-ash-300 md:text-left md:text-[32px]">
 						AI is our <span className="text-secondary-200">superpower</span>.
 					</h2>
-					<div className="my-20 flex h-auto w-full flex-col items-center gap-16 md:h-[471.78px] md:flex-row md:gap-x-24">
-						<div className="flex h-full w-full flex-col justify-between gap-10 md:w-1/4 md:gap-0">
+					<div className="my-20 flex h-auto w-full flex-col items-center gap-16 lg:h-[471.78px] lg:flex-row lg:gap-x-24">
+						<div className="flex h-full w-full flex-col justify-between gap-10 lg:w-1/4 lg:gap-0">
 							{PROCESS2.slice(0, 2).map(({ description, label }, index) => (
 								<div key={index} className="flex flex-col gap-5">
 									<h4 className="text-xl font-bold text-[#333] md:text-2xl">{label}</h4>
@@ -138,7 +138,7 @@ const Home = () => {
 								bounce: 0.25,
 								stiffness: 150,
 							}}
-							className="grid-container h-full w-full md:w-2/4">
+							className="grid-container h-full w-full lg:w-2/4">
 							<div className="top">
 								<img src={top} alt="" />
 							</div>
@@ -152,7 +152,7 @@ const Home = () => {
 								<img src={left} alt="" />
 							</div>
 						</motion.div>
-						<div className="flex h-full w-full flex-col justify-between gap-10 md:w-1/4 md:gap-0">
+						<div className="flex h-full w-full flex-col justify-between gap-10 lg:w-1/4 lg:gap-0">
 							{PROCESS2.slice(2, 4).map(({ description, label }, index) => (
 								<div key={index} className="flex flex-col gap-5">
 									<h4 className="text-xl font-bold text-[#333] md:text-2xl">{label}</h4>
@@ -179,11 +179,11 @@ const Home = () => {
 						Streamlined steps from <br />
 						<span className="text-secondary-200">Concept to Completion.</span>
 					</h2>
-					<div className="mt-[74px] grid w-full grid-cols-1 items-start gap-10 sm:grid-cols-3">
+					<div className="mt-[74px] grid w-full grid-cols-1 items-start gap-10 lg:grid-cols-3">
 						{PROCESS.map((process, index) => (
 							<div key={index} className="flex w-full flex-col">
 								<h4 className="text-xl font-bold text-ash-300">{process.label}</h4>
-								<div className="my-5 h-[230px] w-full cursor-pointer overflow-hidden rounded-lg">
+								<div className="my-5 h-[230px] w-full cursor-pointer overflow-hidden rounded-lg md:h-[330px]">
 									<img
 										src={process.image}
 										alt={process.label}
@@ -209,7 +209,7 @@ const Home = () => {
 						Each project is a testament to our expertise in addressing unique
 						challenges and delivering tailored solutions.
 					</p>
-					<div className="my-[64px] grid w-full grid-cols-1 items-start gap-10 sm:grid-cols-3 md:gap-5">
+					<div className="my-[64px] grid w-full grid-cols-1 items-start gap-10 md:gap-5 lg:grid-cols-3">
 						{PORTFOLIO.map((item, index) => (
 							<div key={index} className="flex w-full flex-col">
 								<img
@@ -245,7 +245,7 @@ const Home = () => {
 						<br />
 						Our Comprehensive Departments
 					</h2>
-					<div className="mt-[50px] grid w-full grid-cols-1 items-center gap-5 overflow-hidden sm:grid-cols-2 md:grid-cols-3">
+					<div className="mt-[50px] grid w-full grid-cols-1 items-center gap-5 overflow-hidden lg:grid-cols-3">
 						{STACKS.map((stack, index) => (
 							<motion.div
 								key={index}
