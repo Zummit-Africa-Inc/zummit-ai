@@ -55,9 +55,9 @@ const Home = () => {
 							className="bg-primary text-white"
 						/>
 					</div>
-					<div className="grid h-[295px] w-full grid-cols-3 gap-5 md:h-auto">
+					<div className="grid h-[295px] w-full grid-cols-3 gap-5 md:h-[500px] lg:h-auto">
 						<div className="flex w-full flex-col justify-between gap-4">
-							<div className="relative h-full w-full rounded-lg bg-black/20 bg-startup-1 bg-blend-multiply md:h-[375px] md:w-[166px]">
+							<div className="relative h-full w-full rounded-lg bg-black/20 bg-startup-1 bg-cover bg-no-repeat bg-blend-multiply lg:h-[375px] lg:w-[166px]">
 								<div className="absolute left-1/2 top-[252px] flex -translate-x-1/2 items-center gap-2">
 									{[...Array(4)].map((_, index) => (
 										<div
@@ -66,11 +66,11 @@ const Home = () => {
 									))}
 								</div>
 							</div>
-							<div className="hidden h-[54px] w-full rounded-lg bg-adornment md:block md:w-[166px]"></div>
+							<div className="hidden h-[54px] w-full rounded-lg bg-adornment md:w-[166px] lg:block"></div>
 						</div>
 						<div className="flex w-full flex-col justify-between gap-4 rounded-lg bg-startup-2 bg-cover"></div>
 						<div className="flex w-full flex-col justify-between gap-4">
-							<div className="hidden h-[54px] w-full flex-wrap justify-between gap-1 overflow-hidden rounded-lg bg-adornment md:flex md:w-[166px]">
+							<div className="hidden h-[54px] w-full flex-wrap justify-between gap-1 overflow-hidden rounded-lg bg-adornment lg:flex lg:w-[166px]">
 								{[...Array(10)].map((_, index) => (
 									<p
 										key={index}
@@ -79,7 +79,7 @@ const Home = () => {
 									</p>
 								))}
 							</div>
-							<div className="h-full w-full rounded-lg bg-black/20 bg-startup-3 bg-blend-multiply md:h-[375px] md:w-[166px]"></div>
+							<div className="h-full w-full rounded-lg bg-black/20 bg-startup-3 bg-cover bg-no-repeat bg-blend-multiply lg:h-[375px] lg:w-[166px]"></div>
 						</div>
 					</div>
 				</section>
