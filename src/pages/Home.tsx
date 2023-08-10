@@ -1,14 +1,8 @@
-import { animated, useInView } from "react-spring"
 import React, { useState } from "react"
 import { Link } from "react-router-dom"
+import { motion } from "framer-motion"
 
-import {
-	OPERATIONS,
-	PORTFOLIO,
-	PROCESS,
-	PROCESS2,
-	STACKS,
-} from "constants"
+import { OPERATIONS, PORTFOLIO, PROCESS, PROCESS2, STACKS } from "constants"
 import {
 	Button,
 	ChatBot,
@@ -17,28 +11,21 @@ import {
 	Navbar,
 	PaddedBlock,
 } from "components"
-import { useEventTracker, usePageTitle, usePageTracker, useScrollToTop } from "hooks"
+import {
+	useEventTracker,
+	usePageTitle,
+	usePageTracker,
+	useScrollToTop,
+} from "hooks"
 import { down, left, right, top } from "assets/images"
 import { ArrowRight } from "assets/icons-tsx"
 
 const Home = () => {
-	const registerEvent = useEventTracker("cta")
 	const [isBotShown, setIsBotShown] = useState(false)
+	const registerEvent = useEventTracker("cta")
 	usePageTitle("Home")
 	usePageTracker()
 	useScrollToTop()
-
-	const [ref, springs] = useInView(() => ({
-		from: {
-			opacity: 0,
-			transform: "scale(0.5) rotate(180deg)",
-		},
-		to: {
-			opacity: 1,
-			transform: "scale(1) rotate(0)",
-		},
-		delay: 300,
-	}))
 
 	return (
 		<>
@@ -49,14 +36,14 @@ const Home = () => {
 			)}
 			<Navbar />
 			<PaddedBlock>
-				<section className="grid w-full grid-cols-2 items-center gap-[122px] py-[99px]">
+				<section className="grid w-full grid-cols-1 items-center gap-[122px] py-12 md:py-[99px] lg:grid-cols-2">
 					<div className="w-full">
-						<h1 className="text-[44px] font-bold text-ash-300">
+						<h1 className="text-[26px] font-bold text-ash-300 md:text-[44px]">
 							Custom-Built <span className="text-secondary-200">Solutions</span> and{" "}
 							<span className="text-secondary-200">AI Integration</span> for Business
 							Transformation and Success.
 						</h1>
-						<p className="my-8 text-[#616161]">
+						<p className="my-8 text-sm text-[#616161] md:text-base">
 							Zummit Africa specializes in creating tailored solutions to transform
 							businesses by leveraging AI and delivering tailored products to reach
 							their full potential.
@@ -68,9 +55,9 @@ const Home = () => {
 							className="bg-primary text-white"
 						/>
 					</div>
-					<div className="grid w-full grid-cols-3 gap-5">
+					<div className="grid h-[295px] w-full grid-cols-3 gap-5 md:h-auto">
 						<div className="flex w-full flex-col justify-between gap-4">
-							<div className="relative h-[375px] w-[166px] rounded-lg bg-black/20 bg-startup-1 bg-blend-multiply">
+							<div className="relative h-full w-full rounded-lg bg-black/20 bg-startup-1 bg-blend-multiply md:h-[375px] md:w-[166px]">
 								<div className="absolute left-1/2 top-[252px] flex -translate-x-1/2 items-center gap-2">
 									{[...Array(4)].map((_, index) => (
 										<div
@@ -79,60 +66,79 @@ const Home = () => {
 									))}
 								</div>
 							</div>
-							<div className="h-[54px] w-[166px] rounded-lg bg-adornment"></div>
+							<div className="hidden h-[54px] w-full rounded-lg bg-adornment md:block md:w-[166px]"></div>
 						</div>
 						<div className="flex w-full flex-col justify-between gap-4 rounded-lg bg-startup-2 bg-cover"></div>
 						<div className="flex w-full flex-col justify-between gap-4">
-							<div className="flex h-[54px] w-[166px] flex-wrap items-center justify-center gap-2 overflow-hidden rounded-lg bg-adornment">
+							<div className="hidden h-[54px] w-full flex-wrap justify-between gap-1 overflow-hidden rounded-lg bg-adornment md:flex md:w-[166px]">
 								{[...Array(10)].map((_, index) => (
-									<p key={index} className="text-xs uppercase text-secondary-200/[0.5]">
+									<p
+										key={index}
+										className="w-fit text-xs uppercase text-secondary-200/[0.5]">
 										ai powered
 									</p>
 								))}
 							</div>
-							<div className="h-[375px] w-[166px] rounded-lg bg-black/20 bg-startup-3 bg-blend-multiply"></div>
+							<div className="h-full w-full rounded-lg bg-black/20 bg-startup-3 bg-blend-multiply md:h-[375px] md:w-[166px]"></div>
 						</div>
 					</div>
 				</section>
-				<hr className="h-[1px] w-full border border-ash-200" />
-				<section className="grid w-full grid-cols-2 gap-[110px] py-[99px]">
-					<div className="flex h-[572px] w-[487px] flex-col justify-end bg-black/20 bg-what p-10 text-white">
-						<p className="font-semibold uppercase">what we do</p>
-						<h2 className="text-[32px] font-bold">
+			</PaddedBlock>
+			<hr className="h-[1px] w-full border border-ash-100" />
+			<PaddedBlock>
+				<section className="grid w-full grid-cols-1 gap-[110px] py-12 md:py-[99px] lg:grid-cols-2">
+					<div className="flex h-[411px] w-full flex-col justify-end rounded-md bg-black/20 bg-what bg-cover bg-bottom bg-no-repeat p-[22px] text-white lg:h-[572px] lg:w-[487px] lg:p-10">
+						<p className="text-sm font-semibold uppercase md:text-base">what we do</p>
+						<h2 className="text-2xl font-bold md:text-[32px]">
 							Building software products quickly and efficiently.
 						</h2>
 					</div>
-					<div className="grid w-full grid-cols-2 items-center gap-x-[41px] gap-y-[50px]">
+					<div className="grid w-full grid-cols-1 items-center gap-x-[41px] gap-y-[50px] md:grid-cols-2">
 						{OPERATIONS.map((item, index) => (
-							<div key={index} className="flex w-[227px] flex-col">
+							<div
+								key={index}
+								className="flex w-full flex-col px-6 md:px-0 lg:w-[227px]">
 								<img src={item.image} alt={item.label} className="w-[30px]" />
-								<h4 className="my-5 text-2xl font-bold text-ash-300">{item.label}</h4>
-								<p className="font-light text-ash-200">{item.description}</p>
+								<h4 className="my-5 text-xl font-bold text-ash-300 md:text-2xl">
+									{item.label}
+								</h4>
+								<p className="text-sm font-light text-ash-200 md:text-base">
+									{item.description}
+								</p>
 							</div>
 						))}
 					</div>
 				</section>
-				<hr className="h-[1px] w-full border border-ash-200" />
+			</PaddedBlock>
+			<hr className="h-[1px] w-full border border-ash-100" />
+			<PaddedBlock>
 				<section className="flex w-full flex-col items-center py-[99px]">
-					<p className="mb-2 font-medium uppercase text-ash-200">
+					<p className="mb-2 text-center text-sm font-medium uppercase text-ash-200 md:text-left md:text-base">
 						what sets us apart
 					</p>
-					<h2 className="text-ash-300 text-[32px] font-bold">
+					<h2 className="text-center text-2xl font-bold text-ash-300 md:text-left md:text-[32px]">
 						AI is our <span className="text-secondary-200">superpower</span>.
 					</h2>
-					<div className="my-20 flex h-[471.78px] w-full items-center gap-x-24">
-						<div className="flex h-full w-1/4 flex-col justify-between">
+					<div className="my-20 flex h-auto w-full flex-col items-center gap-16 lg:h-[471.78px] lg:flex-row lg:gap-x-24">
+						<div className="flex h-full w-full flex-col justify-between gap-10 lg:w-1/4 lg:gap-0">
 							{PROCESS2.slice(0, 2).map(({ description, label }, index) => (
 								<div key={index} className="flex flex-col gap-5">
-									<h4 className="text-[#333} text-2xl font-bold">{label}</h4>
+									<h4 className="text-xl font-bold text-[#333] md:text-2xl">{label}</h4>
 									<p className="text-ash-200">{description}</p>
 								</div>
 							))}
 						</div>
-						<animated.div
-							ref={ref}
-							style={springs}
-							className="grid-container h-full w-2/4">
+						<motion.div
+							initial={{ rotate: 180, scale: 0.5 }}
+							whileInView={{ rotate: 0, scale: 1 }}
+							transition={{
+								type: "spring",
+								delay: 0.1,
+								duration: 1,
+								bounce: 0.25,
+								stiffness: 150,
+							}}
+							className="grid-container h-full w-full lg:w-2/4">
 							<div className="top">
 								<img src={top} alt="" />
 							</div>
@@ -145,11 +151,11 @@ const Home = () => {
 							<div className="left">
 								<img src={left} alt="" />
 							</div>
-						</animated.div>
-						<div className="flex h-full w-1/4 flex-col justify-between">
+						</motion.div>
+						<div className="flex h-full w-full flex-col justify-between gap-10 lg:w-1/4 lg:gap-0">
 							{PROCESS2.slice(2, 4).map(({ description, label }, index) => (
 								<div key={index} className="flex flex-col gap-5">
-									<h4 className="text-[#333} text-2xl font-bold">{label}</h4>
+									<h4 className="text-xl font-bold text-[#333] md:text-2xl">{label}</h4>
 									<p className="text-ash-200">{description}</p>
 								</div>
 							))}
@@ -162,37 +168,48 @@ const Home = () => {
 						Learn More <ArrowRight />
 					</Link>
 				</section>
-				<hr className="h-[1px] w-full border border-ash-200" />
+			</PaddedBlock>
+			<hr className="h-[1px] w-full border border-ash-100" />
+			<PaddedBlock>
 				<section className="flex w-full flex-col py-[99px]">
-					<p className="mb-2 font-medium uppercase text-ash-200">our process</p>
-					<h2 className="text-ash-300 text-[32px] font-bold">
+					<p className="mb-2 text-center text-sm font-medium uppercase text-ash-200 md:text-left md:text-base">
+						our process
+					</p>
+					<h2 className="text-center text-2xl font-bold text-ash-300 md:text-left md:text-[32px]">
 						Streamlined steps from <br />
 						<span className="text-secondary-200">Concept to Completion.</span>
 					</h2>
-					<div className="mt-[74px] grid w-full grid-cols-3 items-start gap-10">
+					<div className="mt-[74px] grid w-full grid-cols-1 items-start gap-10 lg:grid-cols-3">
 						{PROCESS.map((process, index) => (
 							<div key={index} className="flex w-full flex-col">
 								<h4 className="text-xl font-bold text-ash-300">{process.label}</h4>
-								<img
-									src={process.image}
-									alt={process.label}
-									className="my-5 h-[230px] w-full rounded-lg object-cover"
-								/>
-								<p className="text-ash-200">{process.description}</p>
+								<div className="my-5 h-[230px] w-full cursor-pointer overflow-hidden rounded-lg md:h-[330px]">
+									<img
+										src={process.image}
+										alt={process.label}
+										className="h-full w-full transform rounded-lg object-cover transition-all duration-500 ease-in-out hover:scale-[1.2]"
+									/>
+								</div>
+								<p className="text-sm text-ash-200 md:text-base">
+									{process.description}
+								</p>
 							</div>
 						))}
 					</div>
 				</section>
 				<section className="flex w-full flex-col items-center py-[99px]">
-					<p className="font-medium uppercase text-ash-200">our projects</p>
-					<h2 className="text-ash-300 mb-4 mt-2 text-[32px] font-bold">
-						Client Portfolio: <span className="text-secondary-200">Custom Products</span>
+					<p className="text-center text-sm font-medium uppercase text-ash-200 md:text-left md:text-base">
+						our projects
+					</p>
+					<h2 className="mb-4 mt-2 text-center text-2xl font-bold text-ash-300 md:text-left md:text-[32px]">
+						Client Portfolio:{" "}
+						<span className="text-secondary-200">Custom Products</span>
 					</h2>
-					<p className="w-2/5 text-center font-work font-light text-ash-200">
+					<p className="w-full text-center font-work font-light text-ash-200 md:w-2/5">
 						Each project is a testament to our expertise in addressing unique
 						challenges and delivering tailored solutions.
 					</p>
-					<div className="my-[64px] grid w-full grid-cols-3 items-start gap-5">
+					<div className="my-[64px] grid w-full grid-cols-1 items-start gap-10 md:gap-5 lg:grid-cols-3">
 						{PORTFOLIO.map((item, index) => (
 							<div key={index} className="flex w-full flex-col">
 								<img
@@ -200,8 +217,12 @@ const Home = () => {
 									alt={item.label}
 									className="aspect-[1/1] w-full rounded-lg border object-cover"
 								/>
-								<p className="mb-2 mt-5 text-2xl font-bold text-ash-300">{item.label}</p>
-								<p className="font-work font-light text-ash-200">{item.description}</p>
+								<p className="mb-2 mt-5 text-xl font-bold text-ash-300 md:text-2xl">
+									{item.label}
+								</p>
+								<p className="text-sm font-light text-ash-200 first-letter:font-work md:text-base">
+									{item.description}
+								</p>
 							</div>
 						))}
 					</div>
@@ -212,67 +233,47 @@ const Home = () => {
 						View More Projects <ArrowRight />
 					</Link>
 				</section>
-				{/* <hr className="h-[1px] w-full border border-ash-200" />
+			</PaddedBlock>
+			<hr className="h-[1px] w-full border border-ash-100" />
+			<PaddedBlock>
 				<section className="flex w-full flex-col py-[99px]">
-					<p className="mb-2 font-medium uppercase text-ash-200">
-						client success stories
+					<p className="mb-2 text-center text-sm font-medium uppercase text-ash-200 md:text-left md:text-base">
+						our tech stack
 					</p>
-					<h2 className="text-ash-300 text-[32px] font-bold">
-						Hear what our{" "}
-						<span className="text-secondary-200">
-							{" "}
-							satisfied <br />
-							customers{" "}
-						</span>{" "}
-						have to say
-					</h2>
-					<div className="mt-[74px] grid w-full grid-cols-3 items-start gap-10">
-						{TESTIMONIALS.map((testimonial, index) => (
-							<div
-								key={index}
-								className="w-full rounded-lg border border-ash-200 bg-gray-50 p-6">
-								<p className="text-sm text-ash-300">{testimonial.testimony}</p>
-								<div className="mt-6 flex items-center gap-2">
-									<img
-										src={testimonial.image}
-										alt={testimonial.name}
-										className="aspect-[1/1] w-[48px] rounded-sm"
-									/>
-									<div className="flex flex-col">
-										<p className="font-semibold text-ash-300">{testimonial.name}</p>
-										<p className="text-sm text-ash-200">{testimonial.label}</p>
-									</div>
-								</div>
-							</div>
-						))}
-					</div>
-				</section> */}
-				<hr className="h-[1px] w-full border border-ash-200" />
-				<section className="flex w-full flex-col py-[99px]">
-					<p className="mb-2 font-medium uppercase text-ash-200">our tech stack</p>
-					<h2 className="text-ash-300 text-[32px] font-bold">
+					<h2 className="text-center text-2xl font-bold text-ash-300 md:text-left md:text-[32px]">
 						Expertise <span className="text-secondary-200">Across Disciplines</span>:{" "}
 						<br />
 						Our Comprehensive Departments
 					</h2>
-					<div className="mt-[50px] grid w-full grid-cols-3 items-center gap-5">
+					<div className="mt-[50px] grid w-full grid-cols-1 items-center gap-5 overflow-hidden lg:grid-cols-3">
 						{STACKS.map((stack, index) => (
-							<animated.div
+							<motion.div
 								key={index}
-								className="w-[full relative aspect-[2/1] cursor-pointer rounded-lg bg-black/20 duration-300">
+								initial={{ x: 100, opacity: 0 }}
+								whileInView={{ x: 0, opacity: 1 }}
+								transition={{
+									type: "spring",
+									delay: 0.1 * index,
+									duration: 1,
+									bounce: 0.25,
+									stiffness: 200,
+								}}
+								className="relative aspect-[2/1] w-full cursor-pointer rounded-lg bg-black/20 duration-300">
 								<img
 									src={stack.image}
 									alt={stack.label}
 									className="h-full w-full rounded-lg object-cover"
 								/>
 								<div className="absolute left-0 top-0 flex h-full w-full flex-col items-center justify-center">
-									<p className="font-work text-2xl font-bold uppercase text-white">
+									<p className="font-work text-xl font-bold uppercase text-white md:text-2xl">
 										{stack.label}
 									</p>
 									<div className="flex flex-wrap items-center justify-center px-4">
 										{stack.description.map((item, index) => (
 											<React.Fragment key={index}>
-												<p className="font-work font-light text-white">{item}</p>
+												<p className="font-work text-sm font-light text-white md:text-base">
+													{item}
+												</p>
 												{index !== stack.description.length - 1 && (
 													<span className="mx-2 text-white">•</span>
 												)}
@@ -280,18 +281,20 @@ const Home = () => {
 										))}
 									</div>
 								</div>
-							</animated.div>
+							</motion.div>
 						))}
 					</div>
 				</section>
-				<hr className="h-[1px] w-full border border-ash-200" />
+			</PaddedBlock>
+			<hr className="h-[1px] w-full border border-ash-100" />
+			<PaddedBlock>
 				<section className="flex w-full flex-col items-center py-[99px]">
 					<div className="flex w-full flex-col items-center justify-center rounded-lg border border-ash-200 py-10">
-						<h3 className="text-[32px] font-bold text-secondary-200">
+						<h3 className="text-center text-2xl font-bold text-secondary-200 md:text-[32px]">
 							Let's Connect{" "}
 							<span className="text-primary">and Bring your ideas to life</span>
 						</h3>
-						<p className="mb-[32px] mt-[15px] font-work text-ash-200">
+						<p className="mb-[32px] mt-[15px] text-center font-work text-sm text-ash-200 md:text-base">
 							Click the button below to chat, book a meeting, or call our team
 							directly.
 						</p>

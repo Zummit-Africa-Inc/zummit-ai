@@ -1,7 +1,7 @@
 import { FormEvent, useEffect, useRef, useState } from "react"
 import { useMutation } from "@tanstack/react-query"
-import { animated, useSpring } from "react-spring"
-import { FiX } from "react-icons/fi"
+import { X } from "@phosphor-icons/react"
+import { motion } from "framer-motion"
 import { v4 as uuidv4 } from "uuid"
 import axios from "axios"
 
@@ -16,25 +16,21 @@ interface Props {
 }
 
 const ChatBot = (props: Props) => {
-	const { add, chats } = useBotStore(store => store)
+	const { add, chats } = useBotStore((store) => store)
 	const [message, setMessage] = useState("")
 	const ref = useRef<HTMLDivElement>(null)
 
-	const spring = useSpring({
-		from: { x: "100%" },
-		to: { x: "0%" },
-	})
-
 	const scrollToBottom = () => {
-    if (ref.current) {
-      ref.current.scrollTop = ref.current.scrollHeight
-    }
-  }
+		if (ref.current) {
+			ref.current.scrollTop = ref.current.scrollHeight
+		}
+	}
 
-	const {isLoading, mutateAsync} = useMutation({
-		mutationFn: (message: string) => axios.post(`${import.meta.env.VITE_API_URL}/bot`, {message}),
+	const { isLoading, mutateAsync } = useMutation({
+		mutationFn: (message: string) =>
+			axios.post(`${import.meta.env.VITE_API_URL}/bot`, { message }),
 		mutationKey: ["send message"],
-		onSuccess: ({data}) => {
+		onSuccess: ({ data }) => {
 			const message = data.data
 			add({
 				id: uuidv4(),
@@ -43,7 +39,7 @@ const ChatBot = (props: Props) => {
 				type: "bot",
 			})
 		},
-		onError: (error) => console.log(error)
+		onError: (error) => console.log(error),
 	})
 
 	const handleSubmit = (e: FormEvent) => {
@@ -64,16 +60,26 @@ const ChatBot = (props: Props) => {
 	})
 
 	return (
-		<animated.div
-			style={spring}
-			className="fixed bottom-5 right-5 !z-20 flex h-[461px] w-[473px] flex-col items-center justify-between rounded-lg border border-ash-200 bg-white">
+		<motion.div
+			initial={{ x: "100%" }}
+			animate={{ x: 0 }}
+			transition={{
+				type: "spring",
+				delay: 0.1,
+				duration: 1,
+				bounce: 0.25,
+				stiffness: 150,
+			}}
+			className="fixed bottom-0 right-0 !z-20 flex h-screen w-screen flex-col items-center justify-between rounded-lg border border-ash-200 bg-white md:bottom-5 md:right-5 md:h-[461px] md:w-[473px]">
 			<div className="flex w-full items-center justify-between border-b border-ash-200 px-6 py-3">
 				<img src={logo} alt="zummit africa logo" className="w-[100px]" />
 				<button onClick={props.close} className="text-4xl text-ash-200">
-					<FiX />
+					<X />
 				</button>
 			</div>
-			<div ref={ref} className="flex h-full w-full flex-col gap-3 overflow-y-scroll p-2">
+			<div
+				ref={ref}
+				className="flex h-full w-full flex-col gap-3 overflow-y-scroll p-2">
 				{chats.map((chat) => (
 					<div
 						key={chat.id}
@@ -87,7 +93,11 @@ const ChatBot = (props: Props) => {
 									: "rounded-tr-none bg-primary text-white"
 							}`}>
 							<p className="text-sm font-medium">
-								{chat.type === "bot" ? <TypeWriter delay={100} text={chat.message} /> : chat.message}
+								{chat.type === "bot" ? (
+									<TypeWriter delay={100} text={chat.message} />
+								) : (
+									chat.message
+								)}
 							</p>
 						</div>
 					</div>
@@ -96,11 +106,11 @@ const ChatBot = (props: Props) => {
 			<div className="flex w-full flex-col items-center gap-2 rounded-b-[8px] bg-gray-200 px-6 py-3">
 				<form
 					onSubmit={handleSubmit}
-					className="w-full flex items-center border border-ash-200 bg-white px-4 py-2">
+					className="flex w-full items-center border border-ash-200 bg-white px-4 py-2">
 					<input
 						type="text"
 						value={message}
-						onChange={e => setMessage(e.target.value)}
+						onChange={(e) => setMessage(e.target.value)}
 						className="w-full"
 						placeholder="Type you message here..."
 					/>
@@ -109,7 +119,7 @@ const ChatBot = (props: Props) => {
 					</button>
 				</form>
 			</div>
-		</animated.div>
+		</motion.div>
 	)
 }
 
