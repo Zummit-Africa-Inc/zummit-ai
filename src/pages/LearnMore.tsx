@@ -40,11 +40,11 @@ const LearnMore = () => {
 						<img
 							src={learn_more}
 							alt=""
-							className="aspect-[2/1] w-full rounded-lg object-cover lg:aspect-auto"
+							className="aspect-[1/1] w-full rounded-lg object-cover lg:aspect-[2/1]"
 						/>
-						<div className="absolute left-0 top-0 flex h-full w-full items-center justify-center rounded-lg bg-black/30 px-[43px] py-[37px]">
-							<p className="text-[32px] font-bold text-white">
-								How we empower businesses <br />
+						<div className="absolute left-0 top-0 flex h-full w-full items-center justify-center rounded-lg bg-black/30 px-[22px] py-[26px] md:py-[37px] lg:px-[43px]">
+							<p className="text-2xl font-bold text-white lg:text-[32px]">
+								How we empower businesses <br className="hidden lg:block" />
 								with our Unique approach:
 							</p>
 						</div>
@@ -69,7 +69,7 @@ const LearnMore = () => {
 					<h2 className="w-full text-center text-2xl font-bold text-ash-300 md:w-1/2 md:text-[32px]">
 						Revolutionizing Solutions Across Diverse Sectors.
 					</h2>
-					<div className="mb-[72px] mt-[50px] flex items-center justify-center gap-[10px] rounded-[49px] bg-primary p-[10px]">
+					<div className="mb-[72px] mt-[50px] flex items-center justify-center gap-1 rounded-[49px] bg-primary p-[10px] lg:gap-[10px]">
 						{SECTORS.map((sector, index) => (
 							<button
 								key={index}
@@ -77,7 +77,7 @@ const LearnMore = () => {
 									setTab(index)
 									registerEvent("click", "sector tabs")
 								}}
-								className={`flex items-center justify-center rounded-[49px] px-8 py-[10px] capitalize ${
+								className={`flex items-center justify-center rounded-[49px] px-2 py-1 text-sm capitalize lg:px-8 lg:py-[10px] lg:text-base ${
 									tab === index
 										? "bg-secondary-100 text-black"
 										: "bg-white/[8%] text-white"
