@@ -19,7 +19,7 @@ const Hamburger = (props: Props) => {
 			animate={{ y: 0 }}
 			transition={{ type: "spring", delay: 0.1, duration: 0.5, bounce: 0.25 }}
 			onClick={props.onClose}
-			className="fixed left-0 top-0 !z-30 h-screen w-screen bg-black/50">
+			className="fixed left-0 top-0 !z-30 block h-screen w-screen bg-black/50 lg:hidden">
 			<div
 				className="flex w-full flex-col bg-white"
 				onClick={(e) => e.stopPropagation()}>
