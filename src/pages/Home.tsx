@@ -209,13 +209,13 @@ const Home = () => {
 						Each project is a testament to our expertise in addressing unique
 						challenges and delivering tailored solutions.
 					</p>
-					<div className="my-[64px] grid w-full grid-cols-1 items-start gap-10 md:gap-5 lg:grid-cols-3">
+					<div className="my-[64px] grid w-full grid-cols-1 items-start gap-10 md:gap-5 lg:grid-cols-2">
 						{PORTFOLIO.map((item, index) => (
 							<div key={index} className="flex w-full flex-col">
 								<img
 									src={item.image}
 									alt={item.label}
-									className="aspect-[1/1] w-full rounded-lg border object-cover"
+									className="aspect-[2/1] w-full rounded-lg border object-cover"
 								/>
 								<p className="mb-2 mt-5 text-xl font-bold text-ash-300 md:text-2xl">
 									{item.label}

@@ -2,8 +2,8 @@ import { facebook, instagram, linkedin, twitter } from "assets/icons"
 
 export const NAVIGATION = [
   {label: 'What you get', url: '/learn-more'},
-  {label: 'Internship', url: '/internship'},
-  {label: 'Blog', url: '/blog'},
+  // {label: 'Internship', url: '/internship'},
+  // {label: 'Blog', url: '/blog'},
 ]
 
 export const FOOOTER = [
@@ -13,8 +13,8 @@ export const FOOOTER = [
   //   {label: 'Eu est eu  ', url: '/'},
   // ]},
   {title: 'Know more', menu: [
-    {label: 'Blog', url: '/blog'},
-    {label: 'Internship', url: '/internship'},
+    // {label: 'Blog', url: '/blog'},
+    // {label: 'Internship', url: '/internship'},
     {label: 'What you get', url: '/learn-more'},
   ]},
   {title: 'Get in touch', menu: [
