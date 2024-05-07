@@ -1,0 +1,8 @@
+export const config = {
+	API_URL: process.env.NEXT_PUBLIC_API_URL,
+	APP_URL: process.env.NEXT_PUBLIC_APP_URL,
+	GA_TRACKING_ID: process.env.NEXT_PUBLIC_GA_TRACKING_ID,
+	POSTHOG_HOST: process.env.NEXT_PUBLIC_POSTHOG_HOST,
+	POSTHOG_KEY: process.env.NEXT_PUBLIC_POSTHOG_KEY,
+	NODE_ENV: process.env.NODE_ENV,
+}
