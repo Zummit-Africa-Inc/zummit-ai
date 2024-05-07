@@ -1,0 +1,225 @@
+@use "@/styles/base/utils" as *;
+
+.Button {
+	outline: none;
+	text-decoration: none;
+	transition: all 0.2s ease-in-out;
+	cursor: pointer;
+	border-radius: 5px;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 14px;
+	gap: 8px;
+
+	* {
+		user-select: none;
+	}
+
+	&.xs {
+		padding: 6px 12px;
+		font-weight: 400;
+		height: fit-content;
+		width: fit-content;
+	}
+
+	&.sm {
+		padding: 10px 20px;
+		font-weight: 400;
+		height: fit-content;
+		width: fit-content;
+	}
+
+	&.md,
+	&.lg,
+	&.block {
+		height: fit-content;
+		width: fit-content;
+	}
+
+	&.md {
+		padding: 15px 30px;
+		font-weight: 500;
+	}
+
+	&.lg {
+		padding: 18px 36px;
+		font-weight: 500;
+	}
+
+	&.block {
+		width: 100%;
+		padding: 18px;
+		font-weight: 500;
+	}
+
+	.LeadingIcon {
+		user-select: none;
+	}
+
+	&.Buttonprimary {
+		background: var(--primary-purple);
+		color: #fff;
+
+		&-outline {
+			background-color: transparent;
+			border: 1.4px solid var(--primary-purple);
+			border-style: solid;
+			color: var(--primary-purple);
+
+			&.lg {
+				border-width: 2px;
+			}
+
+			&:disabled {
+				background: transparent;
+				opacity: 0.5;
+				cursor: not-allowed;
+				pointer-events: none;
+			}
+
+			&:active {
+				transform: scale(0.98);
+				transition: width 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+				-moz-transition: width 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+				-webkit-transition: width 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+			}
+
+			&:hover,
+			&:focus {
+				opacity: 0.8;
+			}
+		}
+
+		&:disabled {
+			background: #a1cffa;
+			color: #fff;
+			cursor: not-allowed;
+		}
+
+		&:active {
+			transform: scale(0.98);
+			transition: width 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+			-moz-transition: width 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+			-webkit-transition: width 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+		}
+
+		&:hover,
+		&:focus {
+			background: linear-gradient(196.99deg, #59afff 7.09%, #3ca2ff 86.59%);
+			transition: all 0.2s ease-in-out;
+
+			&:active {
+				transform: scale(0.98);
+				transition: width 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+				-moz-transition: width 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+				-webkit-transition: width 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+			}
+		}
+
+		&:focus-visible {
+			outline: 2px solid var(--primary-purple);
+			outline-offset: 2px;
+		}
+	}
+
+	&.Buttonerror {
+		background: var(--primary-red);
+		color: #fff;
+		border: 1.4px solid transparent;
+
+		&-outline {
+			background-color: transparent;
+			border: 1.4px solid var(--primary-red);
+			border-style: solid;
+			color: var(--primary-red);
+
+			&.lg {
+				border-width: 2px;
+			}
+
+			&:disabled {
+				background: transparent;
+			}
+
+			&:active {
+				transform: scale(0.98);
+				transition: width 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+				-moz-transition: width 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+				-webkit-transition: width 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+			}
+
+			&:hover,
+			&:focus {
+				opacity: 0.8;
+			}
+		}
+
+		&:disabled {
+			background: #a1cffa;
+			color: #fff;
+			cursor: not-allowed;
+		}
+
+		&:active {
+			transform: scale(0.98);
+			transition: width 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+			-moz-transition: width 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+			-webkit-transition: width 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+		}
+
+		&:hover,
+		&:focus {
+			background: var(--primary-red);
+			transition: all 0.2s ease-in-out;
+
+			&:active {
+				transform: scale(0.98);
+				transition: width 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+				-moz-transition: width 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+				-webkit-transition: width 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+			}
+		}
+
+		&:focus-visible {
+			outline: 2px solid var(--primary-red);
+			outline-offset: 2px;
+		}
+	}
+
+	&.Buttonsecondary {
+		background: var(--primary-white);
+		color: var(--primary-purple);
+
+		&:disabled {
+			background: #f4f4f4;
+			cursor: not-allowed;
+		}
+
+		&:active {
+			transform: scale(0.98);
+			transition: width 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+			-moz-transition: width 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+			-webkit-transition: width 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+		}
+
+		&:hover,
+		&:focus {
+			background: #d8e9ff;
+			transition: all 0.2s ease-in-out;
+
+			&:active {
+				transform: scale(0.98);
+				transition: width 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+				-moz-transition: width 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+				-webkit-transition: width 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+			}
+		}
+
+		&:focus-visible {
+			outline: 2px solid var(--primary-purple);
+			outline-offset: 2px;
+		}
+	}
+}
