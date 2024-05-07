@@ -78,9 +78,7 @@ export const Home = () => {
 									</Flex>
 									<Heading.h4>{item.label}</Heading.h4>
 									<Text.p>{item.content}</Text.p>
-									<Link href={item.link.href}>
-										{item.link.name}
-									</Link>
+									<Link href={item.link.href}>{item.link.name}</Link>
 								</Flex.Column>
 							))}
 						</Flex>
