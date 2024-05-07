@@ -4,6 +4,7 @@ import "@/styles/index.scss"
 import { QueryClientProvider } from "@tanstack/react-query"
 import { PostHogProvider } from "posthog-js/react"
 import { Toaster } from "@/components/ui/sonner"
+import { AnimatePresence } from "framer-motion"
 import type { AppProps } from "next/app"
 import { Theme } from "@radix-ui/themes"
 import { useRouter } from "next/router"
@@ -28,8 +29,10 @@ export default function App({ Component, pageProps }: AppProps) {
 			<SSRProvider>
 				<QueryClientProvider client={queryClient}>
 					<PostHogProvider client={posthog}>
-						<Component {...pageProps} />
-						<Toaster />
+						<AnimatePresence mode="wait">
+							<Component {...pageProps} />
+							<Toaster />
+						</AnimatePresence>
 					</PostHogProvider>
 				</QueryClientProvider>
 			</SSRProvider>
