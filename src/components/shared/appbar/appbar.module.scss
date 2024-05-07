@@ -17,7 +17,10 @@
 
 	&--true {
 		background: var(--text-white);
-		border-bottom: 1px solid var(--text-gray-light);
+	}
+
+	@include media("sm", "max") {
+		padding: 18px 8px;
 	}
 
 	.AppbarInner {
@@ -40,6 +43,10 @@
 			display: flex;
 			align-items: center;
 			gap: 16px;
+
+			@include media("sm", "max") {
+				display: none;
+			}
 
 			.AppbarNavigationItem {
 				color: var(--text-black);
