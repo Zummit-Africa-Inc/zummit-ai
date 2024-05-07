@@ -7,6 +7,10 @@
 	justify-content: center;
 	margin: 2em 0 0;
 
+	@include media("sm", "max") {
+		padding: 28px 8px 0;
+	}
+
 	.FooterInner {
 		width: 100%;
 		max-width: 1200px;
@@ -25,9 +29,14 @@
 
 			.FooterNavigationList {
 				min-height: 330px;
+				min-width: 300px;
 				flex: 1;
 				display: flex;
 				flex-direction: column;
+
+				@include media("sm", "max") {
+					min-height: fit-content;
+				}
 
 				.FooterNavigationTitle {
 					font-size: 20px;
@@ -61,6 +70,16 @@
 			font-size: 16.8px;
 			padding: 32px 0;
 			gap: 2em;
+
+			@include media("sm", "max") {
+				padding: 20px 0px;
+			}
+
+			a {
+				@include media("sm", "max") {
+					display: none;
+				}
+			}
 		}
 	}
 }
