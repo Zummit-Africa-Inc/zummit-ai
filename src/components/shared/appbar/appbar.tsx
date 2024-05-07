@@ -19,7 +19,7 @@ export const Appbar = () => {
 
 	const isActivePath = (href: string) => router.pathname === href
 
-	const handleScroll = () => setScrolled(window.scrollY > 200)
+	const handleScroll = () => setScrolled(window.scrollY > 100)
 
 	React.useEffect(() => {
 		window.addEventListener("scroll", handleScroll)

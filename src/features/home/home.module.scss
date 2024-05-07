@@ -15,18 +15,232 @@
 		align-items: center;
 		justify-content: center;
 
-		.HomeSection {
-			width: 100%;
-			padding: 40px 0;
-
-			@include media("sm", "max") {
-				padding: 20px 0;
-			}
+		@include media("sm", "max") {
+			padding: 0 8px;
 		}
 
 		.HomeHeader {
 			width: 100%;
 			min-height: 100dvh;
+			align-items: center;
+			justify-content: center;
+			background: url("../../../public/assets/images/africa-background-2.png") no-repeat;
+			background-size: 45%;
+			background-position: right;
+
+			.HomeHeaderContent {
+				width: 100%;
+
+				.HomeHeaderContentHeading {
+					margin: 76px 0 126px;
+
+					@include media("sm", "max") {
+						margin: 76px 0 66px;
+					}
+
+					h2 {
+						width: 100%;
+						max-width: 745px;
+						font-size: 56px;
+						font-weight: 500;
+						line-height: 56px;
+						margin: 45px 0 20px;
+						span {
+							color: var(--primary-orange);
+						}
+
+						@include media("sm", "max") {
+							font-size: 30.4px;
+							line-height: 30px;
+						}
+					}
+
+					p {
+						width: 100%;
+						max-width: 745px;
+						font-size: 19.2px;
+						margin: 0 0 30px;
+						color: var(--text-gray);
+
+						span {
+							font-weight: 600;
+						}
+
+						@include media("sm", "max") {
+							font-size: 16.4px;
+						}
+					}
+				}
+
+				.HomeHeaderCounter {
+					width: 100%;
+					align-items: center;
+					justify-content: center;
+
+					@include media("sm", "max") {
+						flex-direction: column;
+						gap: 16px;
+					}
+
+					.HomeHeaderCounterItem {
+						width: 276px;
+						align-items: center;
+						justify-content: center;
+
+						h2 {
+							font-size: 57.6px;
+							width: fit-content;
+							font-weight: 500;
+							line-height: 56px;
+
+							@include media("sm", "max") {
+								font-size: 32.8px;
+							}
+						}
+
+						p {
+							font-size: 19.2px;
+							width: fit-content;
+
+							@include media("sm", "max") {
+								font-size: 16.4px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.HomeSection {
+		width: 100%;
+		padding: 40px 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		&--solid {
+			background: var(--soft-orange);
+		}
+
+		@include media("sm", "max") {
+			padding: 20px 0;
+		}
+
+		.HomeSectionInner {
+			width: 100%;
+			max-width: 1200px;
+
+			@include media("sm", "max") {
+				padding: 0 8px;
+			}
+
+			&--center {
+				padding: 80px 0;
+
+				@include media("sm", "max") {
+					padding: 0 8px;
+				}
+
+				h3 {
+					font-size: 48px;
+					margin: 0 0 10px;
+					font-weight: 500;
+
+					@include media("sm", "max") {
+						font-size: 28px;
+					}
+				}
+
+				p {
+					width: 100%;
+					max-width: 745px;
+					font-size: 19.2px;
+					margin: 0 0 30px;
+					color: var(--text-gray);
+					span {
+						font-weight: 600;
+					}
+
+					@include media("sm", "max") {
+						font-size: 16.4px;
+					}
+				}
+			}
+
+			.HomeSectionWrapper {
+				width: 100%;
+				display: grid;
+				grid-template-columns: repeat(2, minmax(0, 1fr));
+				grid-template-rows: repeat(2, minmax(0, 1fr));
+				gap: 80px;
+
+				@include media("sm", "max") {
+					grid-template-columns: repeat(1, minmax(0, 1fr));
+					grid-template-rows: auto;
+					gap: 20px;
+				}
+
+				.HomeSectionItem {
+					width: 100%;
+
+					&:nth-child(1) {
+						grid-row: span 2 / span 2;
+
+						@include media("sm", "max") {
+							grid-row: span 1 / span 1;
+						}
+
+						.HomeSectionItemImage {
+							width: 100%;
+							aspect-ratio: 3/5;
+							position: relative;
+
+							img {
+								object-fit: cover;
+							}
+						}
+					}
+
+					.HomeSectionItemImage {
+						width: 100%;
+						aspect-ratio: 3/2;
+						position: relative;
+
+						img {
+							object-fit: cover;
+						}
+					}
+
+					h4 {
+						margin: 20px 0 0;
+						font-size: 28px;
+
+						@include media("sm", "max") {
+							font-size: 19.2px;
+						}
+					}
+
+					p {
+						margin: 10px 0 19.2px;
+						font-size: 19.2px;
+						color: var(--text-gray);
+
+						@include media("sm", "max") {
+							font-size: 16.4px;
+						}
+					}
+
+					a {
+						text-decoration: underline;
+						font-size: 18.4px;
+						font-weight: 600;
+
+						@include media("sm", "max") {
+							font-size: 16px;
+						}
+					}
+				}
+			}
 		}
 	}
 }
