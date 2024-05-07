@@ -1,0 +1,32 @@
+@use "@/styles/base/utils" as *;
+
+.Home {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	.HomeInner {
+		width: 100%;
+		max-width: 1200px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		.HomeSection {
+			width: 100%;
+			padding: 40px 0;
+
+			@include media("sm", "max") {
+				padding: 20px 0;
+			}
+		}
+
+		.HomeHeader {
+			width: 100%;
+			min-height: 100dvh;
+		}
+	}
+}
