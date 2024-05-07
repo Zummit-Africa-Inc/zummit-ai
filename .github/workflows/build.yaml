@@ -1,25 +1,26 @@
 name: build-check
 
 on:
-  pull_request:
-    branches:
-      - development
+ pull_request:
+  branches:
+   - dev
+   - main
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+ build:
+  runs-on: ubuntu-latest
 
-    steps:
-      - name: check-out
-        uses: actions/checkout@v3
+  steps:
+   - name: check-out
+     uses: actions/checkout@v3
 
-      - name: set-up-node
-        uses: actions/setup-node@v2
-        with:
-          node-version: 18
+   - name: set-up-node
+     uses: actions/setup-node@v2
+     with:
+      node-version: 18
 
-      - name: install-deps
-        run: npm install
+   - name: install-deps
+     run: npm install
 
-      - name: build
-        run: npm run build
+   - name: build
+     run: npm run build
