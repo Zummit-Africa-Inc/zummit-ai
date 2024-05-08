@@ -3,6 +3,7 @@ import React from "react"
 import { Button, Flex, Heading, Text } from "@labs/components"
 import { Appbar, Footer, Seo } from "@/components/shared"
 import styles from "./about.module.scss"
+import { about } from "./data"
 
 export const About = () => {
 	return (
@@ -23,8 +24,15 @@ export const About = () => {
 							</Flex.Column>
 						</Flex.Column>
 						<Flex.Column></Flex.Column>
+						<Flex.Column className={styles.AboutHeaderItems}>
+							{about.map((item, index) => (
+								<Flex key={index} className={styles.AboutHeaderItem}>
+									<Heading.h3>{item.title}</Heading.h3>
+									<div className={styles.AboutHeaderText}>{item.content}</div>
+								</Flex>
+							))}
+						</Flex.Column>
 					</Flex.Column>
-					{/* content goes here */}
 				</Flex.Column>
 				<section className={styles.AboutSection}>
 					<Flex.Column className={styles.AboutSectionInner}>
