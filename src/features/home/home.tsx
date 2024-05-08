@@ -30,7 +30,7 @@ export const Home = () => {
 	return (
 		<>
 			<Seo
-				title="Welcome to Zummit"
+				title="Empowering Africa through AI"
 				description="Discover the power of Zummit - your gateway to a transformative learning experience."
 			/>
 			<Appbar />
