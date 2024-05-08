@@ -1,7 +1,9 @@
 import React from "react"
 
+import { Programs } from "@/features/programs"
+
 const Page = () => {
-	return <div>Page</div>
+	return <Programs />
 }
 
 export default Page
