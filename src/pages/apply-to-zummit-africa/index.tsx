@@ -1,7 +1,9 @@
 import React from "react"
 
+import { Apply } from "@/features/apply"
+
 const Page = () => {
-	return <div>Page</div>
+	return <Apply />
 }
 
 export default Page
