@@ -114,4 +114,49 @@
 			}
 		}
 	}
+
+	.ProgramSection {
+		width: 100%;
+		padding: 40px 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: var(--soft-orange);
+
+		@include media("sm", "max") {
+			padding: 20px 0;
+		}
+
+		.ProgramSectionInner {
+			width: 100%;
+			max-width: 1200px;
+			padding: 80px 0;
+
+			@include media("sm", "max") {
+				padding: 0 8px;
+			}
+
+			h3 {
+				font-size: 48px;
+				margin: 0 0 10px;
+				font-weight: 500;
+
+				@include media("sm", "max") {
+					font-size: 28px;
+				}
+			}
+
+			p {
+				width: 100%;
+				max-width: 745px;
+				font-size: 19.2px;
+				margin: 0 0 30px;
+				color: var(--text-gray);
+
+				@include media("sm", "max") {
+					font-size: 16.4px;
+				}
+			}
+		}
+	}
 }

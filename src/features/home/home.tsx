@@ -1,4 +1,4 @@
-import { motion } from "framer-motion"
+import { AnimatePresence, motion } from "framer-motion"
 import classNames from "classnames"
 import Image from "next/image"
 import Link from "next/link"
@@ -40,12 +40,14 @@ export const Home = () => {
 						<Flex.Column className={styles.HomeHeaderContent}>
 							<Flex.Column className={styles.HomeHeaderContentHeading}>
 								<Heading.h2>
-									<motion.span
-										initial={{ opacity: 0 }}
-										whileInView={{ opacity: 1 }}
-										transition={transition}>
-										{words[current]}
-									</motion.span>{" "}
+									<AnimatePresence>
+										<motion.span
+											initial={{ opacity: 0 }}
+											whileInView={{ opacity: 1 }}
+											transition={transition}>
+											{words[current]}
+										</motion.span>{" "}
+									</AnimatePresence>
 									<br />
 									courses to build your career in Tech.
 								</Heading.h2>
@@ -74,7 +76,7 @@ export const Home = () => {
 							{content.map((item, index) => (
 								<Flex.Column key={index} className={styles.HomeSectionItem}>
 									<Flex className={styles.HomeSectionItemImage}>
-										<Image src={item.image} alt="" fill />
+										<Image src={item.image} alt="" fill sizes="(max-width: 1024px) 100%" />
 									</Flex>
 									<Heading.h4>{item.label}</Heading.h4>
 									<Text.p>{item.content}</Text.p>

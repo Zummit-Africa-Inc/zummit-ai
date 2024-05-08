@@ -46,6 +46,16 @@ export const Programs = () => {
 						))}
 					</Flex.Column>
 				</Flex.Column>
+				<section className={styles.ProgramSection}>
+					<Flex.Column className={styles.ProgramSectionInner}>
+						<Heading.h3>Ready to get started?</Heading.h3>
+						<Text.p>
+							Apply to Zummit Africa and join our immersive courses and community starting in{" "}
+							<span>January 2025</span> to transform your career and access new opportunities.
+						</Text.p>
+						<Button.a href="/apply-to-zummit-africa">Apply Now</Button.a>
+					</Flex.Column>
+				</section>
 			</main>
 			<Footer />
 		</>

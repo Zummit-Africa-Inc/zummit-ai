@@ -74,31 +74,26 @@
 			.AboutHeaderItems {
 				width: 100%;
 				align-items: start;
-				margin: 0 0 64px;
-				gap: 40px;
 
 				.AboutHeaderItem {
-					flex: 1;
+					width: 100%;
+					margin: 0 0 78px;
 
-					p {
-						font-size: 19.2px;
+					h3 {
+						flex: 1;
 					}
 
-					.AboutHeaderItemRow {
-						align-items: center;
-						gap: 10px;
-						margin: 10px 0 0;
+					.AboutHeaderText {
+						flex: 1;
 
-						.AboutHeaderItemImage {
-							width: 25px;
-							height: 25px;
-							border-radius: 50%;
-							position: relative;
+						h4 {
+							font-size: 20.8px;
+							font-weight: 500;
+							margin: 20px 0 10px;
+						}
 
-							img {
-								border-radius: 50%;
-								object-fit: cover;
-							}
+						p {
+							font-size: 19.2px;
 						}
 					}
 				}
