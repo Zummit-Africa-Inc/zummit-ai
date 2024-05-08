@@ -9,8 +9,8 @@ import styles from "./appbar.module.scss"
 
 const navigation = [
 	{ name: "programs", href: "/programs" },
-	{ name: "graduates", href: "/testimonials" },
-	{ name: "zummit community", href: "/apply-to-zummit" },
+	{ name: "our graduates", href: "/testimonials" },
+	{ name: "zummit community", href: "/apply-to-zummit-africa" },
 ]
 
 export const Appbar = () => {

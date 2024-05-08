@@ -1,0 +1,141 @@
+@use "@/styles/base/utils" as *;
+
+.Testimonial {
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+
+	.TestimonialInner {
+		width: 100%;
+		max-width: 1200px;
+		align-items: center;
+		justify-content: center;
+
+		@include media("sm", "max") {
+			padding: 0 8px;
+		}
+
+		.TestimonialHeader {
+			width: 100%;
+			min-height: 100dvh;
+			height: fit-content;
+			align-items: center;
+			justify-content: center;
+			background: url("../../../public/assets/images/africa-background-2.png") no-repeat;
+			background-size: 45%;
+			background-position: top right;
+			margin: 140px 0 0;
+
+			@include media("sm", "max") {
+				margin: 60px 0 0;
+			}
+
+			.TestimonialHeaderContent {
+				width: 100%;
+
+				.TestimonialHeaderContentHeading {
+					margin: 76px 0 126px;
+
+					@include media("sm", "max") {
+						margin: 76px 0 66px;
+					}
+
+					h2 {
+						width: 100%;
+						max-width: 745px;
+						font-size: 56px;
+						font-weight: 500;
+						line-height: 56px;
+						margin: 45px 0 20px;
+						span {
+							color: var(--primary-orange);
+						}
+
+						@include media("sm", "max") {
+							font-size: 30.4px;
+							line-height: 30px;
+						}
+					}
+				}
+			}
+
+			.TestimonialHeaderItems {
+				width: 100%;
+				align-items: start;
+				margin: 0 0 64px;
+				gap: 40px;
+
+				.TestimonialHeaderItem {
+					flex: 1;
+
+					p {
+						font-size: 19.2px;
+					}
+
+					.TestimonialHeaderItemRow {
+						align-items: center;
+						gap: 10px;
+						margin: 10px 0 0;
+
+						.TestimonialHeaderItemImage {
+							width: 25px;
+							height: 25px;
+							border-radius: 50%;
+							position: relative;
+
+							img {
+								border-radius: 50%;
+								object-fit: cover;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.TestimonialSection {
+		width: 100%;
+		padding: 40px 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: var(--soft-orange);
+
+		@include media("sm", "max") {
+			padding: 20px 0;
+		}
+
+		.TestimonialSectionInner {
+			width: 100%;
+			max-width: 1200px;
+			padding: 80px 0;
+
+			@include media("sm", "max") {
+				padding: 0 8px;
+			}
+
+			h3 {
+				font-size: 48px;
+				margin: 0 0 10px;
+				font-weight: 500;
+
+				@include media("sm", "max") {
+					font-size: 28px;
+				}
+			}
+
+			p {
+				width: 100%;
+				max-width: 745px;
+				font-size: 19.2px;
+				margin: 0 0 30px;
+				color: var(--text-gray);
+
+				@include media("sm", "max") {
+					font-size: 16.4px;
+				}
+			}
+		}
+	}
+}

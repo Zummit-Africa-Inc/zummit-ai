@@ -1,0 +1,117 @@
+@use "@/styles/base/utils" as *;
+
+.Programs {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	.ProgramsInner {
+		width: 100%;
+		max-width: 1200px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		@include media("sm", "max") {
+			padding: 0 8px;
+		}
+
+		.ProgramsHeader {
+			width: 100%;
+			min-height: 100dvh;
+			align-items: center;
+			justify-content: center;
+			background: url("../../../public/assets/images/africa-background-2.png") no-repeat;
+			background-size: 45%;
+			background-position: right;
+
+			.ProgramsHeaderContent {
+				width: 100%;
+
+				.ProgramsHeaderContentHeading {
+					margin: 76px 0 126px;
+
+					@include media("sm", "max") {
+						margin: 76px 0 66px;
+					}
+
+					h2 {
+						width: 100%;
+						max-width: 745px;
+						font-size: 56px;
+						font-weight: 500;
+						line-height: 56px;
+						margin: 45px 0 20px;
+
+						@include media("sm", "max") {
+							font-size: 30.4px;
+							line-height: 30px;
+						}
+					}
+
+					p {
+						width: 100%;
+						max-width: 745px;
+						font-size: 19.2px;
+						margin: 0 0 30px;
+						color: var(--text-gray);
+
+						span {
+							font-weight: 600;
+						}
+
+						@include media("sm", "max") {
+							font-size: 16.4px;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.ProgramsSection {
+		width: 100%;
+		align-items: center;
+		justify-content: center;
+
+		.ProgramsSectionInner {
+			width: 100%;
+			max-width: 1200px;
+			align-items: center;
+			justify-content: center;
+
+			.ProgramsContent {
+				align-items: start;
+				margin: 0 0 60px;
+				gap: 40px;
+
+				.ProgramsContentItems {
+					flex: 1;
+
+					.ProgramsContentItem {
+						margin: 0 0 20px;
+
+						h4 {
+							font-size: 20.8px;
+							margin: 0 0 10px;
+						}
+
+						p {
+							font-size: 19.2px;
+							margin: 0 0 20px;
+						}
+					}
+
+					.ProgramsContentFooter {
+						align-items: center;
+						justify-content: space-between;
+						margin: 16px 0 0;
+					}
+				}
+			}
+		}
+	}
+}
