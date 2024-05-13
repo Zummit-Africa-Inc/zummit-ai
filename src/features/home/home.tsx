@@ -25,7 +25,7 @@ export const Home = () => {
 									<span>Zummit</span> School of AI and Data
 								</Heading.h2>
 								<Text.p>
-									The best place to learn hands-on <span>Artificial Intelligence</span>
+									The best place to learn hands-on <span>Artificial Intelligence </span>
 									and <span>Data</span> skills in Africa.
 								</Text.p>
 								<Flex gap={24}>

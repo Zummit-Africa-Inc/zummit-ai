@@ -83,9 +83,40 @@
 						flex: 1;
 					}
 
-					p {
-						font-size: 19.2px;
+					.EnquiriesHeaderText {
 						flex: 1;
+
+						p {
+							font-size: 19.2px;
+
+							a {
+								font-weight: 600;
+								position: relative;
+								width: fit-content;
+
+								&::before {
+									content: "";
+									position: absolute;
+									right: 0;
+									bottom: 0;
+									width: 0;
+									height: 2px;
+									border-radius: 4px;
+									background: var(--text-gray);
+									transition: width 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+									-moz-transition: width 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+									-webkit-transition: width 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+								}
+
+								@media (hover: hover) and (pointer: fine) {
+									&:hover::before {
+										left: 0;
+										right: auto;
+										width: 100%;
+									}
+								}
+							}
+						}
 					}
 				}
 			}
