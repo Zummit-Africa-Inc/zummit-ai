@@ -1,4 +1,3 @@
-import { AnimatePresence, motion } from "framer-motion"
 import classNames from "classnames"
 import Image from "next/image"
 import Link from "next/link"
@@ -6,27 +5,10 @@ import React from "react"
 
 import { Button, Flex, Heading, Text } from "@labs/components"
 import { Appbar, Footer, Seo } from "@/components/shared"
-import { useInterval } from "@labs/utils"
 import { content, counts } from "./data"
 import styles from "./home.module.scss"
 
-const words = ["Artificial Intelligence", "Software Development"]
-const transition = {
-	type: "tween",
-	delay: 0.1,
-	duration: 1,
-	easings: ["easeIn", "easeOut"],
-}
-
 export const Home = () => {
-	const [current, setCurrent] = React.useState(0)
-
-	const handleSwap = () => {
-		setCurrent((current + 1) % words.length)
-	}
-
-	useInterval(() => handleSwap(), 5000)
-
 	return (
 		<>
 			<Seo
@@ -40,22 +22,18 @@ export const Home = () => {
 						<Flex.Column className={styles.HomeHeaderContent}>
 							<Flex.Column className={styles.HomeHeaderContentHeading}>
 								<Heading.h2>
-									<AnimatePresence>
-										<motion.span
-											initial={{ opacity: 0 }}
-											whileInView={{ opacity: 1 }}
-											transition={transition}>
-											{words[current]}
-										</motion.span>{" "}
-									</AnimatePresence>
-									<br />
-									courses to build your career in Tech.
+									<span>Zummit</span> School of AI and Data
 								</Heading.h2>
 								<Text.p>
-									Apply to Zummit Africa and join our immersive courses and community starting in{" "}
-									<span>January 2025</span> to transform your career and access new opportunities.
+									The best place to learn hands-on <span>Artificial Intelligence</span>
+									and <span>Data</span> skills in Africa.
 								</Text.p>
-								<Button.a href="/apply-to-zummit-africa">Apply Now</Button.a>
+								<Flex gap={24}>
+									<Button.a href="/apply-to-zummit-africa">Apply Now</Button.a>
+									<Button.a href="https://datarango.com" target="_blank" outline>
+										Self-paced Learning
+									</Button.a>
+								</Flex>
 							</Flex.Column>
 							<Flex className={styles.HomeHeaderCounter}>
 								{counts.map((count) => (
@@ -92,10 +70,10 @@ export const Home = () => {
 							styles.HomeSectionInner,
 							styles["HomeSectionInner--center"],
 						])}>
-						<Heading.h3>Ready to get started?</Heading.h3>
+						<Heading.h3>Why join us?</Heading.h3>
 						<Text.p>
-							Apply to Zummit Africa and join our immersive courses and community starting in{" "}
-							<span>January 2025</span> to transform your career and access new opportunities.
+							We have the best data scientist and Machine Learning engineers supporting our
+							training program.
 						</Text.p>
 						<Button.a href="/apply-to-zummit-africa">Apply Now</Button.a>
 					</Flex.Column>
