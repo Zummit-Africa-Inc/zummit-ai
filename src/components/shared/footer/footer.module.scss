@@ -52,6 +52,30 @@
 					.FooterNavigationItem {
 						color: var(--text-gray);
 						font-size: 16.8px;
+						position: relative;
+						width: fit-content;
+
+						&::before {
+							content: "";
+							position: absolute;
+							right: 0;
+							bottom: 0;
+							width: 0;
+							height: 2px;
+							border-radius: 4px;
+							background: var(--text-gray);
+							transition: width 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+							-moz-transition: width 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+							-webkit-transition: width 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+						}
+
+						@media (hover: hover) and (pointer: fine) {
+							&:hover::before {
+								left: 0;
+								right: auto;
+								width: 100%;
+							}
+						}
 					}
 				}
 			}
@@ -73,12 +97,11 @@
 
 			@include media("sm", "max") {
 				padding: 20px 0px;
+				flex-direction: column;
 			}
 
-			a {
-				@include media("sm", "max") {
-					display: none;
-				}
+			p {
+				font-size: 16.8px;
 			}
 		}
 	}

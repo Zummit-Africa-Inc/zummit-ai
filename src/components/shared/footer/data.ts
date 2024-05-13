@@ -3,6 +3,7 @@ export const navigation = [
 		label: "Company",
 		links: [
 			{ name: "About", href: "/about", as: "link" },
+			{ name: "Patrons & Partners", href: "/patrons", as: "link" },
 			{
 				name: "Press",
 				href:

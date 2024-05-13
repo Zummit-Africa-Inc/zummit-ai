@@ -59,34 +59,67 @@
 				}
 			}
 
-			.TestimonialHeaderItems {
+			.Carousel {
 				width: 100%;
-				align-items: start;
-				margin: 0 0 64px;
-				gap: 40px;
+				align-items: center;
+				justify-content: center;
 
-				.TestimonialHeaderItem {
-					flex: 1;
+				.CarouselItem {
+					width: 100%;
+					display: flex;
+					padding: 60px 0;
+					align-items: center;
+					justify-content: center;
+					gap: 24px;
 
-					p {
-						font-size: 19.2px;
+					&--inactive {
+						display: none;
 					}
 
-					.TestimonialHeaderItemRow {
-						align-items: center;
-						gap: 10px;
-						margin: 10px 0 0;
+					.CarouselAvatar {
+						width: 250px;
+						aspect-ratio: 1/1;
+						border-radius: 50%;
+						position: relative;
 
-						.TestimonialHeaderItemImage {
-							width: 25px;
-							height: 25px;
+						@include media("sm", "max") {
+							width: 100px;
+						}
+
+						img {
+							object-fit: cover;
 							border-radius: 50%;
-							position: relative;
+						}
+					}
 
-							img {
-								border-radius: 50%;
-								object-fit: cover;
-							}
+					.CarouselName {
+						font-size: 28.9px;
+
+						@include media("sm", "max") {
+							font-size: 24.5px;
+						}
+					}
+
+					.CarouselImage {
+						width: 30px;
+						aspect-ratio: 1/1;
+						border-radius: 50%;
+						position: relative;
+
+						img {
+							object-fit: cover;
+							border-radius: 50%;
+						}
+					}
+
+					.CarouselQuote {
+						font-size: 16.8px;
+						width: 100%;
+						max-width: 500px;
+						text-align: center;
+
+						@include media("sm", "max") {
+							font-size: 14.2px;
 						}
 					}
 				}
