@@ -6,9 +6,9 @@ export const counts = [
 
 export const content = [
 	{
-		label: "Your journey starts here",
+		label: "How can I learn AI and Data science?",
 		content:
-			"Whether you're a beginner or an experienced tech enthusiast, our programs cater to your needs. Get ready to embark on a journey of growth and opportunity.",
+			"Are you a beginner or an experienced tech developer? our program caters to your learning or upskilling needs.",
 		image: "/assets/images/zummit-journey-starts.webp",
 		link: {
 			name: "Explore programs",
@@ -18,7 +18,7 @@ export const content = [
 	{
 		label: "Transform your workforce, drive innovation",
 		content:
-			"Partner with us to equip your team with AI and Data skills they need to lead your company into the AI era. Our customized training programs will enhance your organization's competitive edge.",
+			"Partner with us to equip your team with the AI and Data skills they need to lead your company into the era of AI. We work with your team to carry out research and development through structured hackathons.",
 		image: "/assets/images/zummit-workforce.webp",
 		link: {
 			name: "Contact us",
@@ -28,7 +28,7 @@ export const content = [
 	{
 		label: "Empower Africa, transform lives",
 		content:
-			"By donating to Zummit Africa, you're investing in a brighter future for Africa. Your support has already impacted over 2000 lives and continues to drive our mission forward.",
+			"Partner with us to train 5000  Underprivileged youths giving them  quality data professional training and opening doors to meaningful employment globally with AI and Data skills.",
 		image: "/assets/images/zummit-csr.webp",
 		link: {
 			name: "Support zummit Africa",
