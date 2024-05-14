@@ -23,7 +23,7 @@ export const Enquiries = () => {
 							{enquiries.map((item, index) => (
 								<Flex key={index} className={styles.EnquiriesHeaderItem}>
 									<Heading.h3>{item.label}</Heading.h3>
-									<Text.p>{item.content}</Text.p>
+									<Flex className={styles.EnquiriesHeaderText}>{item.content}</Flex>
 								</Flex>
 							))}
 						</Flex.Column>
