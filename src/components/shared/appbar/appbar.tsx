@@ -1,15 +1,18 @@
+import { RiMenuLine } from "@remixicon/react"
 import { useRouter } from "next/router"
 import classNames from "classnames"
 import Link from "next/link"
 import React from "react"
 
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import ZummitIcon from "@labs/icons/zummit-logo.svg"
-import { Button } from "@labs/components"
+import { Button, Flex } from "@labs/components"
 import styles from "./appbar.module.scss"
 
 const navigation = [
 	{ name: "programs", href: "/programs" },
 	{ name: "our graduates", href: "/testimonials" },
+	{ name: "patrons & partners", href: "/patrons" },
 	{ name: "zummit community", href: "/apply-to-zummit-africa" },
 ]
 
@@ -45,7 +48,21 @@ export const Appbar = () => {
 						</Link>
 					))}
 				</div>
-				<Button.a href="/apply-to-zummit-africa">Apply Now</Button.a>
+				<Button.a href="/apply-to-zummit-africa" className={styles.AppbarButton}>
+					Apply Now
+				</Button.a>
+				<div className={styles.AppbarHamburgerButton}>
+					<Sheet>
+						<SheetTrigger>
+							<RiMenuLine />
+						</SheetTrigger>
+						<SheetContent className={styles.AppbarHamburgerMenu}>
+							<Flex.Column>
+								<Button.a href="/apply-to-zummit-africa">Apply Now</Button.a>
+							</Flex.Column>
+						</SheetContent>
+					</Sheet>
+				</div>
 			</div>
 		</nav>
 	)

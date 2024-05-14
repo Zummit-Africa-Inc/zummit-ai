@@ -11,7 +11,7 @@
 		align-items: center;
 		justify-content: center;
 
-		@include media("sm", "max") {
+		@include media("md", "max") {
 			padding: 0 8px;
 		}
 
