@@ -11,7 +11,7 @@
 		align-items: center;
 		justify-content: center;
 
-		@include media("sm", "max") {
+		@include media("md", "max") {
 			padding: 0 8px;
 		}
 
@@ -79,15 +79,33 @@
 					width: 100%;
 					margin: 0 0 78px;
 
-					h3 {
-						flex: 1;
+					@include media("sm", "max") {
+						flex-direction: column;
+						align-items: center;
+						text-align: center;
 					}
 
-					.SupportHeaderText {
+					h3 {
 						flex: 1;
 
+						@include media("sm", "max") {
+							font-size: 24px;
+						}
+					}
+					
+					.SupportHeaderText {
+						flex: 1;
+						
 						p {
 							font-size: 19.2px;
+							
+							@include media("sm", "max") {
+								font-size: 16.4px;
+							}
+						}
+
+						ul {
+							list-style: none;
 						}
 					}
 				}
@@ -112,7 +130,7 @@
 			max-width: 1200px;
 			padding: 80px 0;
 
-			@include media("sm", "max") {
+			@include media("md", "max") {
 				padding: 0 8px;
 			}
 

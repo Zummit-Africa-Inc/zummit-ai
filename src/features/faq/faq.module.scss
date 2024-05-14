@@ -10,10 +10,7 @@
 		max-width: 1200px;
 		align-items: center;
 		justify-content: center;
-
-		@include media("sm", "max") {
-			padding: 0 8px;
-		}
+		padding: 0 8px;
 
 		.FaqHeader {
 			width: 100%;
@@ -74,18 +71,32 @@
 			.FaqHeaderItems {
 				width: 100%;
 				align-items: start;
-
+				
 				.FaqHeaderItem {
 					width: 100%;
 					margin: 0 0 78px;
+					
+					@include media("sm", "max") {
+						flex-direction: column;
+						align-items: center;
+						text-align: center;
+					}
 
 					h3 {
 						flex: 1;
-					}
 
+						@include media("sm", "max") {
+							font-size: 24px;
+						}
+					}
+					
 					p {
 						font-size: 19.2px;
 						flex: 1;
+
+						@include media("sm", "max") {
+							font-size: 16.4px;
+						}
 					}
 				}
 			}
@@ -107,9 +118,9 @@
 		.FaqSectionInner {
 			width: 100%;
 			max-width: 1200px;
-			padding: 80px 0;
+			padding: 80px 8px;
 
-			@include media("sm", "max") {
+			@include media("md", "max") {
 				padding: 0 8px;
 			}
 
