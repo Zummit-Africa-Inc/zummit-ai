@@ -11,9 +11,6 @@
 	left: 0;
 	background: transparent;
 	z-index: 20 !important;
-	transition: all 0.7s cubic-bezier(0.25, 1, 0.5, 1);
-	-moz-transition: all 0.7s cubic-bezier(0.25, 1, 0.5, 1);
-	-webkit-transition: all 0.7s cubic-bezier(0.25, 1, 0.5, 1);
 
 	&--true {
 		background: var(--text-white);
