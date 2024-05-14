@@ -37,3 +37,19 @@ export interface FileWithKey {
 	key: string
 	status: string[]
 }
+
+export interface DataResponse {
+	error: boolean
+	message: string
+	data?: null | string | Date | boolean | number | object | Array<any>
+}
+
+export type HttpError = {
+	response: {
+		data: {
+			error: boolean
+			message: string
+			data?: any
+		}
+	}
+}
