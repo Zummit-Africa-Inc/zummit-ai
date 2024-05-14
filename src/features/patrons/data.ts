@@ -37,7 +37,7 @@ export const patrons = [
 	},
 	{
 		about:
-			"Author of Advanced Analytics in Power BI with R and Python.Passionate about helping Africans get skilled in Data and Analytics",
+			"Author of Advanced Analytics in Power BI with R and Python. Passionate about helping Africans get skilled in Data and Analytics",
 		id: "5",
 		image: "/assets/ryan.webp",
 		linkedin: "https://www.linkedin.com/in/mrdatageek/",
