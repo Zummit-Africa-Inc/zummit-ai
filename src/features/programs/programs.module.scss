@@ -15,7 +15,7 @@
 		align-items: center;
 		justify-content: center;
 
-		@include media("sm", "max") {
+		@include media("md", "max") {
 			padding: 0 8px;
 		}
 
@@ -88,6 +88,12 @@
 				margin: 0 0 60px;
 				gap: 40px;
 
+				@include media("sm", "max") {
+					flex-direction: column;
+					align-items: center;
+					text-align: center;
+				}
+
 				.ProgramsContentItems {
 					flex: 1;
 
@@ -107,7 +113,7 @@
 
 					.ProgramsContentFooter {
 						align-items: center;
-						justify-content: space-between;
+						justify-content: center;
 						margin: 16px 0 0;
 					}
 				}
