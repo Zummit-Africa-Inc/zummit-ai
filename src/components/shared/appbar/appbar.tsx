@@ -18,6 +18,7 @@ const navigation = [
 
 export const Appbar = () => {
 	const [scrolled, setScrolled] = React.useState(false)
+	const [isOpen, setIsOpen] = React.useState(false)
 	const router = useRouter()
 
 	const isActivePath = (href: string) => router.pathname === href
@@ -52,13 +53,24 @@ export const Appbar = () => {
 					Apply Now
 				</Button.a>
 				<div className={styles.AppbarHamburgerButton}>
-					<Sheet>
+					<Sheet onOpenChange={() => setIsOpen(!isOpen)} open={isOpen}>
 						<SheetTrigger>
 							<RiMenuLine />
 						</SheetTrigger>
-						<SheetContent className={styles.AppbarHamburgerMenu}>
-							<Flex.Column>
-								<Button.a href="/apply-to-zummit-africa">Apply Now</Button.a>
+						<SheetContent>
+							<Flex.Column gap={24} className="py-6">
+								{navigation.map((item) => (
+									<Link
+										key={item.name}
+										href={item.href}
+										onClick={() => setIsOpen(false)}
+										className="capitalize">
+										{item.name}
+									</Link>
+								))}
+								<Button.a href="/apply-to-zummit-africa" onClick={() => setIsOpen(false)}>
+									Apply Now
+								</Button.a>
 							</Flex.Column>
 						</SheetContent>
 					</Sheet>

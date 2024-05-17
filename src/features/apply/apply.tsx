@@ -33,6 +33,7 @@ export const Apply = () => {
 			const { message } = data
 			toast.success(message)
 			setFields(initialValues)
+			window.location.reload()
 		},
 		onError: ({ response }: HttpError) => {
 			const { message } = response.data
