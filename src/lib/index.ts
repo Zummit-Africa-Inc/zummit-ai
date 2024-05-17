@@ -1,2 +1,2 @@
-export * from "./prisma"
+export * from "./mongo"
 export * from "./utils"
