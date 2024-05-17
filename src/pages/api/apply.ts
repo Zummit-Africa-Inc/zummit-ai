@@ -1,18 +1,20 @@
 import { NextApiRequest, NextApiResponse } from "next/types"
 
 import { DataResponse } from "@labs/utils/types/utility"
-import { prisma } from "@/lib"
+import { Form } from "@/models/Form"
+import { dbConnect } from "@/lib"
 
 export default async function handler(
 	req: NextApiRequest,
 	res: NextApiResponse<DataResponse>
 ) {
 	try {
-		await prisma.$connect()
+		await dbConnect()
+
 		let response: DataResponse
 		if (req.method === "POST") {
-			const form = await prisma.form.create({
-				data: { ...req.body },
+			const form = await Form.create({
+				...req.body,
 			})
 			if (!form) {
 				response = {
@@ -27,7 +29,7 @@ export default async function handler(
 			}
 			return res.status(201).json(response)
 		} else if (req.method === "GET") {
-			const forms = await prisma.form.findMany({})
+			const forms = await Form.find({})
 			response = {
 				error: false,
 				message: "all forms retrieved",
