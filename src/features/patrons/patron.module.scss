@@ -83,20 +83,20 @@
 					text-align: center;
 					gap: 20px;
 				}
-				
+
 				.PatronHeaderItem {
 					flex: 1;
-					
+
 					@include media("sm", "max") {
 						flex-direction: column;
 						align-items: center;
 						justify-content: center;
 						text-align: center;
 					}
-					
+
 					p {
 						font-size: 19.2px;
-						
+
 						@include media("sm", "max") {
 							font-size: 16.4px;
 						}

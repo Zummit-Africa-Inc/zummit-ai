@@ -13,7 +13,7 @@ export interface FormProps extends mongoose.Document {
 const form = new mongoose.Schema<FormProps>(
 	{
 		name: { type: String, required: true },
-		email: { type: String, required: true, unique: true },
+		email: { type: String, required: true },
 		country: { type: String },
 		previous_experience: { type: String },
 		interest: { type: String },
