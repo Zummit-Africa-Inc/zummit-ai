@@ -92,13 +92,13 @@
 							font-size: 24px;
 						}
 					}
-					
+
 					.SupportHeaderText {
 						flex: 1;
-						
+
 						p {
 							font-size: 19.2px;
-							
+
 							@include media("sm", "max") {
 								font-size: 16.4px;
 							}
