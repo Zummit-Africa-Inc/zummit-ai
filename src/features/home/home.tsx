@@ -64,6 +64,34 @@ export const Home = () => {
 						</Flex>
 					</Flex>
 				</section>
+				<section className={styles.HomeSection}>
+					<Flex className={styles.HomeSectionInner}>
+						<Flex className={styles.HomeAdSection}>
+							<Flex.Column gap={16}>
+								<Heading.h3>Learn AI and Data skills in a fun way</Heading.h3>
+								<Text.p fontSize="19.2px">
+									Sign up on{" "}
+									<a href="https://datarango.com" target="_blank" className="link">
+										Datarango
+									</a>{" "}
+									and get access to industry-standard learning, earn rewards and showcase your
+									progress.
+								</Text.p>
+								<Button.a href="https://datarango.com" target="_blank">
+									Sign up on Datarango
+								</Button.a>
+							</Flex.Column>
+							<Flex className={styles.HomeAdSectionImage}>
+								<Image
+									src="/assets/datarango.png"
+									alt="datarango"
+									fill
+									sizes="(max-width: 1024px) 100%"
+								/>
+							</Flex>
+						</Flex>
+					</Flex>
+				</section>
 				<section className={classNames([styles.HomeSection, styles["HomeSection--solid"]])}>
 					<Flex.Column
 						className={classNames([
