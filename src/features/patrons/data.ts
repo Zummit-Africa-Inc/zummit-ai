@@ -51,6 +51,6 @@ export const patrons = [
 		image: "/assets/biswas.webp",
 		linkedin: "https://www.linkedin.com/in/jyotishko-biswas-015b8540/",
 		name: "Jyotishko Biswas",
-		role: "Head of AI, Treasury HP",
+		role: "AI Head of Treasury, HP",
 	},
 ]
