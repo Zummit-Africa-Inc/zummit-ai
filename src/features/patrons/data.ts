@@ -44,4 +44,13 @@ export const patrons = [
 		name: "Ryan Wade",
 		role: "Sr Cloud Solution Architect (Data & AI), Microsoft",
 	},
+	{
+		about:
+			"Serving as Head of AI for HP's Global Treasury; delivering business value through AI and Analytics for cash optimization, cash forecasting, working capital optimization, reserves optimization etc. Over 18 years in AI industry, with 9 years in leadership positions. Successfully leading enterprise-wide AI projects for a decade at top firms like HP and IBM",
+		id: "6",
+		image: "/assets/biswas.webp",
+		linkedin: "https://www.linkedin.com/in/jyotishko-biswas-015b8540/",
+		name: "Jyotishko Biswas",
+		role: "Head of AI, Treasury HP",
+	},
 ]
