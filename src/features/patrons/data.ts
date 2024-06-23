@@ -46,11 +46,11 @@ export const patrons = [
 	},
 	{
 		about:
-			"Serving as Head of AI for HP's Global Treasury; delivering business value through AI and Analytics for cash optimization, cash forecasting, working capital optimization, reserves optimization etc. Over 18 years in AI industry, with 9 years in leadership positions. Successfully leading enterprise-wide AI projects for a decade at top firms like HP and IBM",
+			"AI leader who leads AI and Analytics initiatives for HP's Global Treasury department. Delivered 100+ AI projects in his 18 years of AI career. Leads AI mentorship programs mentoring professionals to build an AI career. Received of 2 National level AI awards and member of esteemed Forbes Technology Council.",
 		id: "6",
 		image: "/assets/biswas.webp",
 		linkedin: "https://www.linkedin.com/in/jyotishko-biswas-015b8540/",
 		name: "Jyotishko Biswas",
-		role: "AI Head of Treasury, HP",
+		role: "AI leader, HP Finance",
 	},
 ]
