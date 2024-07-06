@@ -12,6 +12,7 @@ import React from "react"
 
 import { queryClient } from "@lib/query-client"
 import { SSRProvider } from "@labs/components"
+import { ChatBot } from "@/components/shared"
 import analytics from "@lib/analytics"
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -30,6 +31,7 @@ export default function App({ Component, pageProps }: AppProps) {
 					<PostHogProvider client={posthog}>
 						<Component {...pageProps} />
 						<Toaster />
+						<ChatBot />
 					</PostHogProvider>
 				</QueryClientProvider>
 			</SSRProvider>
