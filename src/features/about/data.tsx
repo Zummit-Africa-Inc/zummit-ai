@@ -16,7 +16,7 @@ export const about = [
 				<h4>Expert Trainers</h4>
 				<p>
 					Our dedicated trainers bring years of industry experience to the classroom, ensuring
-					you receive the best education. <br />
+					you receive the best education.
 					<br />
 					Our training system is unlike the regular; we adopt the high-impact practices for
 					best results. We provide peer programming for our learners. Experts in the field of
