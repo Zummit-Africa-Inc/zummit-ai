@@ -1,5 +1,5 @@
 export * from "./appbar"
-export * from "./chat-bot"
+export * from "./chat-bot/chatbot"
 export * from "./footer"
 export * from "./pagination"
 export * from "./seo"
