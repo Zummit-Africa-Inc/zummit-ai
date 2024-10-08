@@ -33,7 +33,7 @@ export function forwardRefWrapper<T, P = {}>(
 	const defaultProps =
 		typeof defaultPropsOrRender === "function" ? {} : defaultPropsOrRender
 
-	const pristineComponent = forwardRef(render!)
+	const pristineComponent = forwardRef(render as ForwardRefRenderFunction<T, P>)
 	pristineComponent.displayName = name
 	pristineComponent.defaultProps = defaultProps
 	return pristineComponent
