@@ -15,26 +15,27 @@ import {
  * `displayName` are pure.
  */
 
+type DefaultProps<P> = Partial<PropsWithoutRef<P>>
+
 export function forwardRefWrapper<T, P = {}>(
 	name: string,
-	defaultPropsOrRender:
-		| Partial<PropsWithoutRef<P> & RefAttributes<T>>
-		| undefined
-		| ForwardRefRenderFunction<T, P>,
+	defaultPropsOrRender: DefaultProps<P> | ForwardRefRenderFunction<T, P> | undefined,
 	definitelyRender?: ForwardRefRenderFunction<T, P>
 ): ForwardRefExoticComponent<PropsWithoutRef<P> & RefAttributes<T>> {
-	/**
-	 * If `defaultPropsOrRender` is an object, then `definitelyRender` is the render function.
-	 */
-	const render =
-		typeof defaultPropsOrRender === "object" ? definitelyRender : defaultPropsOrRender
+	const render = isRenderFunction(defaultPropsOrRender)
+		? defaultPropsOrRender
+		: definitelyRender
+	const defaultProps = isRenderFunction(defaultPropsOrRender) ? {} : defaultPropsOrRender
 
-	/** If `defaultPropsOrRender` is a function, then there are no `defaultProps`. */
-	const defaultProps =
-		typeof defaultPropsOrRender === "function" ? {} : defaultPropsOrRender
+	const component = forwardRef(render as ForwardRefRenderFunction<T, P>)
+	component.displayName = name
+	component.defaultProps = defaultProps
 
-	const pristineComponent = forwardRef(render as ForwardRefRenderFunction<T, P>)
-	pristineComponent.displayName = name
-	pristineComponent.defaultProps = defaultProps
-	return pristineComponent
+	return component
+}
+
+function isRenderFunction<T, P>(
+	value: DefaultProps<P> | ForwardRefRenderFunction<T, P> | undefined
+): value is ForwardRefRenderFunction<T, P> {
+	return typeof value === "function"
 }
