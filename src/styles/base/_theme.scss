@@ -3,8 +3,8 @@
 
 :root {
 	/* Font Typeface */
-	--font-base: "Aeonik Pro";
-	--font-secondary: "Moderat";
+	--font-base: "DM Sans", sans-serif;
+	--font-secondary: "Inter", sans-serif;
 
 	/* Typography */
 	--font-h1: 68px;
@@ -40,6 +40,26 @@
 	--soft-orange: #f7bb88;
 	--soft-white: #fff6e7;
 	--soft-black: #0b0a0d;
+
+	--neutral-100: #ffffff;
+	--neutral-200: #f6f8fa;
+	--neutral-300: #e2e4e9;
+	--neutral-400: #cdd0d5;
+	--neutral-500: #868c98;
+	--neutral-600: #525866;
+	--neutral-700: #31353f;
+	--neutral-800: #161922;
+	--neutral-900: #0a0d14;
+	--error-100: #fdedf0;
+	--error-200: #f8c9d2;
+	--error-300: #df1c41;
+	--error-400: #af1d38;
+	--error-500: #710e21;
+	--warning-100: #fef7ec;
+	--warning-200: #fbdfb1;
+	--warning-300: #f2ae40;
+	--warning-400: #b47818;
+	--warning-500: #693d11;
 
 	/** Layout */
 	--os-labs-vh: 100vh;
@@ -223,6 +243,7 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 a {
 	color: inherit;
+	font-family: var(--font-base);
 	text-decoration: inherit;
 	outline-color: var(--primary-purple);
 }
@@ -234,6 +255,7 @@ Add the correct font weight in Edge and Safari.
 b,
 strong {
 	font-weight: bolder;
+	font-family: var(--font-base);
 }
 
 /*
@@ -329,6 +351,7 @@ Remove the inheritance of text transform in Edge and Firefox.
 button,
 select {
 	text-transform: none;
+	font-family: var(--font-base);
 }
 
 /*
