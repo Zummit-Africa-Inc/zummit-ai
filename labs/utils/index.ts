@@ -1,5 +1,4 @@
 export * from "./exceptions"
-export * from "./forwardRefWrapper"
 export * from "./hooks/useClickOutside"
 export * from "./hooks/useDebounce"
 export * from "./hooks/useDyanmicStyle"
