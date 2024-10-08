@@ -5,6 +5,7 @@
 	text-decoration: var(--text-decoration, unset);
 	text-align: var(--text-align, unset);
 	text-transform: var(--text-case, unset);
+	font-family: var(--font-base);
 
 	&.adapt {
 		font-size: inherit;

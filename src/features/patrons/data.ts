@@ -42,7 +42,7 @@ export const patrons = [
 		image: "/assets/ryan.webp",
 		linkedin: "https://www.linkedin.com/in/mrdatageek/",
 		name: "Ryan Wade",
-		role: "Sr Cloud Solution Architect (Data & AI), Microsoft",
+		role: "Sr Cloud Solution Architect, Microsoft",
 	},
 	{
 		about:
@@ -52,5 +52,14 @@ export const patrons = [
 		linkedin: "https://www.linkedin.com/in/jyotishko-biswas-015b8540/",
 		name: "Jyotishko Biswas",
 		role: "AI leader, HP Finance",
+	},
+	{
+		about:
+			"A leading voice in data science and machine learning, recognized as a LinkedIn Community Top Voice and among the Top 50 ML & Data Science Experts. Recognized by the United States, he is the Founder of DataGlobal Hub, where he drives AI education & advocacy, aiming to democratize AI knowledge and foster data-driven decision-making globally.",
+		id: "7",
+		image: "/assets/mojeed.webp",
+		linkedin: "https://www.linkedin.com/in/mojeed-abisiga/",
+		name: "Mojeed Abisiga",
+		role: "Founder, DataGlobal Hub",
 	},
 ]
