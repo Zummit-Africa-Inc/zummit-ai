@@ -21,21 +21,6 @@ export const navigation = [
 		],
 	},
 	{
-		label: "Links",
-		links: [
-			{ name: "FAQ", href: "faq", as: "link" },
-			{ name: "Support Zummit", href: "support-zummit-africa", as: "link" },
-			{ name: "LinkedIn", href: "https://www.linkedin.com/company/zummit-africa", as: "a" },
-			{
-				name: "Facebook",
-				href: "https://www.facebook.com/p/Zummit-Africa-Academy-100084351483458/",
-				as: "a",
-			},
-			{ name: "Twitter", href: "https://twitter.com/zummitafrica", as: "a" },
-			{ name: "Medium", href: "https://medium.com/@ZummitAfrica", as: "a" },
-		],
-	},
-	{
 		label: "Contact",
 		links: [
 			{ name: "Enquiries", href: "/enquiries", as: "link" },
@@ -46,7 +31,7 @@ export const navigation = [
 ]
 
 export const links = [
-	{ name: "Privacy Policy", href: "/privacy-policy" },
 	{ name: "Terms of Use", href: "/terms-of-use" },
-	{ name: "Cookie Policy", href: "/cookie-policy" },
+	{ name: "Privacy Policy", href: "/privacy-policy" },
+	{ name: "Cookies", href: "/cookie-policy" },
 ]
