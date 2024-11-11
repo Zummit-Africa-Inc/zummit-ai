@@ -42,9 +42,9 @@ export const Appbar = () => {
 
 	return (
 		<nav
-			className={`fixed left-0 top-0 !z-10 flex h-fit w-screen items-center justify-center px-4 py-7 transition-all duration-500 lg:h-[120px] lg:px-0 ${scrolled ? "bg-white/30 backdrop-blur backdrop-filter" : "bg-white shadow-md"}`}>
+			className={`fixed left-0 top-0 !z-10 flex h-fit w-screen items-center justify-center px-4 py-5 transition-all duration-500 lg:h-[120px] lg:px-0 ${scrolled ? "bg-white/30 backdrop-blur backdrop-filter" : "bg-white shadow-md"}`}>
 			<AnnouncementBanner />
-			<div className="container mx-auto flex items-center justify-between">
+			<div className="container mx-auto mt-5 flex items-center justify-between lg:mt-0">
 				<Link href="/" className="relative w-20 lg:w-[120px]">
 					<ZummitIcon />
 				</Link>
@@ -117,15 +117,28 @@ export const Appbar = () => {
 		</nav>
 	)
 }
+
 const AnnouncementBanner = () => {
+	const handlePageRoute = () => {
+		// onClick page route to instructor leg training page
+	}
 	return (
-		<div className="absolute left-0 top-0 z-10 inline-flex w-full cursor-pointer items-center justify-center gap-2 bg-neutral-800 py-2 text-sm text-white transition-colors duration-150 hover:bg-neutral-800/90">
-			<RiAlarmWarningFill size={16} className="animate-pulse" />
-			<span>
-				Announcement ! Registration for our instructor led training has commenced , click here
-				to register now
+		<div
+			className="absolute left-0 top-0 z-10 flex w-screen cursor-pointer items-center justify-between bg-neutral-800 py-1.5 text-sm text-white transition-colors duration-150 hover:bg-neutral-800/90 lg:justify-center lg:gap-4 lg:px-0"
+			onClick={handlePageRoute}>
+			<span className="animate-pulse px-2 lg:px-0">
+				<RiAlarmWarningFill size={16} />
 			</span>
-			<span className="rotate-45">
+
+			{/* Text Container: This will have a specific width and scroll horizontally */}
+			<div className="w-full overflow-hidden lg:w-fit">
+				<span className="animate-marquee block whitespace-nowrap lg:animate-none">
+					Announcement! Registration for our instructor-led training has commenced. Click here
+					to register now.
+				</span>
+			</div>
+
+			<span className="rotate-45 px-2 lg:px-0">
 				<RiRocket2Fill size={16} />
 			</span>
 		</div>
