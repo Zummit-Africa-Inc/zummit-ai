@@ -119,20 +119,17 @@ export const Appbar = () => {
 }
 
 const AnnouncementBanner = () => {
-	const handlePageRoute = () => {
-		// onClick page route to instructor leg training page
-	}
 	return (
-		<div
-			className="absolute left-0 top-0 z-10 flex w-screen cursor-pointer items-center justify-between bg-neutral-800 py-1.5 text-sm text-white transition-colors duration-150 hover:bg-neutral-800/90 lg:justify-center lg:gap-4 lg:px-0"
-			onClick={handlePageRoute}>
+		<Link
+			href="instructor-led-training"
+			className="absolute left-0 top-0 z-10 flex w-screen cursor-pointer items-center justify-between bg-neutral-800 py-1.5 text-sm text-white transition-colors duration-150 hover:bg-neutral-800/90 lg:justify-center lg:gap-4 lg:px-0">
 			<span className="animate-pulse px-2 lg:px-0">
 				<RiAlarmWarningFill size={16} />
 			</span>
 
 			{/* Text Container: This will have a specific width and scroll horizontally */}
 			<div className="w-full overflow-hidden lg:w-fit">
-				<span className="animate-marquee block whitespace-nowrap lg:animate-none">
+				<span className="block animate-marquee whitespace-nowrap lg:animate-none">
 					Announcement! Registration for our instructor-led training has commenced. Click here
 					to register now.
 				</span>
@@ -141,6 +138,6 @@ const AnnouncementBanner = () => {
 			<span className="rotate-45 px-2 lg:px-0">
 				<RiRocket2Fill size={16} />
 			</span>
-		</div>
+		</Link>
 	)
 }
