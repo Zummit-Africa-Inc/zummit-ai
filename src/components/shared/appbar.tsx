@@ -26,6 +26,7 @@ const services = [
 	{ name: "Consulting & Advisory Services", href: "/consulting-and-advisory" },
 	{ name: "Interships", href: "/internships" },
 	{ name: "Instructor-led Training", href: "/instructor-led-training" },
+	{ name: "Hackathon", href: "/hackathon" },
 ]
 
 export const Appbar = () => {
