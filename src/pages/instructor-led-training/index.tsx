@@ -1,6 +1,6 @@
 import React from "react"
 
-import { InstructorLed } from "@/features/instructor-led-taining"
+import { InstructorLed } from "@/features/instructor-led-training"
 
 const Page = () => {
 	return <InstructorLed />

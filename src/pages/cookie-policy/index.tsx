@@ -1,7 +1,9 @@
 import React from "react"
 
+import { Cookie } from "@/features/cookie-policy"
+
 const Page = () => {
-	return <div>Page</div>
+	return <Cookie />
 }
 
 export default Page

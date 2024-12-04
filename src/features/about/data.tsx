@@ -3,7 +3,7 @@ export const about = [
 		title: "Our Impact",
 		content: (
 			<p>
-				We&apos;ve already impacted the lives of over <b>2000</b> individuals. We&apos;re not
+				We&apos;ve already impacted the lives of over <b>3000</b> individuals. We&apos;re not
 				just training; we&apos;re transforming lives. Our impressive <b>50%</b> employment
 				rate of our past students showcases the effectiveness of our programs.
 			</p>

@@ -6,6 +6,7 @@ import React from "react"
 import { Appbar, Footer, Seo } from "@/components/shared"
 import { Button } from "@/components/ui/button"
 import { gen_ai_strategies } from "./data"
+import Link from "next/link"
 
 export const Consulting = () => {
 	const [email, setEmail] = React.useState("")
@@ -44,15 +45,25 @@ export const Consulting = () => {
 										implementation, we&apos;re here to guide you every step of the way
 									</p>
 								</div>
-								<Button className="w-fit" size="lg">
-									Start Learning
-									<RiArrowRightLine />
-								</Button>
+								<Link href="/contact">
+									<Button className="w-fit" size="lg">
+										Contact Us
+										<RiArrowRightLine />
+									</Button>
+								</Link>
 							</div>
-							<div className="relative aspect-[1.6/1] w-full flex-1 rounded-[18px] border"></div>
+							<div className="relative aspect-[1.6/1] w-full flex-1 rounded-[18px] ">
+								<Image
+									src="/assets/images/consulting.svg"
+									alt="hero"
+									fill
+									sizes="(max-width: 1024px)100%"
+									className="object-contain"
+								/>
+							</div>
 						</div>
 						<div className="container mx-auto flex items-center justify-center pt-[50px] lg:py-0">
-							<div className="w-full rounded-[18px] bg-white px-5 py-4 shadow-lg lg:px-[37px] lg:py-8">
+							<div className="z-10 w-full rounded-[18px] bg-white px-5 py-4 shadow-lg lg:px-[37px] lg:py-8">
 								<p className="text-center text-sm lg:text-base">
 									Generative AI (GenAI) is suddenly on everyone&apos;s radar, but some
 									organizations already have extensive experience and success in deploying AI
