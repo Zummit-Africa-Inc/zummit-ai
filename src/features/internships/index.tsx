@@ -1,10 +1,22 @@
 import { RiArrowRightLine } from "@remixicon/react"
+import { toast } from "sonner"
 import React from "react"
 
 import { Appbar, Footer, Seo } from "@/components/shared"
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
+import Link from "next/link"
 
 export const Internships = () => {
+	const [email, setEmail] = React.useState("")
+
+	const handleSubmit = async (e: React.FormEvent) => {
+		e.preventDefault()
+		if (!email) {
+			toast.error("Please enter your email address")
+			return
+		}
+	}
 	return (
 		<>
 			<Seo title="internships" />
@@ -30,13 +42,46 @@ export const Internships = () => {
 										internships provide the hands-on experience you need to stand out.
 									</p>
 								</div>
-								<Button className="w-fit" size="lg">
-									Apply for an internship
-									<RiArrowRightLine />
-								</Button>
+								<Link href="/contact">
+									<Button className="w-fit" size="lg">
+										Apply for an internship
+										<RiArrowRightLine />
+									</Button>
+								</Link>
 							</div>
-							<div className="relative aspect-[1.6/1] w-full flex-1 rounded-[18px] border"></div>
+							<div className="relative aspect-[1.6/1] w-full flex-1 rounded-[18px]">
+								<Image
+									src="/assets/images/internship.svg"
+									alt="hero"
+									fill
+									sizes="(max-width: 1024px)100%"
+									className="object-contain"
+								/>
+							</div>
 						</div>
+					</div>
+				</section>
+				<section className="w-full bg-neutral-900 p-6 lg:py-[56px]">
+					<div className="container mx-auto flex flex-col items-center gap-5 rounded-[18px] bg-white py-[22px] lg:gap-[50px] lg:py-[50px]">
+						<div className="flex flex-col items-center gap-3 text-center">
+							<p className="text-xl font-medium lg:text-4xl">
+								Stay Ahead with the Latest in EdTech
+							</p>
+							<p className="text-sm lg:w-[700px] lg:text-lg">
+								Get the latest in Artificial Intelligence, Machine Learning and Data Science
+								trends and tips delivered monthly; straight to your inbox.
+							</p>
+						</div>
+						<form onSubmit={handleSubmit} className="flex flex-col gap-8 lg:flex-row">
+							<input
+								type="email"
+								value={email}
+								onChange={(e) => setEmail(e.target.value)}
+								placeholder="Enter your email address"
+								className="w-full rounded-md border border-neutral-300 px-4 py-2 outline-none transition-all duration-500 focus:border-neutral-900 lg:w-[482px]"
+							/>
+							<Button size="lg">Subscribe</Button>
+						</form>
 					</div>
 				</section>
 			</main>

@@ -27,7 +27,7 @@ const config = {
 				marquee: "marquee 10s linear infinite",
 			},
 			backgroundImage: {
-				lines: "url('/assets/images/lines.svg')",
+				lines: "url('/homeBg.svg')",
 			},
 			colors: {
 				"primary-purple": "#460d38",

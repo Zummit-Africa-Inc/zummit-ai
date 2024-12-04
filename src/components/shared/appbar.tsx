@@ -26,7 +26,6 @@ const services = [
 	{ name: "Consulting & Advisory Services", href: "/consulting-and-advisory" },
 	{ name: "Interships", href: "/internships" },
 	{ name: "Instructor-led Training", href: "/instructor-led-training" },
-	{ name: "Hackathon", href: "/hackathon" },
 ]
 
 export const Appbar = () => {
@@ -104,7 +103,7 @@ export const Appbar = () => {
 					})}
 				</div>
 				<div className="flex items-center gap-3">
-					<Link href="/apply-to-zummit-africa">
+					<Link href="/instructor-led-training">
 						<Button>Get Started</Button>
 					</Link>
 					<Sheet open={isSheetOpen} onOpenChange={setIsSheetopen}>

@@ -26,7 +26,7 @@ export const Home = () => {
 							At Zummit Africa, we provide cutting-edge education, innovative solutions, and
 							hands-on experience in AI, data science, and machine learning.
 						</p>
-						<Link href="/programs" className="mt-[89px]">
+						<Link href="/instructor-led-training" className="mt-[89px]">
 							<Button size="lg">Explore Our Programs</Button>
 						</Link>
 					</div>
@@ -92,16 +92,25 @@ export const Home = () => {
 					<p className="text-lg font-semibold lg:text-[38px]">
 						Some Milestones of Zummit Africa
 					</p>
-					<div className="grid w-full grid-cols-2 gap-4 lg:grid-cols-4 lg:gap-14">
+					<div className="grid w-full grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 lg:gap-14">
 						{counts.map((item, index) => (
 							<div
 								key={index}
 								style={{ background: item.color }}
-								className="flex w-full items-center gap-3 rounded-2xl border border-neutral-900 p-[18px]">
-								<div className="size-7 lg:size-12"></div>
+								className="flex w-full items-center justify-start   gap-4  rounded-2xl border border-neutral-900 p-[8px]">
+								{item.icon && (
+									<div className="flex size-7 items-center justify-center rounded-2xl  border bg-black lg:size-12">
+										<Image src={item.icon} alt="" width={0} height={0} className=" w-[40px] p-1" />
+									</div>
+								)}
+								{item.icon2 && (
+									<div className="flex size-7 items-center justify-center  rounded-2xl   lg:size-14">
+										<Image src={item.icon2} alt="" width={0} height={0} className=" w-[40px]" />
+									</div>
+								)}
 								<div className="flex flex-col">
 									<p className="text-[10px] text-neutral-500 lg:text-sm">{item.label}</p>
-									<p className="text-xl font-bold lg:text-2xl">
+									<p className="text-xl font-bold lg:text-xl">
 										{item.value}
 										{item.metric}
 									</p>
@@ -110,14 +119,7 @@ export const Home = () => {
 						))}
 					</div>
 				</section>
-				<section className="lg;gap-[72px] container mx-auto flex flex-col items-center py-10 lg:gap-[71px] lg:py-[53px]">
-					<div className="flex flex-col items-center gap-2">
-						<p className="font-semibold lg:text-2xl">TESTIMONIALS</p>
-						<p className="text-sm text-neutral-400 lg:text-sm">
-							What people are saying about Zummit Africa
-						</p>
-					</div>
-				</section>
+
 				<section className="w-full bg-neutral-900 p-6 lg:py-[56px]">
 					<div className="container mx-auto flex flex-col items-center gap-5 rounded-[18px] bg-white py-[22px] lg:gap-[50px] lg:py-[50px]">
 						<div className="flex flex-col items-center gap-3 text-center">
@@ -127,7 +129,7 @@ export const Home = () => {
 								training program.
 							</p>
 						</div>
-						<Link href="/programs">
+						<Link href="/instructor-led-training">
 							<Button size="lg">Join us</Button>
 						</Link>
 					</div>

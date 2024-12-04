@@ -12,34 +12,36 @@ export const SelfPaced = () => {
 			<Seo title="Self-paced Learning" />
 			<Appbar />
 			<main className="w-full px-4 lg:px-0">
-				<section className="container mx-auto grid w-full place-items-center lg:py-40">
-					<div className="flex h-full w-full flex-col items-center justify-center lg:gap-[45px]">
+				<section className="container mx-auto grid w-full place-items-center px-4 py-16 pt-28 lg:px-0 lg:py-40">
+					<div className="image-bg flex h-full w-full flex-col items-center justify-center lg:gap-[45px]">
 						<h1 className="w-full text-center text-3xl font-bold leading-[44px] lg:w-[908px] lg:text-[56px] lg:leading-[82px]">
 							Learn at Your Own Pace with{" "}
 							<span className="font-bold text-primary-purple">Datarango</span>
 						</h1>
-						<div className="flex w-full items-center justify-between lg:gap-[57px]">
-							<div className="flex flex-1 flex-col lg:gap-[58px]">
-								<div className="flex w-full flex-col lg:gap-9">
-									<p className="">
+						<div className="flex w-full flex-col-reverse items-center gap-6 lg:flex-row lg:gap-[58px]">
+							<div className="flex flex-1 flex-col items-center gap-5 lg:items-start lg:gap-[58px]">
+								<div className="flex w-full flex-col gap-3 text-center lg:gap-9 lg:text-left">
+									<p className="text-sm lg:text-base">
 										DataRango is our innovative app designed to teach AI, data science, and machine
 										learning through interactive, self-paced courses. Solve real-world problems,
 										test your knowledge with trivia questions, and climb the ranks in a gamified
 										learning environment.
 									</p>
-									<p className="">
+									<p className="text-sm lg:text-base">
 										Whether you&apos;re a beginner or an experienced professional, DataRango offers
 										a personalized learning journey to help you master the skills that matter in
 										today&apos;s tech landscape.
 									</p>
 								</div>
-								<Button className="w-fit" size="lg">
-									Start Learning <RiArrowRightLine />
-								</Button>
+								<Link href="https://datarango.com">
+									<Button className="z-10 w-fit" size="lg">
+										Start Learning <RiArrowRightLine />
+									</Button>
+								</Link>
 							</div>
 							<div className="relative flex aspect-[1.4/1] w-full flex-1 flex-col">
 								<Image
-									src="/assets/images/self-paced.png"
+									src="/assets/images/self-paced.svg"
 									alt="hero"
 									fill
 									sizes="(max-width: 1024px)100%"
@@ -57,7 +59,7 @@ export const SelfPaced = () => {
 								Science
 							</p>
 						</div>
-						<Link href="/programs">
+						<Link href="/contact">
 							<Button size="lg">Join us</Button>
 						</Link>
 					</div>
