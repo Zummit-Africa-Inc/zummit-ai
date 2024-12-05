@@ -13,6 +13,7 @@ import { queryClient } from "@lib/query-client"
 import { SSRProvider } from "@labs/components"
 import { ChatBot } from "@/components/shared"
 import analytics from "@lib/analytics"
+import { AuthContextProvider } from "@/context/AuthContext"
 
 export default function App({ Component, pageProps }: AppProps) {
 	const router = useRouter()
@@ -24,14 +25,16 @@ export default function App({ Component, pageProps }: AppProps) {
 	}, [router.events])
 
 	return (
-		<SSRProvider>
-			<QueryClientProvider client={queryClient}>
-				<PostHogProvider client={posthog}>
-					<Component {...pageProps} />
-					<Toaster />
-					<ChatBot />
-				</PostHogProvider>
-			</QueryClientProvider>
-		</SSRProvider>
+		<AuthContextProvider>
+			<SSRProvider>
+				<QueryClientProvider client={queryClient}>
+					<PostHogProvider client={posthog}>
+						<Component {...pageProps} />
+						<Toaster />
+						<ChatBot />
+					</PostHogProvider>
+				</QueryClientProvider>
+			</SSRProvider>
+		</AuthContextProvider>
 	)
 }
