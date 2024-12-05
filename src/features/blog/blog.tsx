@@ -1,8 +1,8 @@
 import { RiSearchLine } from "@remixicon/react"
-import Link from "next/link"
 import React from "react"
 
 import { Appbar, Footer, Pagination, Seo } from "@/components/shared"
+import ReadMore from "./readmorebutton"
 
 const LIMIT = 4
 const filters = [
@@ -69,7 +69,7 @@ export const Blog = () => {
 							<p className="font-medium lg:text-xl">Featured this week</p>
 							<div className="grid w-full grid-cols-3 gap-12">
 								{[...Array(3)].map((_, index) => (
-									<div key={index} className="flex w-full flex-col gap-5">
+									<div key={index + 1} className="flex w-full flex-col gap-5">
 										<div className="relative aspect-[1.6/1] w-full rounded-2xl border"></div>
 										<div className="flex w-full flex-col gap-5">
 											<div className="flex w-full flex-col">
@@ -83,9 +83,7 @@ export const Blog = () => {
 												autem dolorum, ut in ipsum illum inventore. Animi, doloremque? Officia
 												veritatis dicta est tempora ratione provident, reprehenderit maxime ut!
 											</p>
-											<Link href="" className="link text-sm font-semibold lg:text-base">
-												Read More
-											</Link>
+											<ReadMore id={index + 1} />
 										</div>
 									</div>
 								))}
