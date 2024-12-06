@@ -174,7 +174,7 @@ export const InstructorLed = () => {
 										<div
 											key={testimonial.id}
 											className="w-full flex-none overflow-scroll px-2 sm:px-4 md:w-1/2 lg:w-1/4">
-											<div className="h-fit rounded-2xl bg-[#301030] p-6">
+											<div className="h-[590px] overflow-y-scroll rounded-2xl bg-[#301030] p-6">
 												<Image
 													src={testimonial.image}
 													layout="responsive"
@@ -255,9 +255,20 @@ export const InstructorLed = () => {
 													NO HIDDEN FEES
 												</div>
 											</div>
-											<button className=" mt-12 gap-2.5 rounded-xl bg-[#460D38]  px-8 py-3  text-lg font-semibold uppercase text-white sm:px-10 sm:py-5">
-												{plan.ctaText}
-											</button>
+											{plan.price === "₦60,000" ? (
+												<Link href="/registration-one-time">
+													<button className=" mt-12 gap-2.5 rounded-xl bg-[#460D38]  px-8 py-3  text-lg font-semibold uppercase text-white sm:px-10 sm:py-5">
+														{plan.ctaText}
+													</button>
+												</Link>
+											) : (
+												<Link href="/login">
+													<button className=" mt-12 gap-2.5 rounded-xl bg-[#460D38]  px-8 py-3  text-lg font-semibold uppercase text-white sm:px-10 sm:py-5">
+														{plan.ctaText}
+													</button>
+												</Link>
+											)}
+
 											{plan.isPopular && (
 												<span className="mt-1.5 text-center text-base font-medium italic leading-loose tracking-normal text-pink-950">
 													Classes start January 2025
