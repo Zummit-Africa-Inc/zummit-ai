@@ -4,7 +4,7 @@ import { Appbar, Footer, Seo } from "@/components/shared"
 
 import axios from "axios"
 import { toast } from "sonner"
-import LinkDialog from "../instructor-led-training/generateLinkDialog"
+import Link from "next/link"
 
 interface FormData {
 	email: string
@@ -78,7 +78,7 @@ export const Login = () => {
 			<main>
 				<div className="mx-auto mb-20 mt-40 max-w-xl p-6">
 					<h1 className="mb-8 text-center text-3xl font-normal">
-						Complete this form to proceed to your first month payment
+						Login in to access the training or proceed to payment
 					</h1>
 
 					<form onSubmit={handleSubmit} className="space-y-6">
@@ -122,11 +122,9 @@ export const Login = () => {
 						</button>
 					</form>
 
-					<a
-						href="/registration-three-time"
-						className="mt-2 flex cursor-pointer justify-center underline">
+					<Link href="/signup" className="mt-2 flex cursor-pointer justify-center underline">
 						<p>Register here if you don{"'"}t have an account</p>
-					</a>
+					</Link>
 				</div>
 			</main>
 			<Footer />
