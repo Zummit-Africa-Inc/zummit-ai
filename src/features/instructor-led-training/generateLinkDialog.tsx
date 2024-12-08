@@ -1,14 +1,14 @@
+import Link from "next/link"
 import React from "react"
+
+import { Button } from "@/components/ui/button"
 import {
 	Dialog,
 	DialogContent,
 	DialogDescription,
 	DialogHeader,
 	DialogTitle,
-	DialogTrigger,
 } from "@/components/ui/dialog"
-import { Button } from "@/components/ui/button"
-import Link from "next/link"
 
 type PlanProps = {
 	title: string

@@ -1,17 +1,16 @@
-import React, { useContext, useRef, useState } from "react"
-import Link from "next/link"
-import Image from "next/image"
-
-import { Appbar, Footer, Seo } from "@/components/shared"
-import { Button } from "@/components/ui/button"
-import { faqItems, testimonials, pricingPlans, valueProps, courseModules } from "./data"
-
-import Accordion from "@mui/material/Accordion"
-import AccordionSummary from "@mui/material/AccordionSummary"
-import AccordionDetails from "@mui/material/AccordionDetails"
 import { RiArrowDownSLine } from "@remixicon/react"
 import { useRouter } from "next/router"
-import { AuthContext } from "@/context/AuthContext"
+import Image from "next/image"
+import Link from "next/link"
+import React from "react"
+
+import { faqItems, testimonials, pricingPlans, valueProps, courseModules } from "./data"
+import AccordionSummary from "@mui/material/AccordionSummary"
+import AccordionDetails from "@mui/material/AccordionDetails"
+import { Appbar, Footer, Seo } from "@/components/shared"
+import { useAuthContext } from "@/context/AuthContext"
+import { Button } from "@/components/ui/button"
+import Accordion from "@mui/material/Accordion"
 
 interface Plan {
 	title: string
@@ -25,10 +24,10 @@ export const InstructorLedContent = ({
 	setShowModal: React.Dispatch<React.SetStateAction<boolean>>
 	setPlanDetails: React.Dispatch<React.SetStateAction<Plan>>
 }) => {
-	const [currentIndex, setCurrentIndex] = useState(0)
-	const containerRef = useRef<HTMLDivElement | null>(null)
+	const containerRef = React.useRef<HTMLDivElement | null>(null)
+	const [currentIndex, _setCurrentIndex] = React.useState(0)
+	const { user } = useAuthContext()
 	const router = useRouter()
-	const { user } = useContext(AuthContext)
 
 	const handleRoute = (plan: Plan) => {
 		// FOR NOW ON CLICK SHOULD JUST TOGGLE THE MODAL
