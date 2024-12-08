@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react"
+import React, { useContext, useRef, useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 
@@ -11,6 +11,7 @@ import AccordionSummary from "@mui/material/AccordionSummary"
 import AccordionDetails from "@mui/material/AccordionDetails"
 import { RiArrowDownSLine } from "@remixicon/react"
 import { useRouter } from "next/router"
+import { AuthContext } from "@/context/AuthContext"
 
 interface Plan {
 	title: string
@@ -27,6 +28,7 @@ export const InstructorLedContent = ({
 	const [currentIndex, setCurrentIndex] = useState(0)
 	const containerRef = useRef<HTMLDivElement | null>(null)
 	const router = useRouter()
+	const { user } = useContext(AuthContext)
 
 	const handleRoute = (plan: Plan) => {
 		// FOR NOW ON CLICK SHOULD JUST TOGGLE THE MODAL
