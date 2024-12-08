@@ -12,43 +12,38 @@ import AccordionDetails from "@mui/material/AccordionDetails"
 import { RiArrowDownSLine } from "@remixicon/react"
 import { useRouter } from "next/router"
 
-type PlanProps = {
-	planId: number
-	planName: string
-	planPrice: string
+interface Plan {
+	title: string
+	price: string
 }
 
 export const InstructorLedContent = ({
-	showModal,
 	setShowModal,
-	planDetails,
+	setPlanDetails,
 }: {
-	showModal: boolean
 	setShowModal: React.Dispatch<React.SetStateAction<boolean>>
-	planDetails: PlanProps[]
+	setPlanDetails: React.Dispatch<React.SetStateAction<Plan>>
 }) => {
 	const [currentIndex, setCurrentIndex] = useState(0)
 	const containerRef = useRef<HTMLDivElement | null>(null)
 	const router = useRouter()
 
-	const handleRoute = (title: string) => {
-		const activePlanDetail = planDetails.find((planDetail) => planDetail.planName === title)
-
-		setShowModal(true)
-
+	const handleRoute = (plan: Plan) => {
 		// FOR NOW ON CLICK SHOULD JUST TOGGLE THE MODAL
 
-		// if (!user) {
-		// 	router.push("/login")
-		// } else {
-		// 	setShowModal(true)
-		// }
+		if (!user) {
+			router.push("/login")
+		} else {
+			setPlanDetails(plan)
+			setShowModal(true)
+		}
 	}
 
 	return (
 		<>
 			<Seo title="Instructor-Led Training" />
 			<Appbar />
+
 			<main className="w-full ">
 				<div className="flex flex-col items-center overflow-hidden bg-slate-50 pl-2 pr-2 sm:p-0">
 					<section className=" bg-white pt-24">
@@ -288,7 +283,7 @@ export const InstructorLedContent = ({
 
 											<button
 												className=" mt-12 gap-2.5 rounded-xl bg-[#460D38]  px-8 py-3  text-lg font-semibold uppercase text-white sm:px-10 sm:py-5"
-												onClick={() => handleRoute(plan.title)}>
+												onClick={() => handleRoute({ title: plan.title, price: plan.price })}>
 												{plan.ctaText}
 											</button>
 

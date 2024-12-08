@@ -4,6 +4,7 @@ import { Appbar, Footer, Seo } from "@/components/shared"
 
 import axios from "axios"
 import { toast } from "sonner"
+import LinkDialog from "../instructor-led-training/generateLinkDialog"
 
 interface FormData {
 	email: string
