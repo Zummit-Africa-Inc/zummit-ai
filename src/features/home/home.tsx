@@ -15,6 +15,7 @@ export const Home = () => {
 				description="Discover the power of Zummit - your gateway to a transformative learning experience."
 			/>
 			<Appbar />
+
 			<main className="w-screen">
 				<div className="grid h-screen w-full bg-lines bg-center bg-no-repeat">
 					<div className="container mx-auto flex h-full flex-col items-center justify-center gap-3 text-center">
