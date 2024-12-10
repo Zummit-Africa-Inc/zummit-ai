@@ -26,11 +26,7 @@ export const SSRProvider: React.FC<PropsWithChildren & {}> = (props) => {
 	 */
 	const ctx = { ...defaultSSRContext }
 
-	return (
-		<SSRContext.Provider value={ctx}>
-			{children}
-		</SSRContext.Provider>
-	)
+	return <SSRContext.Provider value={ctx}>{children}</SSRContext.Provider>
 }
 
 export function useSSR() {
