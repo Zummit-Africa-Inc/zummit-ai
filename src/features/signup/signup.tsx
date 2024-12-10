@@ -1,11 +1,11 @@
-import { useState, ChangeEvent, FormEvent, useContext } from "react"
+import { useRouter } from "next/router"
+import { toast } from "sonner"
+import Link from "next/link"
+import React from "react"
 
 import { Appbar, Footer, Seo } from "@/components/shared"
-
+import { useAuthContext } from "@/context/AuthContext"
 import { countries } from "./data"
-import { toast } from "sonner"
-import { useRouter } from "next/router"
-import { AuthContext } from "@/context/AuthContext"
 
 interface FormData {
 	full_name: string
@@ -17,11 +17,11 @@ interface FormData {
 }
 
 export const Signup: React.FC = () => {
-	const [loading, setLoading] = useState(false)
+	const [loading, setLoading] = React.useState(false)
+	const { createUser } = useAuthContext()
 	const router = useRouter()
-	const { createUser } = useContext(AuthContext)
 
-	const [formData, setFormData] = useState<FormData>({
+	const [formData, setFormData] = React.useState<FormData>({
 		full_name: "",
 		email: "",
 		password: "",
@@ -30,7 +30,9 @@ export const Signup: React.FC = () => {
 		country: "",
 	})
 
-	const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>): void => {
+	const handleChange = (
+		e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+	): void => {
 		const { name, value } = e.target
 		setFormData((prevState) => ({
 			...prevState,
@@ -196,9 +198,9 @@ export const Signup: React.FC = () => {
 						</button>
 					</form>
 
-					<a href="/login" className="mt-2 flex cursor-pointer justify-center underline">
+					<Link href="/login" className="mt-2 flex cursor-pointer justify-center underline">
 						<p>Login here if you already registered</p>
-					</a>
+					</Link>
 				</div>
 			</main>
 			<Footer />

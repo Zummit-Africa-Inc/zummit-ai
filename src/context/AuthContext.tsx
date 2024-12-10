@@ -17,8 +17,15 @@ interface AuthContextProps {
 	generatePaymentLink: (data: any) => Promise<any>
 }
 
+const defaultContext: AuthContextProps = {
+	user: null,
+	setUser: () => {},
+	createUser: async () => {},
+	loginUser: async () => {},
+}
+
 // Create the AuthContext
-export const AuthContext = createContext<AuthContextProps | null>(null)
+export const AuthContext = createContext<AuthContextProps>(defaultContext)
 
 // AuthContextProvider component
 export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
@@ -112,4 +119,12 @@ export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
 			{children}
 		</AuthContext.Provider>
 	)
+}
+
+export const useAuthContext = () => {
+	const ctx = React.useContext(AuthContext)
+	if (!ctx) {
+		throw new Error("useAuthContext must be used within an AuthContextProvider")
+	}
+	return ctx
 }

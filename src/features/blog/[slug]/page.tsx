@@ -11,10 +11,11 @@ import Image from "next/image"
 // 	}))
 // }
 
-export const BlogPost = ({ params }: any) => {
+export const BlogPost = () => {
 	return (
 		<>
 			<Seo title={``} />
+			<Appbar />
 			<main className="w-full">
 				<header className="container w-full max-w-[1200px]">
 					<Image

@@ -1,5 +1,5 @@
-import React, { useContext, useState } from "react"
-import { AuthContext } from "@/context/AuthContext"
+import React from "react"
+
 import { InstructorLedContent } from "./instructor-led-content"
 import LinkDialog from "./generateLinkDialog"
 
@@ -9,10 +9,8 @@ type PlanProps = {
 }
 
 export default function InstructorLed() {
-	// const {  } = useContext(AuthContext)
-
-	const [showModal, setShowModal] = useState(false)
-	const [planDetails, setPlanDetails] = useState<PlanProps>({ title: "", price: "" })
+	const [planDetails, setPlanDetails] = React.useState<PlanProps>({ title: "", price: "" })
+	const [showModal, setShowModal] = React.useState(false)
 
 	return (
 		<div>

@@ -1,17 +1,16 @@
-import React, { useContext, useRef, useState } from "react"
-import Link from "next/link"
+import { RiArrowDownSLine, RiArrowRightLine } from "@remixicon/react"
+import { useRouter } from "next/router"
 import Image from "next/image"
+import Link from "next/link"
+import React from "react"
 
-import { Appbar, Footer, Seo } from "@/components/shared"
-import { Button } from "@/components/ui/button"
 import { faqItems, testimonials, pricingPlans, valueProps, courseModules } from "./data"
-
-import Accordion from "@mui/material/Accordion"
 import AccordionSummary from "@mui/material/AccordionSummary"
 import AccordionDetails from "@mui/material/AccordionDetails"
-import { RiArrowDownSLine } from "@remixicon/react"
-import { useRouter } from "next/router"
-import { AuthContext } from "@/context/AuthContext"
+import { Appbar, Footer, Seo } from "@/components/shared"
+import { useAuthContext } from "@/context/AuthContext"
+import { Button } from "@/components/ui/button"
+import Accordion from "@mui/material/Accordion"
 
 interface Plan {
 	title: string
@@ -25,10 +24,10 @@ export const InstructorLedContent = ({
 	setShowModal: React.Dispatch<React.SetStateAction<boolean>>
 	setPlanDetails: React.Dispatch<React.SetStateAction<Plan>>
 }) => {
-	const [currentIndex, setCurrentIndex] = useState(0)
-	const containerRef = useRef<HTMLDivElement | null>(null)
+	const containerRef = React.useRef<HTMLDivElement | null>(null)
+	const [currentIndex, _setCurrentIndex] = React.useState(0)
+	const { user } = useAuthContext()
 	const router = useRouter()
-	const { user } = useContext(AuthContext)
 
 	const handleRoute = (plan: Plan) => {
 		// FOR NOW ON CLICK SHOULD JUST TOGGLE THE MODAL
@@ -190,7 +189,7 @@ export const InstructorLedContent = ({
 								</p>
 							</div>
 						</div>
-						<section className="mx-auto w-screen px-4 sm:max-w-7xl ">
+						<section className="mx-auto flex w-screen items-center justify-center px-4 sm:max-w-7xl ">
 							<div className="relative overflow-x-scroll">
 								{/* Carousel Container */}
 								<div
@@ -221,6 +220,9 @@ export const InstructorLedContent = ({
 										</div>
 									))}
 								</div>
+							</div>
+							<div>
+								<RiArrowRightLine className="z-50 hidden size-9 text-[#301030] sm:block" />
 							</div>
 						</section>
 						<Link href="#payment" className="self-center">
