@@ -22,6 +22,7 @@ const defaultContext: AuthContextProps = {
 	setUser: () => {},
 	createUser: async () => {},
 	loginUser: async () => {},
+	generatePaymentLink: async () => {},
 }
 
 // Create the AuthContext
