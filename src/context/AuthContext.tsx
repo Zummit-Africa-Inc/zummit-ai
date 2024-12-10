@@ -14,6 +14,7 @@ interface AuthContextProps {
 	setUser: React.Dispatch<React.SetStateAction<User | null>>
 	createUser: (formData: any) => Promise<any>
 	loginUser: (formData: any) => Promise<any>
+	generatePaymentLink: (data: any) => Promise<any>
 }
 
 // Create the AuthContext
@@ -25,12 +26,17 @@ export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
 	const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
 
 	// Login User
+
+	const getUserToken = () => {
+		const user: any = localStorage.getItem("user") // Retrieve string from localStorage
+		const parsedUser = JSON.parse(user)
+		return parsedUser.access_token
+	}
+
 	const loginUser = async (formData: any): Promise<any> => {
 		if (!baseUrl) throw new Error("Base URL is not defined.")
 		try {
-			const results = await axios.post(`${baseUrl}/user/login`, formData, {
-				headers: { "Content-Type": "application/json" },
-			})
+			const results = await axios.get(`${baseUrl}/user/login`, formData)
 			const { id, full_name, email } = results.data.data
 			const userData = { id, full_name, email }
 			localStorage.setItem("user", JSON.stringify(userData))
@@ -49,10 +55,41 @@ export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
 			const results = await axios.post(`${baseUrl}/user/signup`, formData, {
 				headers: { "Content-Type": "application/json" },
 			})
-			const { id, full_name, email } = results.data.data
-			const userData = { id, full_name, email }
+			const { id, full_name, email, access_token } = results.data.data
+			const userData = { id, full_name, email, access_token }
 			localStorage.setItem("user", JSON.stringify(userData))
 			setUser(results.data.data)
+			return results.data
+		} catch (error: any) {
+			console.error("Signup error:", error.message)
+			throw error // Rethrow the error for the caller to handle
+		}
+	}
+
+	//generate payment link
+
+	const generatePaymentLink = async ({
+		title,
+		convertedPrice,
+	}: {
+		title: string
+		convertedPrice: number
+	}) => {
+		const data = {
+			amount: convertedPrice,
+			narration: `Deduction for ${title} from zummit africa training`,
+			narration_id: user?.id,
+		}
+
+		const token = getUserToken()
+		try {
+			const results = await axios.post(`${baseUrl}/transaction/gen-payment-link`, data, {
+				method: "POST",
+				headers: {
+					Authorization: `Bearer ${token}`, // Include the Bearer token in the headers
+					"Content-Type": "application/json",
+				},
+			})
 			return results.data
 		} catch (error: any) {
 			console.error("Signup error:", error.message)
@@ -70,7 +107,8 @@ export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
 
 	// Provide the context
 	return (
-		<AuthContext.Provider value={{ user, setUser, createUser, loginUser }}>
+		<AuthContext.Provider
+			value={{ user, setUser, createUser, loginUser, generatePaymentLink }}>
 			{children}
 		</AuthContext.Provider>
 	)

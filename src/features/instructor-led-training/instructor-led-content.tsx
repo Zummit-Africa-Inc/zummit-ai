@@ -34,7 +34,7 @@ export const InstructorLedContent = ({
 		// FOR NOW ON CLICK SHOULD JUST TOGGLE THE MODAL
 
 		if (!user) {
-			router.push("/login")
+			router.push("/signup")
 		} else {
 			setPlanDetails(plan)
 			setShowModal(true)
