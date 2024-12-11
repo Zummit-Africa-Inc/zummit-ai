@@ -1,7 +1,4 @@
-import Link from "next/link"
-import React from "react"
-
-import { Button } from "@/components/ui/button"
+import React, { useContext, useState } from "react"
 import {
 	Dialog,
 	DialogContent,
@@ -9,6 +6,10 @@ import {
 	DialogHeader,
 	DialogTitle,
 } from "@/components/ui/dialog"
+import { Button } from "@/components/ui/button"
+import { AuthContext } from "@/context/AuthContext"
+import { toast } from "sonner"
+import { useRouter } from "next/router"
 
 type PlanProps = {
 	title: string
@@ -24,6 +25,32 @@ const LinkDialog = ({
 	setShowModal: React.Dispatch<React.SetStateAction<boolean>>
 	planDetails: PlanProps
 }) => {
+	const [loading, setLoading] = useState(false)
+	const { generatePaymentLink } = useContext(AuthContext)
+	const router = useRouter()
+
+	const handleClick = async () => {
+		const { title, price } = planDetails
+		const convertedPrice = Number(price.replace(/[^\d.-]/g, "")) // Remove non-numeric characters
+		try {
+			setLoading(true)
+			const result = await generatePaymentLink({ title, convertedPrice })
+			if (result?.code === 200) {
+				const redirectLink = result.data.link
+				setLoading(false)
+				router.push(redirectLink)
+			}
+		} catch (error: any) {
+			console.log(error)
+			toast.error("unable to generate link", {
+				action: {
+					label: "Undo",
+					onClick: () => console.log("Undo"),
+				},
+				position: "top-right",
+			})
+		}
+	}
 	return (
 		<Dialog open={showModal} onOpenChange={setShowModal}>
 			<DialogContent>
@@ -34,8 +61,8 @@ const LinkDialog = ({
 						button below to do so, you would be redirected.
 					</DialogDescription>
 				</DialogHeader>
-				<Button>
-					<Link href="#">Generate Payment Link</Link>
+				<Button onClick={handleClick} disabled={loading}>
+					{loading ? "Wait a moment ..." : "Generate Payment Link"}
 				</Button>
 			</DialogContent>
 		</Dialog>

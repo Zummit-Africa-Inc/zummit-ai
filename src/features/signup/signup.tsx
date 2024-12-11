@@ -40,12 +40,12 @@ export const Signup: React.FC = () => {
 		}))
 	}
 
-	const handleSubmit = async (e: React.FormEvent) => {
-		setLoading(true)
+	const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault()
 		try {
+			setLoading(true)
 			const results = await createUser(formData)
-			if (results?.status === 200) {
+			if (results?.code === 200) {
 				setLoading(false)
 				toast(results?.data.message, {
 					action: {
