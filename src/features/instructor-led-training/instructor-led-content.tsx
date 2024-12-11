@@ -1,4 +1,4 @@
-import { RiArrowDownSLine } from "@remixicon/react"
+import { RiArrowDownSLine, RiArrowRightLine } from "@remixicon/react"
 import { useRouter } from "next/router"
 import Image from "next/image"
 import Link from "next/link"
@@ -33,7 +33,7 @@ export const InstructorLedContent = ({
 		// FOR NOW ON CLICK SHOULD JUST TOGGLE THE MODAL
 
 		if (!user) {
-			router.push("/login")
+			router.push("/signup")
 		} else {
 			setPlanDetails(plan)
 			setShowModal(true)
@@ -189,7 +189,7 @@ export const InstructorLedContent = ({
 								</p>
 							</div>
 						</div>
-						<section className="mx-auto w-screen px-4 sm:max-w-7xl ">
+						<section className="mx-auto flex w-screen items-center justify-center px-4 sm:max-w-7xl ">
 							<div className="relative overflow-x-scroll">
 								{/* Carousel Container */}
 								<div
@@ -220,6 +220,9 @@ export const InstructorLedContent = ({
 										</div>
 									))}
 								</div>
+							</div>
+							<div>
+								<RiArrowRightLine className="z-50 hidden size-9 text-[#301030] sm:block" />
 							</div>
 						</section>
 						<Link href="#payment" className="self-center">
