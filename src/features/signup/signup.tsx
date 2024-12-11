@@ -1,7 +1,7 @@
 import { useRouter } from "next/router"
 import { toast } from "sonner"
 import Link from "next/link"
-import React from "react"
+import React, { FormEvent } from "react"
 
 import { Appbar, Footer, Seo } from "@/components/shared"
 import { useAuthContext } from "@/context/AuthContext"
@@ -40,12 +40,12 @@ export const Signup: React.FC = () => {
 		}))
 	}
 
-	const handleSubmit = async (e: React.FormEvent) => {
-		setLoading(true)
+	const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault()
 		try {
+			setLoading(true)
 			const results = await createUser(formData)
-			if (results?.status === 200) {
+			if (results?.code === 200) {
 				setLoading(false)
 				toast(results?.data.message, {
 					action: {
