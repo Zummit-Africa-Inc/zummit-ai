@@ -1,10 +1,8 @@
-import { useState, ChangeEvent, FormEvent } from "react"
-
+import { useState, ChangeEvent, FormEvent, useContext } from "react"
 import { Appbar, Footer, Seo } from "@/components/shared"
-
-import axios from "axios"
 import { toast } from "sonner"
 import Link from "next/link"
+import { AuthContext } from "@/context/AuthContext"
 
 interface FormData {
 	email: string
@@ -12,6 +10,7 @@ interface FormData {
 }
 export const Login = () => {
 	const [loading, setLoading] = useState(false)
+	const { loginUser } = useContext(AuthContext)
 
 	const [formData, setFormData] = useState<FormData>({
 		email: "",
@@ -26,25 +25,11 @@ export const Login = () => {
 		}))
 	}
 
-	const createUser = async () => {
-		const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
-		try {
-			const results = await axios.post(`${baseUrl}/user/login`, formData, {
-				method: "POST",
-				headers: { "Content-Type": "application/json" },
-			})
-			return results
-			console.log(results)
-		} catch (error: any) {
-			console.log(error.message)
-		}
-	}
-
 	const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
 		setLoading(true)
 		e.preventDefault()
 		try {
-			const results = await createUser()
+			const results = await loginUser(formData)
 			console.log(results)
 			setLoading(false)
 			toast(results?.data.message, {
@@ -56,7 +41,7 @@ export const Login = () => {
 			})
 		} catch (error: any) {
 			console.log(error.message)
-			toast.error("unable to create user", {
+			toast.error("unable to login user", {
 				action: {
 					label: "Undo",
 					onClick: () => console.log("Undo"),
