@@ -1,7 +1,7 @@
 import { useRouter } from "next/router"
 import { toast } from "sonner"
 import Link from "next/link"
-import React from "react"
+import React, { FormEvent } from "react"
 
 import { Appbar, Footer, Seo } from "@/components/shared"
 import { useAuthContext } from "@/context/AuthContext"
