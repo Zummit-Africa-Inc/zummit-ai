@@ -8,14 +8,14 @@ export const testimonials = [
 			"I started off as a Junior Data Scientist (Intern) at Zummit Africa, and it was a great opportunity to be part of the team. I have learnt so much by being integral to the growth of the company. Zummit Africa is the best place to be and I now work as a Community Support at EntryLevel where I focus on democratizing Tech skills.",
 	},
 	{
-		id: 1,
+		id: 2,
 		name: "Pat Chizoba",
 		position: "Data Scientist",
 		image: "/assets/pat.webp",
 		text: "One of the best things that happened to me was Zummit Africa. For real!!!",
 	},
 	{
-		id: 1,
+		id: 3,
 		name: "Jude Ezeh",
 		position: "Data Scientist",
 		image: "/assets/jude.webp",
@@ -23,7 +23,7 @@ export const testimonials = [
 			"Joining Zummit Africa was a great step towards becoming a data analyst/data scientist. The collaboration among teams was great. Also, the paper review session helped with so many research and collaboration on projects. I must admit that the skills both soft and hard skills gained while interning with Zummit helped me landed my role as a Data analyst at Heroshe.",
 	},
 	{
-		id: 1,
+		id: 4,
 		name: "Silas Penda",
 		position: "Data Scientist",
 		image: "/assets/silas.webp",
@@ -31,7 +31,7 @@ export const testimonials = [
 			"Zummit Africa gave me a good stepping stone in my Data Science career. I got to work with teams working on real use case projects. I led two teams to win the monthly competition. I built my confidence up from there. I'll always be grateful for the opportunity.",
 	},
 	{
-		id: 1,
+		id: 5,
 		name: "Ayomide Olaniyi",
 		position: "AI/Data Scientist",
 		image: "/assets/ayomide.webp",
@@ -39,7 +39,7 @@ export const testimonials = [
 			"My journey at Zummit Africa has been immensely rewarding, marked by professional growth, meaningful collaborations, and impactful contributions to the field of Data Science and Artificial Intelligence. Thank you Zummit Africa.",
 	},
 	{
-		id: 1,
+		id: 6,
 		name: "Chioma Eze",
 		position: "Data Scientist",
 		image: "/assets/chioma.webp",
@@ -63,7 +63,7 @@ export const pricingPlans = [
 			"Job placement assistance",
 			"Lifelong access to course",
 		],
-		price: "₦60,000",
+		price: "150",
 		originalPrice: "₦75,000",
 		ctaText: "Enroll Now",
 		isPopular: true,
@@ -83,7 +83,7 @@ export const pricingPlans = [
 			"Job placement assistance",
 			"Lifelong access to course",
 		],
-		price: "₦25,000/month",
+		price: "100",
 		ctaText: "Enroll Now",
 		isPopular: true,
 	},
@@ -129,7 +129,7 @@ export const valueProps = [
 ]
 export const courseModules = [
 	{
-		title: "Module 1: Python crash",
+		title: "Module 1: Python Crash Course",
 		body:
 			"This module will guide you through the fundamentals of Python programming. You'll learn how to write Python code, work with data, control program flow, and build simple applications.",
 		list: [
