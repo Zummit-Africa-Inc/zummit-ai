@@ -55,7 +55,10 @@ export function Seo({
 
 				<meta name="robots" content="index,follow" />
 				<meta name="apple-mobile-web-app-title" content="Zummit Africa" />
-				<meta name="keywords" content="Zummit Africa" />
+				<meta
+					name="keywords"
+					content="Zummit Africa, AI, Data science, Generative AI, online learning, AI talents, AI in Africa, Democratizing AI, data strategy, internships"
+				/>
 				<meta name="mobile-web-app-capable" content="yes" />
 				<meta content="IE=edge" httpEquiv="X-UA-Compatible" />
 				<meta content="#171717" name="theme-color" />

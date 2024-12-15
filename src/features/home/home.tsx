@@ -12,7 +12,8 @@ export const Home = () => {
 		<>
 			<Seo
 				title="Empowering Africa through AI"
-				description="Discover the power of Zummit - your gateway to a transformative learning experience."
+				description="The best place to learn AI and Data skills online. Zummit will help your start your career in Data science and Artificial intelligence through instructor led structured and gamified learning. We adopt Generative AI to help personalize your learning.
+"
 			/>
 			<Appbar />
 
