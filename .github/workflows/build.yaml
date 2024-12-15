@@ -19,7 +19,10 @@ jobs:
      with:
       node-version: 18
 
-   - name: install-deps
+   - name: install-pnpm
+     run: npm install -g pnpm
+
+     - name: install-deps
      run: npm install
 
    - name: build
