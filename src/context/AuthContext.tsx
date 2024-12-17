@@ -1,7 +1,10 @@
 "use client"
 
-import axios from "axios"
 import React, { createContext, useState, ReactNode, useEffect } from "react"
+import Cookies from "js-cookie"
+import axios from "axios"
+
+import { UserProps } from "@/types"
 
 interface User {
 	id: string
@@ -12,8 +15,8 @@ interface User {
 interface AuthContextProps {
 	user: User | null // User object or null when not logged in
 	setUser: React.Dispatch<React.SetStateAction<User | null>>
-	createUser: (formData: any) => Promise<any>
-	loginUser: (formData: any) => Promise<any>
+	createUser: (user: Partial<UserProps>) => Promise<any>
+	loginUser: (user: UserProps) => void
 	generatePaymentLink: (data: any) => Promise<any>
 }
 
@@ -34,26 +37,19 @@ export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
 	const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
 
 	// Login User
-
 	const getUserToken = () => {
 		const user: any = localStorage.getItem("user") // Retrieve string from localStorage
 		const parsedUser = JSON.parse(user)
 		return parsedUser.access_token
 	}
 
-	const loginUser = async (formData: any): Promise<any> => {
-		if (!baseUrl) throw new Error("Base URL is not defined.")
-		try {
-			const results = await axios.get(`${baseUrl}/user/login`, formData)
-			const { id, full_name, email } = results.data.data
-			const userData = { id, full_name, email }
-			localStorage.setItem("user", JSON.stringify(userData))
-			setUser(results.data.data)
-			return results.data
-		} catch (error: any) {
-			console.error("Login error:", error.message)
-			throw error
-		}
+	const loginUser = (user: UserProps) => {
+		const token = user.access_token
+		if (!token) throw new Error("Token not found.")
+		Cookies.set("ZUMMIT-TOKEN", token, { expires: 7, sameSite: "Strict" })
+		localStorage.setItem("user", JSON.stringify(user))
+		setUser(user)
+		return user
 	}
 
 	// Create User
