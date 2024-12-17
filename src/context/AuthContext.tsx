@@ -1,43 +1,33 @@
 "use client"
 
-import React, { createContext, useState, ReactNode, useEffect } from "react"
 import Cookies from "js-cookie"
+import React from "react"
 import axios from "axios"
 
-import { UserProps } from "@/types"
-
-interface User {
-	id: string
-	full_name: string
-	email: string
-}
+import { Maybe, UserProps } from "@/types"
 
 interface AuthContextProps {
-	user: User | null // User object or null when not logged in
-	setUser: React.Dispatch<React.SetStateAction<User | null>>
-	createUser: (user: Partial<UserProps>) => Promise<any>
+	user: UserProps | null // User object or null when not logged in
 	loginUser: (user: UserProps) => void
 	generatePaymentLink: (data: any) => Promise<any>
 }
 
 const defaultContext: AuthContextProps = {
 	user: null,
-	setUser: () => {},
-	createUser: async () => {},
 	loginUser: async () => {},
 	generatePaymentLink: async () => {},
 }
 
 // Create the AuthContext
-export const AuthContext = createContext<AuthContextProps>(defaultContext)
+export const AuthContext = React.createContext<AuthContextProps>(defaultContext)
 
 // AuthContextProvider component
-export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
-	const [user, setUser] = useState<User | null>(null)
+export const AuthContextProvider = ({ children }: React.PropsWithChildren & {}) => {
+	const [user, setUser] = React.useState<Maybe<UserProps>>(null)
 	const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
 
 	// Login User
-	const getUserToken = () => {
+	const getUser = (): UserProps => {
 		const user: any = localStorage.getItem("user") // Retrieve string from localStorage
 		const parsedUser = JSON.parse(user)
 		return parsedUser.access_token
@@ -52,26 +42,6 @@ export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
 		return user
 	}
 
-	// Create User
-	const createUser = async (formData: any): Promise<any> => {
-		if (!baseUrl) throw new Error("Base URL is not defined.")
-		try {
-			const results = await axios.post(`${baseUrl}/user/signup`, formData, {
-				headers: { "Content-Type": "application/json" },
-			})
-			const { id, full_name, email, access_token } = results.data.data
-			const userData = { id, full_name, email, access_token }
-			localStorage.setItem("user", JSON.stringify(userData))
-			setUser(results.data.data)
-			return results.data
-		} catch (error: any) {
-			console.error("Signup error:", error.message)
-			throw error // Rethrow the error for the caller to handle
-		}
-	}
-
-	//generate payment link
-
 	const generatePaymentLink = async ({
 		title,
 		convertedPrice,
@@ -85,7 +55,7 @@ export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
 			narration_id: user?.id,
 		}
 
-		const token = getUserToken()
+		const token = getUser()
 		try {
 			const results = await axios.post(`${baseUrl}/transaction/gen-payment-link`, data, {
 				method: "POST",
@@ -102,7 +72,7 @@ export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
 	}
 
 	// Load user from localStorage on mount
-	useEffect(() => {
+	React.useEffect(() => {
 		const savedUser = localStorage.getItem("user")
 		if (savedUser) {
 			setUser(JSON.parse(savedUser))
@@ -111,8 +81,7 @@ export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
 
 	// Provide the context
 	return (
-		<AuthContext.Provider
-			value={{ user, setUser, createUser, loginUser, generatePaymentLink }}>
+		<AuthContext.Provider value={{ user, loginUser, generatePaymentLink }}>
 			{children}
 		</AuthContext.Provider>
 	)

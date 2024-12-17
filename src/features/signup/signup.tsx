@@ -1,81 +1,54 @@
+import { useMutation } from "@tanstack/react-query"
 import { useRouter } from "next/router"
 import { toast } from "sonner"
 import Link from "next/link"
-import React, { FormEvent } from "react"
+import React from "react"
 
+import { CreateUser, CreateUserPayload } from "@/queries/auth"
 import { Appbar, Footer, Seo } from "@/components/shared"
 import { useAuthContext } from "@/context/AuthContext"
+import { HttpError } from "@/types"
 import { countries } from "./data"
 
-interface FormData {
-	full_name: string
-	email: string
-	password: string
-	phone_number: string
-	gender: string
-	country: string
-}
-
 export const Signup: React.FC = () => {
-	const [loading, setLoading] = React.useState(false)
-	const { createUser } = useAuthContext()
+	const { loginUser } = useAuthContext()
 	const router = useRouter()
 
-	const [formData, setFormData] = React.useState<FormData>({
-		full_name: "",
+	const [values, setValues] = React.useState<CreateUserPayload>({
+		country: "",
 		email: "",
+		full_name: "",
+		gender: "",
 		password: "",
 		phone_number: "",
-		gender: "",
-		country: "",
 	})
 
-	const handleChange = (
-		e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
-	): void => {
-		const { name, value } = e.target
-		setFormData((prevState) => ({
-			...prevState,
-			[name]: value,
-		}))
+	const { isPending, mutateAsync } = useMutation({
+		mutationFn: (payload: CreateUserPayload) => CreateUser(payload),
+		onSuccess: (data) => {
+			loginUser(data.data)
+			toast.success("Account created successfully")
+			router.push("/instructor-led-training#payment")
+		},
+		onError: ({ response }: HttpError) => {
+			const { message } = response.data
+			toast.error(message ?? "Unable to create account")
+		},
+	})
+
+	const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+		setValues((prev) => ({ ...prev, [e.target.name]: e.target.value }))
 	}
 
-	const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault()
-		try {
-			setLoading(true)
-			const results = await createUser(formData)
-			if (results?.code === 200) {
-				setLoading(false)
-				toast(results?.data.message, {
-					action: {
-						label: "Undo",
-						onClick: () => console.log("Undo"),
-					},
-					position: "top-right",
-				})
-				router.push("/instructor-led-training#payment")
+		Object.entries(values).forEach(([key, value]) => {
+			if (!value) {
+				toast.error(`Please fill in ${key}`)
+				return
 			}
-		} catch (error: any) {
-			console.log(error.message)
-			toast.error("unable to create user", {
-				action: {
-					label: "Undo",
-					onClick: () => console.log("Undo"),
-				},
-				position: "top-right",
-			})
-		} finally {
-			setLoading(false)
-			setFormData({
-				full_name: "",
-				email: "",
-				password: "",
-				phone_number: "",
-				gender: "",
-				country: "",
-			})
-		}
+		})
+		mutateAsync(values)
 	}
 
 	return (
@@ -97,7 +70,7 @@ export const Signup: React.FC = () => {
 								type="text"
 								id="fullName"
 								name="full_name"
-								value={formData.full_name}
+								value={values.full_name}
 								onChange={handleChange}
 								placeholder="Enter Full Name"
 								className="border-gray-300 w-full rounded-lg border px-4 py-3 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#460D38]"
@@ -113,7 +86,7 @@ export const Signup: React.FC = () => {
 								type="email"
 								id="email"
 								name="email"
-								value={formData.email}
+								value={values.email}
 								onChange={handleChange}
 								placeholder="Enter Email Address"
 								className="border-gray-300 w-full rounded-lg border px-4 py-3 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#460D38]"
@@ -129,7 +102,7 @@ export const Signup: React.FC = () => {
 								type="password"
 								id="password"
 								name="password"
-								value={formData.password}
+								value={values.password}
 								onChange={handleChange}
 								placeholder="Enter Password"
 								className="border-gray-300 w-full rounded-lg border px-4 py-3 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#460D38]"
@@ -145,7 +118,7 @@ export const Signup: React.FC = () => {
 								type="tel"
 								id="phoneNumber"
 								name="phone_number"
-								value={formData.phone_number}
+								value={values.phone_number}
 								onChange={handleChange}
 								placeholder="Enter Phone Number"
 								className="border-gray-300 w-full rounded-lg border px-4 py-3 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#460D38]"
@@ -160,7 +133,7 @@ export const Signup: React.FC = () => {
 							<select
 								id="sex"
 								name="gender"
-								value={formData.gender}
+								value={values.gender}
 								onChange={handleChange}
 								className="border-gray-300 w-full rounded-lg border px-4 py-3 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#460D38]"
 								required>
@@ -177,7 +150,7 @@ export const Signup: React.FC = () => {
 							<select
 								id="country"
 								name="country"
-								value={formData.country}
+								value={values.country}
 								onChange={handleChange}
 								className="border-gray-300 w-full rounded-lg border px-4 py-3 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#460D38]"
 								required>
@@ -192,9 +165,9 @@ export const Signup: React.FC = () => {
 
 						<button
 							type="submit"
-							disabled={loading}
+							disabled={isPending}
 							className={`w-full rounded-lg bg-[#460D38] py-3 text-white transition-colors duration-200 hover:bg-pink-950 disabled:cursor-not-allowed disabled:opacity-75`}>
-							{loading ? "Please wait..." : "Register"}
+							{isPending ? "Please wait..." : "Register"}
 						</button>
 					</form>
 

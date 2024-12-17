@@ -1,7 +1,7 @@
 import { HttpResponse, UserProps } from "@/types"
 import { axios } from "@/lib"
 
-interface CreateUserPayload
+export interface CreateUserPayload
 	extends Omit<
 		UserProps,
 		"_id" | "access_token" | "createdAt" | "id" | "subscription" | "updatedAt"
