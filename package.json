@@ -3,15 +3,13 @@
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
-		"install": "pnpm install",
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
 		"lint": "next lint",
 		"prettier:write": "prettier --write \"./src/**/*.{ts,tsx}\"",
 		"prettier:check": "prettier --check \"./src/**/*.{ts,tsx}\"",
-		"check-code": "npm run prettier:check && npm run lint",
-		"prisma:generate": "npx prisma generate"
+		"check-code": "npm run prettier:check && npm run lint"
 	},
 	"dependencies": {
 		"@emotion/react": "^11.13.5",
