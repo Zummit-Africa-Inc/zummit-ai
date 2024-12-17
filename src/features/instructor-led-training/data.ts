@@ -63,7 +63,7 @@ export const pricingPlans = [
 			"Job placement assistance",
 			"Lifelong access to course",
 		],
-		price: "150",
+		price: "60000",
 		originalPrice: "₦75,000",
 		ctaText: "Enroll Now",
 		isPopular: true,
@@ -72,7 +72,7 @@ export const pricingPlans = [
 	{
 		title: "3-Months Payment",
 		description:
-			"We provide an option for you to spread out your payment if you’re on a budget",
+			"We provide an option for you to spread out your payment if you're on a budget",
 		features: [
 			"4-Month Internship Program",
 			"Access to Global Talent Pool",
@@ -83,7 +83,7 @@ export const pricingPlans = [
 			"Job placement assistance",
 			"Lifelong access to course",
 		],
-		price: "100",
+		price: "25000",
 		ctaText: "Enroll Now",
 		isPopular: true,
 	},
