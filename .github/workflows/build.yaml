@@ -11,16 +11,21 @@ jobs:
   runs-on: ubuntu-latest
 
   steps:
-   - name: check-out
+   - name: Check out repository
      uses: actions/checkout@v4
 
-   - name: set-up-node
-     uses: actions/setup-node@v3
+   - name: Set up Node.js
+     uses: actions/setup-node@v4
      with:
       node-version: 20
 
-   - name: install-deps
-     run: npm install
+   - name: Install pnpm
+     uses: pnpm/action-setup@v3
+     with:
+      version: latest
 
-   - name: build
-     run: npm run build
+   - name: Install dependencies
+     run: pnpm install
+
+   - name: Build project
+     run: pnpm run build
