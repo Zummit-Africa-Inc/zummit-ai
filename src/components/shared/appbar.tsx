@@ -105,7 +105,7 @@ export const Appbar = () => {
 					})}
 				</div>
 				<div className="flex items-center gap-3">
-					{user ? (
+					{!user ? (
 						<Link href="/instructor-led-training">
 							<Button>Get Started</Button>
 						</Link>

@@ -28,7 +28,7 @@ export const Login = () => {
 		onSuccess: (data) => {
 			loginUser(data.data)
 			toast.success("Login Successful")
-			router.push("/")
+			router.push("/instructor-led-training#payment")
 		},
 		onError: ({ response }: HttpError) => {
 			const { message } = response.data
