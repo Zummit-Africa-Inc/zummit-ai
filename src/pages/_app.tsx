@@ -1,11 +1,10 @@
 import "@radix-ui/themes/styles.css"
-import "@/styles/index.scss"
+import "@/styles/globals.css"
 
 import { QueryClientProvider } from "@tanstack/react-query"
 import { PostHogProvider } from "posthog-js/react"
 import { Toaster } from "@/components/ui/sonner"
 import type { AppProps } from "next/app"
-import { Theme } from "@radix-ui/themes"
 import { useRouter } from "next/router"
 import posthog from "posthog-js"
 import React from "react"
@@ -14,6 +13,7 @@ import { queryClient } from "@lib/query-client"
 import { SSRProvider } from "@labs/components"
 import { ChatBot } from "@/components/shared"
 import analytics from "@lib/analytics"
+import { AuthContextProvider } from "@/context/AuthContext"
 
 export default function App({ Component, pageProps }: AppProps) {
 	const router = useRouter()
@@ -25,7 +25,7 @@ export default function App({ Component, pageProps }: AppProps) {
 	}, [router.events])
 
 	return (
-		<Theme appearance="light">
+		<AuthContextProvider>
 			<SSRProvider>
 				<QueryClientProvider client={queryClient}>
 					<PostHogProvider client={posthog}>
@@ -35,6 +35,6 @@ export default function App({ Component, pageProps }: AppProps) {
 					</PostHogProvider>
 				</QueryClientProvider>
 			</SSRProvider>
-		</Theme>
+		</AuthContextProvider>
 	)
 }
