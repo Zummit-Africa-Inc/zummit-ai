@@ -3,7 +3,7 @@ export const about = [
 		title: "Our Impact",
 		content: (
 			<p>
-				We&apos;ve already impacted the lives of over <b>2000</b> individuals. We&apos;re not
+				We&apos;ve already impacted the lives of over <b>3000</b> individuals. We&apos;re not
 				just training; we&apos;re transforming lives. Our impressive <b>50%</b> employment
 				rate of our past students showcases the effectiveness of our programs.
 			</p>
@@ -16,7 +16,7 @@ export const about = [
 				<h4>Expert Trainers</h4>
 				<p>
 					Our dedicated trainers bring years of industry experience to the classroom, ensuring
-					you receive the best education. <br />
+					you receive the best education.
 					<br />
 					Our training system is unlike the regular; we adopt the high-impact practices for
 					best results. We provide peer programming for our learners. Experts in the field of

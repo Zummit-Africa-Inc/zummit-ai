@@ -1,8 +1,6 @@
 import React, { createContext, useContext, useLayoutEffect, useState } from "react"
 import type { PropsWithChildren } from "react"
 
-import { StyleProvider } from "./style-creator"
-
 const canUseDOM = Boolean(
 	typeof window !== "undefined" && window?.document && window?.document?.createElement
 )
@@ -28,11 +26,7 @@ export const SSRProvider: React.FC<PropsWithChildren & {}> = (props) => {
 	 */
 	const ctx = { ...defaultSSRContext }
 
-	return (
-		<SSRContext.Provider value={ctx}>
-			<StyleProvider>{children}</StyleProvider>
-		</SSRContext.Provider>
-	)
+	return <SSRContext.Provider value={ctx}>{children}</SSRContext.Provider>
 }
 
 export function useSSR() {

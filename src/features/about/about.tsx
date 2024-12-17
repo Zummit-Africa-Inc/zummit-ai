@@ -1,8 +1,6 @@
 import React from "react"
 
-import { Button, Flex, Heading, Text } from "@labs/components"
 import { Appbar, Footer, Seo } from "@/components/shared"
-import styles from "./about.module.scss"
 import { about } from "./data"
 
 export const About = () => {
@@ -10,41 +8,23 @@ export const About = () => {
 		<>
 			<Seo title="About Us" />
 			<Appbar />
-			<Flex.Column className={styles.About}>
-				<Flex.Column className={styles.AboutInner}>
-					<Flex.Column className={styles.AboutHeader}>
-						<Flex.Column className={styles.AboutHeaderContent}>
-							<Flex.Column className={styles.AboutHeaderContentHeading}>
-								<Heading.h2>We are empowering Africa through Tech Education</Heading.h2>
-								<Text.p>
-									We believe in the transformative power of technology. Our mission is to empower
-									young Africans through artificial intelligence and software development skills,
-									so they can create a better future for themselves and their communities
-								</Text.p>
-							</Flex.Column>
-						</Flex.Column>
-						<Flex.Column></Flex.Column>
-						<Flex.Column className={styles.AboutHeaderItems}>
-							{about.map((item, index) => (
-								<Flex key={index} className={styles.AboutHeaderItem}>
-									<Heading.h3>{item.title}</Heading.h3>
-									<div className={styles.AboutHeaderText}>{item.content}</div>
-								</Flex>
-							))}
-						</Flex.Column>
-					</Flex.Column>
-				</Flex.Column>
-				<section className={styles.AboutSection}>
-					<Flex.Column className={styles.AboutSectionInner}>
-						<Heading.h3>Why join us?</Heading.h3>
-						<Text.p>
-							We have the best data scientist and Machine Learning engineers supporting our
-							training program.
-						</Text.p>
-						<Button.a href="/apply-to-zummit-africa">Apply Now</Button.a>
-					</Flex.Column>
+			<main className="w-full">
+				<section className="container mx-auto grid w-full place-items-center px-4 py-28 lg:px-0 lg:py-40">
+					<div className="flex h-full w-full flex-col items-center justify-center lg:gap-[45px]">
+						<h1 className="w-full text-center text-3xl font-bold leading-[44px] lg:w-[908px] lg:text-[56px] lg:leading-[82px]">
+							About <span className="font-bold text-primary-purple">Zummit Africa</span>
+						</h1>
+					</div>
+					<div className="flex w-full flex-col gap-5 lg:gap-10">
+						{about.map((item, index) => (
+							<div key={index} className="flex w-full flex-col gap-3 lg:gap-6">
+								<p className="font-bold lg:text-xl">{item.title}</p>
+								<div className="html-content text-neutral-500">{item.content}</div>
+							</div>
+						))}
+					</div>
 				</section>
-			</Flex.Column>
+			</main>
 			<Footer />
 		</>
 	)
