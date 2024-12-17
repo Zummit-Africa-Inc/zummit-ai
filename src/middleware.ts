@@ -22,13 +22,13 @@ export function middleware(req: NextRequest) {
 	// If user is not logged in and is on dashboard, redirect to signin
 	if (!hasToken && url.pathname.startsWith("/")) {
 		url.pathname = "/"
-		return redirectResponse(url)
+		// return redirectResponse(url)
 	}
 
 	// If user is logged in and is on signin or signup, redirect to dashboard
 	if (hasToken && (url.pathname === "/login" || url.pathname === "/signup")) {
-		url.pathname = "/dashboard"
-		// return redirectResponse(url)
+		url.pathname = "/"
+		return redirectResponse(url)
 	}
 
 	return NextResponse.next({
