@@ -1,5 +1,4 @@
 export * from "./analytics"
-export * from "./axios"
 export * from "./base-query"
 export * from "./config"
 export * from "./endpoints"

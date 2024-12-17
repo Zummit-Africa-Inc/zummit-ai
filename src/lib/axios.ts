@@ -13,4 +13,6 @@ const createInstance = () => {
 	return instance
 }
 
-export const instance = createInstance()
+const instance = createInstance()
+
+export { instance as axios }
