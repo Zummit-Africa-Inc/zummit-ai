@@ -27,6 +27,20 @@ export type HttpResponse<T> = {
 	data: T
 }
 
+export type HttpError = {
+	response: {
+		data: {
+			code: number
+			data: null
+			message: string
+			status: string
+		}
+		status: number
+		statusText: string
+	}
+	stack: string
+}
+
 export type Node = {
 	_id: string
 	createdAt: Date | string
