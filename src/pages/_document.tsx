@@ -1,29 +1,12 @@
-import Document, { DocumentContext, Html, Head, Main, NextScript } from "next/document"
+import Document, { Html, Head, Main, NextScript } from "next/document"
 
-import { getSSRCssRules } from "@labs/utils"
 import { config } from "@lib/config"
 
 class HtmlDocument extends Document {
-	static async getInitialProps(ctx: DocumentContext) {
-		const initialProps = await Document.getInitialProps(ctx)
-		const ssrCssRules = getSSRCssRules()
-		return { ...initialProps, ssrCssRules }
-	}
-
 	render() {
-		const { styles, ...props } = this.props
-
 		return (
-			<Html lang="en" {...props}>
+			<Html lang="en">
 				<Head>
-					{styles && (
-						<style
-							id="s2c:ssr-css-rules"
-							dangerouslySetInnerHTML={{
-								__html: Array.from(styles || []).join(""),
-							}}
-						/>
-					)}
 					<GoogleAnalytics />
 				</Head>
 				<body>
