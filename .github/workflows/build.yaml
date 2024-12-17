@@ -17,10 +17,7 @@ jobs:
    - name: set-up-node
      uses: actions/setup-node@v3
      with:
-      node-version: 18
-
-   - name: install-pnpm
-     run: npm install -g pnpm
+      node-version: 20
 
    - name: install-deps
      run: npm install
