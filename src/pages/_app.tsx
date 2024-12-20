@@ -9,11 +9,11 @@ import { useRouter } from "next/router"
 import posthog from "posthog-js"
 import React from "react"
 
+import { ChatBot, FacebookPixel } from "@/components/shared"
+import { AuthContextProvider } from "@/context/AuthContext"
 import { queryClient } from "@lib/query-client"
 import { SSRProvider } from "@labs/components"
-import { ChatBot } from "@/components/shared"
 import analytics from "@lib/analytics"
-import { AuthContextProvider } from "@/context/AuthContext"
 
 export default function App({ Component, pageProps }: AppProps) {
 	const router = useRouter()
@@ -32,6 +32,7 @@ export default function App({ Component, pageProps }: AppProps) {
 						<Component {...pageProps} />
 						<Toaster />
 						<ChatBot />
+						<FacebookPixel />
 					</PostHogProvider>
 				</QueryClientProvider>
 			</SSRProvider>
