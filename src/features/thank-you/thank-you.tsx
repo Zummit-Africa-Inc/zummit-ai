@@ -1,12 +1,20 @@
-import { Appbar, Footer, Seo } from "@/components/shared"
+import { useRouter } from "next/router"
+import Confetti from "react-confetti"
 import Image from "next/image"
 import React from "react"
 
+import { Appbar, Footer, Seo } from "@/components/shared"
+import { useWindowSize } from "@/hooks"
+
 export const Thankyou = () => {
+	const windowSize = useWindowSize()
+	const router = useRouter()
+
 	return (
 		<>
-			<Seo title="Support Zummit Africa" />
+			<Seo title="Thank You" />
 			<Appbar />
+			<Confetti width={windowSize[0]} height={windowSize[1]} numberOfPieces={500} />
 			<main>
 				<div className="flex h-screen items-center justify-center bg-[#EDEDFA] text-black">
 					<div className="space-y-6 text-center">
@@ -23,9 +31,8 @@ export const Thankyou = () => {
 							You{"'"}ve successfully paid for your Data/AI Course. Get ready to receive updates
 							via your provided email.
 						</p>
-
 						<button
-							onClick={() => (window.location.href = "/")}
+							onClick={() => router.push("/")}
 							className="rounded-full bg-white px-6 py-3 text-lg font-semibold text-[#460D38] shadow-md transition duration-300 ease-in-out hover:bg-neutral-200">
 							Back to Home
 						</button>
