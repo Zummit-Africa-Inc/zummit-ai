@@ -45,9 +45,9 @@ export const Signup: React.FC = () => {
 		try {
 			setLoading(true)
 			const results = await createUser(formData)
+			console.log(results)
 			if (results?.code === 200) {
-				setLoading(false)
-				toast(results?.data.message, {
+				toast(results?.message, {
 					action: {
 						label: "Undo",
 						onClick: () => console.log("Undo"),
@@ -55,10 +55,12 @@ export const Signup: React.FC = () => {
 					position: "top-right",
 				})
 				router.push("/instructor-led-training#payment")
+				setLoading(false)
 			}
 		} catch (error: any) {
-			console.log(error.message)
-			toast.error("unable to create user", {
+			console.log(error)
+			toast.error("Unable to create user", {
+				description: "User might already exisit",
 				action: {
 					label: "Undo",
 					onClick: () => console.log("Undo"),

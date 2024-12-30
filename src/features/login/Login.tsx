@@ -29,7 +29,7 @@ export const Login = () => {
 		setLoading(true)
 		e.preventDefault()
 		try {
-			const results = await loginUser(formData)
+			const results = await loginUser({ email: "test34@gmail.com", password: "qwertyuio" })
 			console.log(results)
 			setLoading(false)
 			toast(results?.data.message, {
@@ -40,7 +40,7 @@ export const Login = () => {
 				position: "top-right",
 			})
 		} catch (error: any) {
-			console.log(error.message)
+			console.log(error)
 			toast.error("unable to login user", {
 				action: {
 					label: "Undo",

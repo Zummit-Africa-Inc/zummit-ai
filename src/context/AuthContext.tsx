@@ -15,6 +15,7 @@ interface AuthContextProps {
 	createUser: (formData: any) => Promise<any>
 	loginUser: (formData: any) => Promise<any>
 	generatePaymentLink: (data: any) => Promise<any>
+	getUsersFrmDb: (searchTerm: string, pageNumber: number) => Promise<any>
 }
 
 const defaultContext: AuthContextProps = {
@@ -23,6 +24,7 @@ const defaultContext: AuthContextProps = {
 	createUser: async () => {},
 	loginUser: async () => {},
 	generatePaymentLink: async () => {},
+	getUsersFrmDb: async () => {},
 }
 
 // Create the AuthContext
@@ -32,6 +34,7 @@ export const AuthContext = createContext<AuthContextProps>(defaultContext)
 export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
 	const [user, setUser] = useState<User | null>(null)
 	const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
+	const adminToken = process.env.NEXT_PUBLIC_ADMIN_TOKEN
 
 	// Login User
 
@@ -43,10 +46,13 @@ export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
 
 	const loginUser = async (formData: any): Promise<any> => {
 		if (!baseUrl) throw new Error("Base URL is not defined.")
+		console.log(formData)
 		try {
-			const results = await axios.get(`${baseUrl}/user/login`, formData)
-			const { id, full_name, email } = results.data.data
-			const userData = { id, full_name, email }
+			const results = await axios.post(`${baseUrl}/user/login`, formData, {
+				headers: { "Content-Type": "application/json" },
+			})
+			const { id, full_name, email, access_token } = results.data.data
+			const userData = { id, full_name, email, access_token }
 			localStorage.setItem("user", JSON.stringify(userData))
 			setUser(results.data.data)
 			return results.data
@@ -71,6 +77,26 @@ export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
 		} catch (error: any) {
 			console.error("Signup error:", error.message)
 			throw error // Rethrow the error for the caller to handle
+		}
+	}
+
+	const getUsersFrmDb = async (searchTerm: string, pageNumber: number) => {
+		if (!baseUrl) throw new Error("Base URL is not defined.")
+		try {
+			const results = await axios.get(
+				`${baseUrl}/admin/users/fetch?limit=20&page=${pageNumber}&search=${searchTerm}`,
+				{
+					method: "GET",
+					headers: {
+						Authorization: `Bearer ${adminToken}`, // Include the Bearer token in the headers
+						"Content-Type": "application/json",
+					},
+				}
+			)
+			return results.data
+		} catch (error: any) {
+			console.error("fetch user error:", error.toString())
+			throw error
 		}
 	}
 
@@ -116,7 +142,7 @@ export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
 	// Provide the context
 	return (
 		<AuthContext.Provider
-			value={{ user, setUser, createUser, loginUser, generatePaymentLink }}>
+			value={{ user, setUser, createUser, loginUser, generatePaymentLink, getUsersFrmDb }}>
 			{children}
 		</AuthContext.Provider>
 	)
