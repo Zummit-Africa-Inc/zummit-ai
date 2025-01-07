@@ -35,6 +35,7 @@ export const InstructorLedContent = ({
 		if (!user) {
 			router.push("/signup")
 		} else {
+			user
 			setPlanDetails(plan)
 			setShowModal(true)
 		}

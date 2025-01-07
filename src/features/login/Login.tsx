@@ -1,60 +1,54 @@
-import { useState, ChangeEvent, FormEvent, useContext } from "react"
-import { Appbar, Footer, Seo } from "@/components/shared"
+import { useMutation } from "@tanstack/react-query"
+import { useRouter } from "next/router"
 import { toast } from "sonner"
 import Link from "next/link"
-import { AuthContext } from "@/context/AuthContext"
+import React from "react"
 
-interface FormData {
-	email: string
-	password: string
-}
+import { Appbar, Footer, Seo } from "@/components/shared"
+import { useAuthContext } from "@/context/AuthContext"
+import { LoginUser } from "@/queries/auth"
+import { HttpError } from "@/types"
+
 export const Login = () => {
-	const [loading, setLoading] = useState(false)
-	const { loginUser } = useContext(AuthContext)
+	const [values, setValues] = React.useState({ email_or_phone_number: "", password: "" })
+	const { loginUser } = useAuthContext()
+	const router = useRouter()
 
-	const [formData, setFormData] = useState<FormData>({
-		email: "",
-		password: "",
-	})
-
-	const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>): void => {
-		const { name, value } = e.target
-		setFormData((prevState) => ({
-			...prevState,
-			[name]: value,
+	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+		setValues((prev) => ({
+			...prev,
+			[e.target.name]: e.target.value,
 		}))
 	}
 
-	const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-		setLoading(true)
+	const { isPending, mutateAsync } = useMutation({
+		mutationFn: (payload: typeof values) =>
+			LoginUser(payload.email_or_phone_number, payload.password),
+		mutationKey: ["login"],
+		onSuccess: (data) => {
+			loginUser(data.data)
+			toast.success("Login Successful")
+			router.push("/instructor-led-training#payment")
+		},
+		onError: ({ response }: HttpError) => {
+			const { message } = response.data
+			toast.error(message ?? "Unable to login user", {
+				action: {
+					label: "Undo",
+					onClick: () => console.log("Undo"),
+				},
+				position: "top-right",
+			})
+		},
+	})
+
+	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault()
-		try {
-			const results = await loginUser({ email: "test34@gmail.com", password: "qwertyuio" })
-			console.log(results)
-			setLoading(false)
-			toast(results?.data.message, {
-				action: {
-					label: "Undo",
-					onClick: () => console.log("Undo"),
-				},
-				position: "top-right",
-			})
-		} catch (error: any) {
-			console.log(error)
-			toast.error("unable to login user", {
-				action: {
-					label: "Undo",
-					onClick: () => console.log("Undo"),
-				},
-				position: "top-right",
-			})
-		} finally {
-			setLoading(false)
-			setFormData({
-				email: "",
-				password: "",
-			})
+		if (!values.email_or_phone_number || !values.password) {
+			toast.error("Please fill in all fields")
+			return
 		}
+		mutateAsync(values)
 	}
 	return (
 		<>
@@ -72,26 +66,22 @@ export const Login = () => {
 								Email Address
 							</label>
 							<input
-								type="email"
-								id="email"
-								name="email"
-								value={formData.email}
+								name="email_or_phone_number"
+								value={values.email_or_phone_number}
 								onChange={handleChange}
 								placeholder="Enter Email Address"
 								className="border-gray-300 w-full rounded-lg border px-4 py-3 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#460D38]"
 								required
 							/>
 						</div>
-
 						<div className="space-y-2">
 							<label htmlFor="password" className="text-gray-900 block text-sm font-medium">
 								Password
 							</label>
 							<input
 								type="password"
-								id="password"
 								name="password"
-								value={formData.password}
+								value={values.password}
 								onChange={handleChange}
 								placeholder="Enter Password"
 								className="border-gray-300 w-full rounded-lg border px-4 py-3 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#460D38]"
@@ -101,9 +91,9 @@ export const Login = () => {
 
 						<button
 							type="submit"
-							disabled={loading}
+							disabled={isPending}
 							className={`w-full rounded-lg bg-[#460D38] py-3 text-white transition-colors duration-200 hover:bg-pink-950 disabled:cursor-not-allowed disabled:opacity-75`}>
-							{loading ? "Please wait..." : "Login"}
+							{isPending ? "Please wait..." : "Login"}
 						</button>
 					</form>
 

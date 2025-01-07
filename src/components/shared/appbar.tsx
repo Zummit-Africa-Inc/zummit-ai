@@ -1,14 +1,15 @@
+import Link from "next/link"
+import React from "react"
 import {
 	RiArrowDownSLine,
 	RiMenuLine,
 	RiRocket2Fill,
 	RiAlarmWarningFill,
 } from "@remixicon/react"
-import Link from "next/link"
-import React from "react"
 
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { useAuthContext } from "@/context/AuthContext"
 import ZummitIcon from "@labs/icons/zummit-logo.svg"
 import { Button } from "../ui/button"
 
@@ -32,6 +33,7 @@ export const Appbar = () => {
 	const [isPopoverOpen, setIsPopoverOpen] = React.useState(false)
 	const [isSheetOpen, setIsSheetopen] = React.useState(false)
 	const [scrolled, setScrolled] = React.useState(false)
+	const { user } = useAuthContext()
 
 	const handleScroll = () => setScrolled(window.scrollY > 100)
 
@@ -103,9 +105,13 @@ export const Appbar = () => {
 					})}
 				</div>
 				<div className="flex items-center gap-3">
-					<Link href="/instructor-led-training">
-						<Button>Get Started</Button>
-					</Link>
+					{!user ? (
+						<Link href="/instructor-led-training">
+							<Button>Get Started</Button>
+						</Link>
+					) : (
+						<Button>My Account</Button>
+					)}
 					<Sheet open={isSheetOpen} onOpenChange={setIsSheetopen}>
 						<SheetTrigger>
 							<RiMenuLine className="block lg:hidden" />
