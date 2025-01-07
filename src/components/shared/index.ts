@@ -1,5 +1,6 @@
 export * from "./appbar"
 export * from "./chat-bot/chatbot"
+export * from "./facebook-pixel"
 export * from "./footer"
 export * from "./pagination"
 export * from "./seo"
