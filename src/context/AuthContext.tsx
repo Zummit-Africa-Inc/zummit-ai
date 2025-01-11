@@ -10,12 +10,14 @@ interface AuthContextProps {
 	user: UserProps | null // User object or null when not logged in
 	loginUser: (user: UserProps) => void
 	generatePaymentLink: (data: any) => Promise<any>
+	getUsersFrmDb: (searchTerm: string, pageNumber: number) => Promise<any>
 }
 
 const defaultContext: AuthContextProps = {
 	user: null,
 	loginUser: async () => {},
 	generatePaymentLink: async () => {},
+	getUsersFrmDb: async () => {},
 }
 
 // Create the AuthContext
@@ -25,6 +27,7 @@ export const AuthContext = React.createContext<AuthContextProps>(defaultContext)
 export const AuthContextProvider = ({ children }: React.PropsWithChildren & {}) => {
 	const [user, setUser] = React.useState<Maybe<UserProps>>(null)
 	const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
+	const adminToken = process.env.NEXT_PUBLIC_ADMIN_TOKEN
 
 	// Login User
 	const getUser = (): UserProps => {
@@ -71,6 +74,26 @@ export const AuthContextProvider = ({ children }: React.PropsWithChildren & {}) 
 		}
 	}
 
+	const getUsersFrmDb = async (searchTerm: string, pageNumber: number) => {
+		if (!baseUrl) throw new Error("Base URL is not defined.")
+		try {
+			const results = await axios.get(
+				`${baseUrl}/admin/users/fetch?limit=20&page=${pageNumber}&search=${searchTerm}`,
+				{
+					method: "GET",
+					headers: {
+						Authorization: `Bearer ${adminToken}`, // Include the Bearer token in the headers
+						"Content-Type": "application/json",
+					},
+				}
+			)
+			return results.data
+		} catch (error: any) {
+			console.error("fetch user error:", error.toString())
+			throw error
+		}
+	}
+
 	// Load user from localStorage on mount
 	React.useEffect(() => {
 		const savedUser = localStorage.getItem("user")
@@ -81,7 +104,7 @@ export const AuthContextProvider = ({ children }: React.PropsWithChildren & {}) 
 
 	// Provide the context
 	return (
-		<AuthContext.Provider value={{ user, loginUser, generatePaymentLink }}>
+		<AuthContext.Provider value={{ user, loginUser, generatePaymentLink, getUsersFrmDb }}>
 			{children}
 		</AuthContext.Provider>
 	)
