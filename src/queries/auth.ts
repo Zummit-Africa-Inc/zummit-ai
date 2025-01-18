@@ -1,4 +1,4 @@
-import { HttpResponse, UserProps } from "@/types"
+import { AdminProps, HttpResponse, UserProps } from "@/types"
 import { axios } from "@/lib"
 
 export interface CreateUserPayload
@@ -8,6 +8,12 @@ export interface CreateUserPayload
 	> {
 	password: string
 }
+
+export interface CreateAdminPayload
+	extends Omit<
+		AdminProps,
+		"_id" | "access_token" | "createdAt" | "id" | "subscription" | "updatedAt" | "__v"
+	> {}
 
 const CreateUser = async (payload: CreateUserPayload) => {
 	return axios
@@ -21,4 +27,22 @@ const LoginUser = async (email_or_phone_number: string, password: string) => {
 		.then((res) => res.data)
 }
 
-export { CreateUser, LoginUser }
+const CreateAdmin = async (payload: CreateAdminPayload) => {
+	return axios
+		.post<HttpResponse<AdminProps>>("/admin/signup", payload)
+		.then((res) => res.data)
+}
+
+const LoginAdmin = async (
+	full_name: string,
+	email_or_phone_number: string,
+	password: string
+) => {
+	return axios
+		.post<
+			HttpResponse<AdminProps>
+		>("/admin/login", { full_name, email_or_phone_number, password })
+		.then((res) => res.data)
+}
+
+export { CreateUser, LoginUser, CreateAdmin, LoginAdmin }
