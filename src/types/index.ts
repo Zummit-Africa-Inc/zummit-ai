@@ -58,3 +58,13 @@ export type UserProps = Node & {
 	phone_number: string
 	subscription: string
 }
+
+export type AdminProps = Node & {
+	_id: string
+	full_name: string
+	email: string
+	password: string
+	__v: number
+	access_token: string
+	id: string
+}
