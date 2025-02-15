@@ -354,7 +354,7 @@ export const InstructorLedContent = ({
 						<div className="mx-auto max-w-5xl px-8">
 							<h2 className="text-4xl font-bold">Ready to Begin Your AI and Data Career?</h2>
 							<p className="mt-8 max-w-3xl text-xl">
-								Join the January 2025 cohort and learn from expert instructors. Enroll now and
+								Join the February 2025 cohort and learn from expert instructors. Enroll now and
 								unlock your career potential in AI and Data Science!
 							</p>
 							<Link href="#payment">
@@ -363,7 +363,7 @@ export const InstructorLedContent = ({
 								</button>
 							</Link>
 							<p className="mt-4 text-sm italic tracking-wide">
-								Secure Your Spot Before January 2025!
+								Secure Your Spot for the February cohort!
 							</p>
 						</div>
 					</section>
