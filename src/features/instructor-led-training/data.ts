@@ -259,4 +259,9 @@ export const faqItems = [
 		answer:
 			"Yes, many of Zummit Africa's courses are designed to be self-paced, allowing you to progress through the material on your own schedule while meeting deadlines for assignments and assessments.",
 	},
+	{
+		question: "Can I get a refund after the training starts?",
+		answer:
+			"We have a no refund policy. However, circumstances will determine if a refund will be made. We are humans first!.",
+	},
 ]
