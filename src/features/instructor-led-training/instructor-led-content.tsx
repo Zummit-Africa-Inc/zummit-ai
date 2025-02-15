@@ -294,7 +294,7 @@ export const InstructorLedContent = ({
 
 											{plan.isPopular && (
 												<span className="mt-1.5 text-center text-base font-medium italic leading-loose tracking-normal text-pink-950">
-													Classes start January 2025
+													Classes start in February!
 												</span>
 											)}
 											{plan.save && (
