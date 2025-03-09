@@ -5,11 +5,8 @@ import React from "react"
 
 import { Appbar, Footer, Loading, Pagination, Seo } from "@/components/shared"
 import { PostEdge, Publication } from "../../../generated/graphql"
-import ReadMore from "./readmorebutton"
 import { Banner } from "@/components/shared"
 import { Card } from "@/components/shared"
-import Image from "next/image"
-import Link from "next/link"
 
 const LIMIT = 9
 

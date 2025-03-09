@@ -1,16 +1,10 @@
-import { RiSearchLine } from "@remixicon/react"
 import { gql, useQuery } from "@apollo/client"
-import { paginate } from "@/utils/pagination"
 import { toast } from "sonner"
 import React from "react"
-
-import { Appbar, Footer, Loading, Pagination, Seo } from "@/components/shared"
+import { Appbar, Footer, Loading, Seo } from "@/components/shared"
 import { Publication } from "../../../../generated/graphql"
-import { Banner } from "@/components/shared"
-import { Card } from "@/components/shared"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
-import Link from "next/link"
 import { useRouter } from "next/router"
 import { sanitizeHtml } from "@/utils/strings"
 
