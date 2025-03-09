@@ -1,10 +1,45 @@
 import { RiSearchLine } from "@remixicon/react"
+import { gql, useQuery } from "@apollo/client"
+import { paginate } from "@/utils/pagination"
 import React from "react"
 
-import { Appbar, Footer, Pagination, Seo } from "@/components/shared"
+import { Appbar, Footer, Loading, Pagination, Seo } from "@/components/shared"
+import { PostEdge, Publication } from "../../../generated/graphql"
 import ReadMore from "./readmorebutton"
+import { Banner } from "@/components/shared"
+import { Card } from "@/components/shared"
+import Image from "next/image"
+import Link from "next/link"
 
-const LIMIT = 4
+const LIMIT = 9
+
+const query = gql`
+	query FetchAllPosts($host: String!) {
+		publication(host: $host) {
+			posts(first: 0) {
+				edges {
+					node {
+						id
+						title
+						slug
+						subtitle
+						tags {
+							id
+							name
+						}
+						coverImage {
+							url
+						}
+						publishedAt
+						views
+						brief
+					}
+				}
+			}
+		}
+	}
+`
+
 const filters = [
 	"all",
 	"machine learning",
@@ -15,7 +50,28 @@ type Filter = (typeof filters)[number]
 
 export const Blog = () => {
 	const [filter, setFilter] = React.useState<Filter>("all")
+	const [publication, setPublication] = React.useState<Publication>()
 	const [page, setPage] = React.useState(1)
+
+	const { data } = useQuery(query, {
+		variables: { host: "datarango.hashnode.dev" },
+	})
+	React.useEffect(() => {
+		if (data) {
+			setPublication(data?.publication)
+		}
+	}, [data])
+
+	if (!publication)
+		return (
+			<div className="grid h-screen w-screen place-items-center">
+				<Loading />
+			</div>
+		)
+
+	const paginated = publication?.posts?.edges
+		? paginate(publication.posts?.edges, page, LIMIT)
+		: []
 
 	return (
 		<>
@@ -57,36 +113,25 @@ export const Blog = () => {
 						</div>
 						<div className="flex w-full flex-col gap-8">
 							<div className="grid w-full grid-cols-1 gap-10 lg:grid-cols-2">
-								{[...Array(4)].map((_, index) => (
-									<div key={index} className="w-full rounded-xl border lg:h-[357px]"></div>
-								))}
+								{paginated
+									.map((post: PostEdge) => <Banner key={post.node.id} postEdge={post} />)
+									.slice(0, 9)}
 							</div>
 							<div className="">
-								<Pagination current={page} onPageChange={setPage} pageSize={LIMIT} total={35} />
+								<Pagination
+									current={page}
+									onPageChange={(page) => setPage(page)}
+									pageSize={LIMIT}
+									total={publication.posts?.edges?.length}
+								/>
 							</div>
 						</div>
 						<div className="flex w-full flex-col gap-[31px] lg:mt-[60px]">
 							<p className="font-medium lg:text-xl">Featured this week</p>
 							<div className="grid w-full grid-cols-3 gap-12">
-								{[...Array(3)].map((_, index) => (
-									<div key={index + 1} className="flex w-full flex-col gap-5">
-										<div className="relative aspect-[1.6/1] w-full rounded-2xl border"></div>
-										<div className="flex w-full flex-col gap-5">
-											<div className="flex w-full flex-col">
-												<p className="font-bold lg:text-xl">
-													Choosing the Right Data Science course as a beginner
-												</p>
-												<div className="flex items-center gap-[18px]"></div>
-											</div>
-											<p className="text-sm text-neutral-500 lg:text-base">
-												Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi quam beatae
-												autem dolorum, ut in ipsum illum inventore. Animi, doloremque? Officia
-												veritatis dicta est tempora ratione provident, reprehenderit maxime ut!
-											</p>
-											<ReadMore id={index + 1} />
-										</div>
-									</div>
-								))}
+								{paginated
+									.map((post: PostEdge) => <Card key={post.node.id} postEdge={post} />)
+									.slice(0, 3)}
 							</div>
 						</div>
 					</div>
