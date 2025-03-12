@@ -75,13 +75,13 @@ export const Blog = () => {
 			<Seo title="Blog" />
 			<Appbar />
 			<main className="w-full py-36">
-				<section className="container mx-auto flex flex-col items-center gap-[71px]">
+				<section className="container mx-auto flex flex-col items-center gap-[20px] lg:gap-[71px] ">
 					<div className="flex flex-col items-center gap-[6px] text-center">
-						<p className="font-bold lg:text-[22px]">Our Blog</p>
-						<h2 className="font-bold lg:text-[38px]">
+						<p className="text-xl font-bold lg:text-[22px]">Our Blog</p>
+						<h2 className="text-[20px] font-bold lg:text-[38px]">
 							Stay Updated with the Latest in AI & Data Science
 						</h2>
-						<p className="lg:mt-5 lg:text-lg">
+						<p className="text-sm lg:mt-5 lg:text-lg ">
 							Our blog is a hub for the latest insights, tutorials, and thought leadership in AI,
 							data science, and machine learning. Explore our regularly updated content to stay
 							informed and inspired.
@@ -89,7 +89,7 @@ export const Blog = () => {
 					</div>
 					<div className="flex w-full flex-col gap-6">
 						<div className="flex w-full items-center justify-between">
-							<div className="flex items-center gap-4">
+							<div className=" hidden items-center gap-4 lg:flex">
 								<p className="font-medium lg:text-xl">Categories</p>
 								<div className="flex items-center gap-3">
 									{filters.map((item, index) => (
@@ -102,14 +102,14 @@ export const Blog = () => {
 									))}
 								</div>
 							</div>
-							<div className="">
+							<div className="hidden lg:block">
 								<button className="grid place-items-center rounded-full bg-white lg:size-10">
 									<RiSearchLine className="lg:size-5" />
 								</button>
 							</div>
 						</div>
 						<div className="flex w-full flex-col gap-8">
-							<div className="grid w-full grid-cols-1 gap-10 lg:grid-cols-2">
+							<div className="grid w-full grid-cols-1 gap-10 px-[15px] lg:grid-cols-2 lg:px-0">
 								{paginated
 									.map((post: PostEdge) => <Banner key={post.node.id} postEdge={post} />)
 									.slice(0, 9)}
@@ -123,9 +123,9 @@ export const Blog = () => {
 								/>
 							</div>
 						</div>
-						<div className="flex w-full flex-col gap-[31px] lg:mt-[60px]">
-							<p className="font-medium lg:text-xl">Featured this week</p>
-							<div className="grid w-full grid-cols-3 gap-12">
+						<div className="mt-[20px] flex w-full flex-col gap-[31px] lg:mt-[60px]">
+							<p className="px-[15px] font-medium lg:px-0 lg:text-xl">Featured this week</p>
+							<div className="grid w-full grid-cols-1 gap-8 px-[16px] lg:grid-cols-3 lg:gap-12 lg:px-0">
 								{paginated
 									.map((post: PostEdge) => <Card key={post.node.id} postEdge={post} />)
 									.slice(0, 3)}
