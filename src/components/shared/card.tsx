@@ -36,7 +36,7 @@ export const Card = ({ postEdge }: Props) => {
 						className="absolute inset-0 h-full w-full rounded-2xl  object-cover"
 					/>
 				</div>
-				<div className="flex w-full flex-col gap-5">
+				<div className="flex w-full flex-col gap-2 lg:gap-5">
 					<div className="flex w-full flex-col">
 						<Link
 							href={`/blog/${node.slug}`}

@@ -78,8 +78,8 @@ export const BlogPost = () => {
 		<>
 			<Seo title={``} />
 			<Appbar />
-			<main className=" container mt-40 w-full max-w-[1200px]">
-				<section className="container w-full max-w-[1200px]">
+			<main className=" container mt-40 w-full max-w-[1200px] px-[16px] lg:px-0">
+				<section className="container w-full max-w-[1200px] ">
 					<Image
 						src={String(publication.post?.coverImage?.url)}
 						alt="blog post image"

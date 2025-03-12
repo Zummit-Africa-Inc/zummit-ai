@@ -32,7 +32,7 @@ export const Banner = ({ postEdge }: Props) => {
 					className="absolute inset-0 h-full  w-full rounded-xl object-cover"
 				/>
 				<div className="absolute inset-0 rounded-xl bg-black/40"></div>
-				<div className=" relative px-6 pt-24 text-white ">
+				<div className=" relative mb-10 px-6 pt-16 text-white lg:mb-0 lg:pt-20 ">
 					<h2 className="text-sm">{formatDate(node.publishedAt)}</h2>
 					<Link
 						href={`/blog/${node.slug}`}
@@ -61,7 +61,7 @@ export const Banner = ({ postEdge }: Props) => {
 							<h2 className="text-sm">{node.views}</h2>
 						</div>
 					</div>
-					<div className="flex w-full items-center space-x-2 pt-5 text-black">
+					<div className="flex w-full items-center space-x-2  pt-5 text-black">
 						{node.tags
 							?.map((tag) => (
 								<button
