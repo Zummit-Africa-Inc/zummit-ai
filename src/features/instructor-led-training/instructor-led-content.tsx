@@ -70,8 +70,7 @@ export const InstructorLedContent = ({
 								</span>
 								<h1 className="mt-0 text-4xl font-bold leading-[49px] md:mt-8 md:text-6xl lg:leading-[82px]">
 									Kickstart Your Career and Master In-Demand{" "}
-									<span className="italic text-fuchsia-950">AI & Data</span> Skills in Just 3
-									Months!
+									<span className="italic text-fuchsia-950">AI & Data</span> Skills in Just 60 Days!
 								</h1>
 								<p className="mt-4 max-w-[400px] text-lg  leading-relaxed  md:mt-8 md:max-w-3xl md:text-2xl">
 									Designed for beginners, this course will help you master essential AI and Data
@@ -294,7 +293,7 @@ export const InstructorLedContent = ({
 
 											{plan.isPopular && (
 												<span className="mt-1.5 text-center text-base font-medium italic leading-loose tracking-normal text-pink-950">
-													Classes start January 2025
+													Classes start May 2025
 												</span>
 											)}
 											{plan.save && (
@@ -354,7 +353,7 @@ export const InstructorLedContent = ({
 						<div className="mx-auto max-w-5xl px-8">
 							<h2 className="text-4xl font-bold">Ready to Begin Your AI and Data Career?</h2>
 							<p className="mt-8 max-w-3xl text-xl">
-								Join the January 2025 cohort and learn from expert instructors. Enroll now and
+								Join the May 2025 cohort and learn from expert instructors. Enroll now and
 								unlock your career potential in AI and Data Science!
 							</p>
 							<Link href="#payment">
@@ -363,7 +362,7 @@ export const InstructorLedContent = ({
 								</button>
 							</Link>
 							<p className="mt-4 text-sm italic tracking-wide">
-								Secure Your Spot Before January 2025!
+								Secure Your Spot Before May 2025!
 							</p>
 						</div>
 					</section>
