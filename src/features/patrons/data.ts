@@ -15,7 +15,7 @@ export const patrons = [
 		image: "/assets/praveen.webp",
 		linkedin: "https://www.linkedin.com/in/praveen-zummit/",
 		name: "Praveen Kumar",
-		role: "Ex-CTO, Examroom.ai",
+		role: "CTO, Sprhava",
 	},
 	{
 		about:
@@ -55,7 +55,7 @@ export const patrons = [
 	},
 	{
 		about:
-			"A leading voice in data science and machine learning, recognized as a LinkedIn Community Top Voice and among the Top 50 ML & Data Science Experts. Recognized by the United States, he is the Founder of DataGlobal Hub, where he drives AI education & advocacy, aiming to democratize AI knowledge and foster data-driven decision-making globally.",
+			"A leading voice in data science and machine learning, recognized as a LinkedIn Community Top Voice and among the Top 50 ML & Data Science Experts. Einstein Visa awardee, he is the Founder of DataGlobal Hub, where he drives AI education & advocacy, aiming to democratize AI knowledge and foster data-driven decision-making globally.",
 		id: "7",
 		image: "/assets/mojeed.webp",
 		linkedin: "https://www.linkedin.com/in/mojeed-abisiga/",
