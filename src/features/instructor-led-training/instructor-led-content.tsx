@@ -348,6 +348,22 @@ export const InstructorLedContent = ({
 							))}
 						</div>
 					</section>
+					<section className="flex flex-col w-screen items-center bg-[#EDEDFA] py-20">
+						<div className="mx-auto items-center flex max-w-7xl flex-col px-8">
+							<div>
+								<Image
+									src="/zummit-quantum.webp"
+									width="700"
+									height={100}
+									alt="{testimonial.name}" />
+							</div>
+							<div>
+								<h2 className="mt-5 text-4xl font-bold sm:text-5xl">
+									Quantumzyme Signs MOU With Zummit Africa to Establish a Centre of Excellence in AI for Green Chemistry
+								</h2>
+							</div>
+						</div>
+					</section>
 
 					<section className="flex w-screen flex-col items-center bg-[#460D38] py-32 text-center text-white">
 						<div className="mx-auto max-w-5xl px-8">
