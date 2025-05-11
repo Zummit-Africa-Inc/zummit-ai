@@ -54,7 +54,6 @@ export const pricingPlans = [
 		title: "One-Time Payment",
 		description: "This is a one-time upfront payment plan where you save ₦15,000.",
 		features: [
-			"4-Month Internship Program",
 			"Access to Global Talent Pool",
 			"Engaging Hackathons",
 			"Vibrant Learning Community",
@@ -73,7 +72,6 @@ export const pricingPlans = [
 		description:
 			"We provide an option for you to spread out your payment if you're on a budget",
 		features: [
-			"4-Month Internship Program",
 			"Access to Global Talent Pool",
 			"Engaging Hackathons",
 			"Vibrant Learning Community",
