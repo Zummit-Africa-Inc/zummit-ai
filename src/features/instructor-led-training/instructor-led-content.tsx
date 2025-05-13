@@ -311,28 +311,7 @@ export const InstructorLedContent = ({
 							</div>
 						</section>
 					</section>
-					<section className="flex flex-col w-screen items-center bg-[#460D38] text-white py-20">
-						<div className="mx-auto w-screen items-center justify-around flex flex-col lg:flex-row max-w-7xl gap-9 px-8">
-							<div>
-								<Image
-									src="/zummit-quantum.webp"
-									width={500}
-									height={100}
-									alt="{testimonial.name}"
-									className="rounded-[20px] w-full" />
-							</div>
-							<div>
-								<h2 className="text-4xl leading-[49px] md:text-6xl lg:leading-[82px] lg:w-[500px] font-bold sm:text-5xl">
-									Quantumzyme Signs MOU With Zummit Africa...
-								</h2>
-								<Link href="https://www.nasdaq.com/press-release/quantumzyme-signs-mou-zummit-africa-establish-centre-excellence-ai-green-chemistry" target="_blank">
-								<button className="hover:bg-gray-100 mt-4 rounded-xl bg-white px-8 py-3 text-xl font-semibold uppercase text-pink-950 sm:px-10 sm:py-5">
-									READ MORE
-								</button>
-								</Link>
-							</div>
-						</div>
-					</section>
+					
 					<section className="flex w-screen flex-col items-center bg-[#EDEDFA] py-20">
 						<div className="mx-auto flex max-w-7xl flex-col px-8">
 							<div className="mb-10 flex flex-col items-center justify-center text-center">
