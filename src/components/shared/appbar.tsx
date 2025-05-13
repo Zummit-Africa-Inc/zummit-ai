@@ -34,6 +34,8 @@ export const Appbar = () => {
 	const [isSheetOpen, setIsSheetopen] = React.useState(false)
 	const [scrolled, setScrolled] = React.useState(false)
 	const { user } = useAuthContext()
+	const [isMobileServicesOpen, setIsMobileServicesOpen] = React.useState(false)
+
 
 	const handleScroll = () => setScrolled(window.scrollY > 100)
 
@@ -116,7 +118,84 @@ export const Appbar = () => {
 						<SheetTrigger>
 							<RiMenuLine className="block lg:hidden" />
 						</SheetTrigger>
-						<SheetContent></SheetContent>
+						<SheetContent side="right" className="w-[300px]">
+							<div className="flex flex-col gap-4 mt-10 px-4">
+								{navigation.map((item) => {
+									if (item.href === "") {
+										// "Services" menu for mobile
+										return (
+											<div key="services">
+												<button
+													onClick={() => setIsMobileServicesOpen((prev) => !prev)}
+													className="flex w-full items-center justify-between font-heading font-medium capitalize"
+												>
+													Services
+													<RiArrowDownSLine
+														className={`transition-transform duration-300 ${isMobileServicesOpen ? "rotate-180" : ""
+															}`}
+													/>
+												</button>
+
+												{isMobileServicesOpen && (
+													<div className="mt-2 ml-4 flex flex-col gap-2">
+														{services.map((subitem) => {
+															if (subitem.href.includes("https://")) {
+																return (
+																	<a
+																		key={subitem.name}
+																		href={subitem.href}
+																		target="_blank"
+																		rel="noopener noreferrer"
+																		className="text-sm text-neutral-600 hover:underline"
+																	>
+																		{subitem.name}
+																	</a>
+																)
+															} else {
+																return (
+																	<Link
+																		key={subitem.name}
+																		href={subitem.href}
+																		onClick={() => setIsSheetopen(false)}
+																		className="text-sm text-neutral-600 hover:underline"
+																	>
+																		{subitem.name}
+																	</Link>
+																)
+															}
+														})}
+													</div>
+												)}
+											</div>
+										)
+									} else {
+										return (
+											<Link
+												key={item.name}
+												href={item.href}
+												onClick={() => setIsSheetopen(false)}
+												className="font-heading font-medium capitalize"
+											>
+												{item.name}
+											</Link>
+										)
+									}
+								})}
+
+								{/* Auth-based CTA */}
+								{!user ? (
+									<Link href="/instructor-led-training" onClick={() => setIsSheetopen(false)}>
+										<Button className="w-full mt-4">Get Started</Button>
+									</Link>
+								) : (
+									<Button className="w-full mt-4" onClick={() => setIsSheetopen(false)}>
+										My Account
+									</Button>
+								)}
+							</div>
+						</SheetContent>
+
+
 					</Sheet>
 				</div>
 			</div>
