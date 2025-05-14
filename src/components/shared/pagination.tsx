@@ -78,7 +78,7 @@ export const Pagination = (props: Props) => {
 	}
 
 	return (
-		<div className="flex w-full items-center justify-center gap-[120px]">
+		<div className="flex w-full items-center justify-center gap-[35px] lg:gap-[120px]">
 			<button onClick={goToPrevious} className="flex h-[21px] w-fit items-center gap-2">
 				<RiArrowLeftLine className="size-5" />
 				Previous

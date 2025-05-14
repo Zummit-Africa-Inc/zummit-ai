@@ -54,11 +54,9 @@ export const pricingPlans = [
 		title: "One-Time Payment",
 		description: "This is a one-time upfront payment plan where you save ₦15,000.",
 		features: [
-			"4-Month Internship Program",
 			"Access to Global Talent Pool",
 			"Engaging Hackathons",
 			"Vibrant Learning Community",
-			"Premium subscription to Datarango",
 			"Certification upon completion",
 			"Job placement assistance",
 			"Lifelong access to course",
@@ -74,11 +72,9 @@ export const pricingPlans = [
 		description:
 			"We provide an option for you to spread out your payment if you're on a budget",
 		features: [
-			"4-Month Internship Program",
 			"Access to Global Talent Pool",
 			"Engaging Hackathons",
 			"Vibrant Learning Community",
-			"Premium subscription to Datarango",
 			"Certification upon completion",
 			"Job placement assistance",
 			"Lifelong access to course",
@@ -258,5 +254,10 @@ export const faqItems = [
 		question: "Can I learn at my own pace?",
 		answer:
 			"Yes, many of Zummit Africa's courses are designed to be self-paced, allowing you to progress through the material on your own schedule while meeting deadlines for assignments and assessments.",
+	},
+	{
+		question: "Can I get a refund after the training starts?",
+		answer:
+			"We have a no refund policy. However, circumstances will determine if a refund will be made. We are humans first!.",
 	},
 ]

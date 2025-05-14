@@ -1,0 +1,2293 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/
+   v5.0.1 | 20191019
+   License: none (public domain)
+*/
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+menu,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section {
+  display: block;
+}
+
+/* HTML5 hidden-attribute fix for newer browsers */
+*[hidden] {
+  display: none;
+}
+
+body {
+  line-height: 1;
+}
+
+menu,
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+/* stylelint-disable */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+html {
+  line-height: 1.15;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/* Sections
+ ========================================================================== */
+/**
+* Remove the margin in all browsers.
+*/
+body {
+  margin: 0;
+}
+
+/**
+* Render the `main` element consistently in IE.
+*/
+main {
+  display: block;
+}
+
+/**
+* Correct the font size and margin on `h1` elements within `section` and
+* `article` contexts in Chrome, Firefox, and Safari.
+*/
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+ ========================================================================== */
+/**
+* 1. Add the correct box sizing in Firefox.
+* 2. Show the overflow in Edge and IE.
+*/
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
+}
+
+/**
+* 1. Correct the inheritance and scaling of font size in all browsers.
+* 2. Correct the odd `em` font sizing in all browsers.
+*/
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/* Text-level semantics
+ ========================================================================== */
+/**
+* Remove the gray background on active links in IE 10.
+*/
+a {
+  background-color: transparent;
+}
+
+/**
+* 1. Remove the bottom border in Chrome 57-
+* 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+*/
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+  /* 2 */
+}
+
+/**
+* Add the correct font weight in Chrome, Edge, and Safari.
+*/
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+* 1. Correct the inheritance and scaling of font size in all browsers.
+* 2. Correct the odd `em` font sizing in all browsers.
+*/
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/**
+* Add the correct font size in all browsers.
+*/
+small {
+  font-size: 80%;
+}
+
+/**
+* Prevent `sub` and `sup` elements from affecting the line height in
+* all browsers.
+*/
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+ ========================================================================== */
+/**
+* Remove the border on images inside links in IE 10.
+*/
+img {
+  border-style: none;
+}
+
+/* Forms
+ ========================================================================== */
+/**
+* 1. Change the font styles in all browsers.
+* 2. Remove the margin in Firefox and Safari.
+*/
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+}
+
+/**
+* Show the overflow in IE.
+* 1. Show the overflow in Edge.
+*/
+button,
+input {
+  /* 1 */
+  overflow: visible;
+}
+
+/**
+* Remove the inheritance of text transform in Edge, Firefox, and IE.
+* 1. Remove the inheritance of text transform in Firefox.
+*/
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+/**
+* Correct the inability to style clickable types in iOS and Safari.
+*/
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button;
+  -moz-appearance: button;
+       appearance: button;
+}
+
+/**
+* Remove the inner border and padding in Firefox.
+*/
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+* Restore the focus styles unset by the previous rule.
+*/
+button:-moz-focusring,
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+* Correct the padding in Firefox.
+*/
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+* 1. Correct the text wrapping in Edge and IE.
+* 2. Correct the color inheritance from `fieldset` elements in IE.
+* 3. Remove the padding so developers are not caught out when they zero out
+*    `fieldset` elements in all browsers.
+*/
+legend {
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */
+}
+
+/**
+* Add the correct vertical alignment in Chrome, Firefox, and Opera.
+*/
+progress {
+  vertical-align: baseline;
+}
+
+/**
+* Remove the default vertical scrollbar in IE 10+.
+*/
+textarea {
+  overflow: auto;
+}
+
+/**
+* 1. Add the correct box sizing in IE 10.
+* 2. Remove the padding in IE 10.
+*/
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+* Correct the cursor style of increment and decrement buttons in Chrome.
+*/
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+* 1. Correct the odd appearance in Chrome and Safari.
+* 2. Correct the outline style in Safari.
+*/
+[type=search] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+       appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+
+/**
+* Remove the inner padding in Chrome and Safari on macOS.
+*/
+[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+* 1. Correct the inability to style clickable types in iOS and Safari.
+* 2. Change font properties to `inherit` in Safari.
+*/
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+/* Interactive
+ ========================================================================== */
+/*
+* Add the correct display in Edge, IE 10+, and Firefox.
+*/
+details {
+  display: block;
+}
+
+/*
+* Add the correct display in all browsers.
+*/
+summary {
+  display: list-item;
+}
+
+/* Misc
+ ========================================================================== */
+/**
+* Add the correct display in IE 10+.
+*/
+template {
+  display: none;
+}
+
+/**
+* Add the correct display in IE 10.
+*/
+[hidden] {
+  display: none;
+}
+
+/**
+* This is a variable font
+* You can controll variable axes as shown below:
+* font-variation-settings: 'wght' 900.0;
+*
+* available axes:
+
+* 'wght' (range from 300.0 to 900.0)
+
+*/
+/**
+* This is a variable font
+* You can controll variable axes as shown below:
+* font-variation-settings: 'wght' 900.0;
+*
+* available axes:
+
+* 'wght' (range from 300.0 to 900.0)
+@font-face {
+	font-family: 'Recoleta';
+	src: url('../../../public/assets/fonts/Recoleta-Bold.woff2') format('woff2');
+	font-weight: 700 800;
+	font-display: swap;
+	font-style: normal;
+}
+*/
+/** ts Theme Variables */
+:root {
+  /* Font Typeface */
+  --font-base: "DM Sans", sans-serif;
+  --font-secondary: "Inter", sans-serif;
+  /* Typography */
+  --font-h1: 68px;
+  --font-h2: 46px;
+  --font-h3: 32px;
+  --font-h4: 24px;
+  --font-h5: 20px;
+  --font-h6: 18px;
+  --font-p: 16px;
+  --font-accent: 14px;
+  --font-caption: 12px;
+  --font-small: 10px;
+  /* Letter Spacings */
+  --letter-spacing-regular: -0.2px;
+  --letter-spacing-wide: -0.4px;
+  --letter-spacing-wider: -1px;
+  /* Text Color */
+  --text-black: ##000;
+  --text-gray: #57636d;
+  --text-gray-light: #868e96;
+  --text-white: #ffffff;
+  /*border-radius*/
+  --shadow-black: 0px 12px 32px rgba(15, 31, 46, 0.08);
+  /* Color Themes */
+  --primary-purple: #460d38;
+  --primary-orange: #f3984b;
+  --primary-dark: #151419;
+  --primary-snow: #fbfbfb;
+  --soft-orange: #f7bb88;
+  --soft-white: #fff6e7;
+  --soft-black: #0b0a0d;
+  --neutral-100: #ffffff;
+  --neutral-200: #f6f8fa;
+  --neutral-300: #e2e4e9;
+  --neutral-400: #cdd0d5;
+  --neutral-500: #868c98;
+  --neutral-600: #525866;
+  --neutral-700: #31353f;
+  --neutral-800: #161922;
+  --neutral-900: #0a0d14;
+  --error-100: #fdedf0;
+  --error-200: #f8c9d2;
+  --error-300: #df1c41;
+  --error-400: #af1d38;
+  --error-500: #710e21;
+  --warning-100: #fef7ec;
+  --warning-200: #fbdfb1;
+  --warning-300: #f2ae40;
+  --warning-400: #b47818;
+  --warning-500: #693d11;
+  /** Layout */
+  --os-labs-vh: 100vh;
+  --nav-height: 78.8px;
+}
+
+.radix-themes {
+  --container-4: 1440px;
+  --indigo-9: var(--primary-purple);
+  --shadow-5: 0px 12px 32px rgba(15, 31, 46, 0.08);
+  --default-font-family: var(--font-secondary);
+}
+.radix-themes h1,
+.radix-themes h2,
+.radix-themes h3,
+.radix-themes h4 {
+  --heading-font-family: var(--font-base);
+}
+.radix-themes .rt-CheckboxButton:where(.rt-variant-surface):where([data-state=checked]) {
+  background-color: var(--primary-purple) !important;
+}
+.radix-themes .rt-BaseMenuViewport {
+  padding: 12px 8px;
+  gap: 8px;
+}
+.radix-themes .rt-BaseMenuItem[data-highlighted] {
+  background-color: rgba(0, 0, 0, 0.0509803922) !important;
+  color: unset;
+}
+.radix-themes .rt-BaseMenuItem {
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  :root {
+    /* Typography */
+    --font-h1: calc(72px - 22px);
+    --font-h2: calc(46px - 4px);
+    --font-h3: calc(32px - 4px);
+    --font-h4: calc(24px - 2px);
+    --font-h5: calc(20px - 2px);
+    --font-h6: calc(18px - 2px);
+    --font-p: 14px;
+    --font-accent: 12px;
+    --font-caption: 12px;
+    --font-small: 10px;
+  }
+}
+@supports (height: 100dvh) {
+  :root {
+    --os-labs-vh: 100dvh;
+  }
+}
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  /* 1 */
+  border-width: 0;
+  /* 2 */
+  border-style: solid;
+  /* 2 */
+  border-color: #e5e7eb;
+  /* 2 */
+}
+
+::before,
+::after {
+  --tw-content: "";
+}
+
+/* remove the scrollbar */
+::-webkit-scrollbar {
+  width: 0;
+}
+
+/*
+1. Use a consistent sensible line-height in all browsers.
+2. Prevent adjustments of font size after orientation changes in iOS.
+3. Use a more readable tab size.
+4. Use the user's configured `sans` font-family by default.
+5. Use the user's configured `sans` font-feature-settings by default.
+*/
+html {
+  line-height: 1.5;
+  /* 1 */
+  /* 2 */
+  /* 3 */
+  -moz-tab-size: 4;
+    -o-tab-size: 4;
+       tab-size: 4;
+  /* 3 */
+  scroll-behavior: smooth;
+  /* 5 */
+}
+
+/*
+1. Remove the margin in all browsers.
+2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
+*/
+body {
+  margin: 0;
+  /* 1 */
+  line-height: inherit;
+  /* 2 */
+  height: var(--os-labs-vh);
+  color: var(--text-black);
+  background-color: var(--soft-white);
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale; /* Firefox */
+  -webkit-font-smoothing: antialiased; /* WebKit  */
+  font-family: var(--font-secondary), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  /* 4 */
+  font-feature-settings: normal;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+/*
+1. Add the correct height in Firefox.
+2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+3. Ensure horizontal rules are visible by default.
+*/
+hr {
+  height: 0;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  border-top-width: 1px;
+  /* 3 */
+}
+
+/*
+Add the correct text decoration in Chrome, Edge, and Safari.
+*/
+abbr:where([title]) {
+  -webkit-text-decoration: underline dotted;
+  text-decoration: underline dotted;
+}
+
+/*
+Remove the default font size and weight for headings.
+*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*
+Reset links to optimize for opt-in styling instead of opt-out.
+*/
+a {
+  color: inherit;
+  font-family: var(--font-base);
+  text-decoration: inherit;
+  outline-color: var(--primary-purple);
+}
+
+/*
+Add the correct font weight in Edge and Safari.
+*/
+b,
+strong {
+  font-weight: bolder;
+  font-family: var(--font-base);
+}
+
+/*
+1. Use the user's configured `mono` font family by default.
+2. Correct the odd `em` font sizing in all browsers.
+*/
+code,
+kbd,
+samp,
+pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/*
+Add the correct font size in all browsers.
+*/
+small {
+  font-size: 80%;
+}
+
+/*
+Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+*/
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/*
+1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+3. Remove gaps between table borders by default.
+*/
+table {
+  text-indent: 0;
+  /* 1 */
+  border-color: inherit;
+  /* 2 */
+  border-collapse: collapse;
+  /* 3 */
+}
+
+/*
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+3. Remove default padding in all browsers.
+*/
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  font-weight: inherit;
+  /* 1 */
+  line-height: inherit;
+  /* 1 */
+  color: inherit;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+  padding: 0;
+  /* 3 */
+}
+
+/*
+Remove the inheritance of text transform in Edge and Firefox.
+*/
+button,
+select {
+  text-transform: none;
+  font-family: var(--font-base);
+}
+
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Remove default button styles.
+*/
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  -moz-appearance: button;
+       appearance: button;
+  -webkit-appearance: button;
+  /* 1 */
+  background-color: transparent;
+  /* 2 */
+  background-image: none;
+  /* 2 */
+  outline-color: var(--primary-purple);
+} /*
+Use the modern Firefox focus style for all focusable elements.
+*/
+:-moz-focusring {
+  outline: auto;
+} /*
+Remove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)
+*/
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+/*
+Add the correct vertical alignment in Chrome and Firefox.
+*/
+progress {
+  vertical-align: baseline;
+}
+
+/*
+Correct the cursor style of increment and decrement buttons in Safari.
+*/
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/*
+1. Correct the odd appearance in Chrome and Safari.
+2. Correct the outline style in Safari.
+*/
+[type=search] {
+  -moz-appearance: textfield;
+       appearance: textfield;
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+
+/*
+Remove the inner padding in Chrome and Safari on macOS.
+*/
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Change font properties to `inherit` in Safari.
+*/
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+/*
+Add the correct display in Chrome and Safari.
+*/
+summary {
+  display: list-item;
+}
+
+/*
+Removes the default spacing and border for appropriate elements.
+*/
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 0;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  padding: 0;
+}
+
+ol,
+ul,
+menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+Prevent resizing textareas horizontally by default.
+*/
+textarea {
+  resize: vertical;
+}
+
+/*
+1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)
+2. Set the default placeholder color to the user's configured gray 400 color.
+*/
+
+input::-moz-placeholder, textarea::-moz-placeholder {
+  opacity: 1;
+  /* 1 */
+  color: #9ca3af;
+  /* 2 */
+}
+
+input::placeholder,
+textarea::placeholder {
+  opacity: 1;
+  /* 1 */
+  color: #9ca3af;
+  /* 2 */
+}
+
+/*
+Set the default cursor for buttons.
+*/
+button,
+[role=button] {
+  cursor: pointer;
+} /*
+Make sure disabled buttons don't get the pointer cursor.
+*/
+:disabled {
+  cursor: default;
+}
+
+/*
+1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)
+2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
+   This can trigger a poorly considered lint error in some tools but is included by design.
+*/
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  /* 1 */
+  vertical-align: middle;
+  /* 2 */
+}
+
+/*
+Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
+*/
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Make elements with the HTML hidden attribute stay hidden by default */
+[hidden] {
+  display: none;
+}
+
+.scrollbar-hide {
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* Internet Explorer 10+ */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  width: 0px;
+  /* Chrome/Safari/Webkit */
+  height: 0px;
+  /* Chrome/Safari/Webkit */
+}
+
+.scrollbar-hide::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-hide::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+.scrollbar-hide::-webkit-scrollbar-thumb:hover {
+  background-color: transparent;
+}
+
+.scrollbar-hide::-webkit-scrollbar-thumb:active {
+  background-color: transparent;
+}
+
+/* Custom */
+.custom-scrollbar {
+  scrollbar-width: 0;
+  scrollbar-color: #c2c2c2 transparent;
+  -ms-overflow-style: none;
+  transition: all 0.2s ease-in-out;
+}
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+@media (max-width: 768px) {
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+}
+.custom-scrollbar:hover::-webkit-scrollbar-thumb {
+  background-color: #c2c2c2;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 20px;
+  border: 3px solid transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #b3b3b3;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:active {
+  background-color: #9a9a9a;
+}
+.custom-scrollbar::-webkit-scrollbar-corner, .custom-scrollbar::-webkit-scrollbar-button, .custom-scrollbar::-webkit-scrollbar-resizer, .custom-scrollbar::-webkit-scrollbar-gripper, .custom-scrollbar::-webkit-scrollbar-gripper:hover, .custom-scrollbar::-webkit-scrollbar-gripper:active, .custom-scrollbar::-webkit-scrollbar-track-piece {
+  display: none;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  @supports (-webkit-touch-callout: none) {
+    select:active, select:focus,
+    textarea:active,
+    textarea:focus,
+    input:active,
+    input:focus {
+      font-size: 16px !important;
+      transform: scale(0.875) translate(-6%, 0px);
+    }
+    select:active:not([data-testid=autocomplete-field]), select:focus:not([data-testid=autocomplete-field]),
+    textarea:active:not([data-testid=autocomplete-field]),
+    textarea:focus:not([data-testid=autocomplete-field]),
+    input:active:not([data-testid=autocomplete-field]),
+    input:focus:not([data-testid=autocomplete-field]) {
+      padding-top: 14.75px !important;
+      padding-bottom: 14.75px !important;
+    }
+    select:active[data-testid=autocomplete-field], select:focus[data-testid=autocomplete-field],
+    textarea:active[data-testid=autocomplete-field],
+    textarea:focus[data-testid=autocomplete-field],
+    input:active[data-testid=autocomplete-field],
+    input:focus[data-testid=autocomplete-field] {
+      padding-top: 10.75px !important;
+      padding-bottom: 10.75px !important;
+    }
+  }
+}
+.sparkles-green path {
+  stroke: var(--primary-purple);
+}
+
+.react-datepicker__year-read-view--down-arrow,
+.react-datepicker__month-read-view--down-arrow,
+.react-datepicker__month-year-read-view--down-arrow,
+.react-datepicker__navigation-icon::before {
+  border-color: var(--text-gray);
+  border-style: solid;
+  border-width: 2px 2px 0 0;
+  content: "";
+  display: block;
+  height: 9px;
+  position: absolute;
+  top: 6px;
+  width: 9px;
+}
+
+.react-datepicker-popper[data-placement^=top] .react-datepicker__triangle,
+.react-datepicker-popper[data-placement^=bottom] .react-datepicker__triangle {
+  margin-left: -4px;
+  position: absolute;
+  width: 0;
+}
+
+.react-datepicker-popper[data-placement^=top] .react-datepicker__triangle::before,
+.react-datepicker-popper[data-placement^=bottom] .react-datepicker__triangle::before,
+.react-datepicker-popper[data-placement^=top] .react-datepicker__triangle::after,
+.react-datepicker-popper[data-placement^=bottom] .react-datepicker__triangle::after {
+  box-sizing: content-box;
+  position: absolute;
+  border: 8px solid transparent;
+  height: 0;
+  width: 1px;
+  content: "";
+  z-index: -1;
+  border-width: 8px;
+  left: -8px;
+}
+
+.react-datepicker-popper[data-placement^=top] .react-datepicker__triangle::before,
+.react-datepicker-popper[data-placement^=bottom] .react-datepicker__triangle::before {
+  border-bottom-color: #aeaeae;
+}
+
+.react-datepicker-popper[data-placement^=bottom] .react-datepicker__triangle {
+  top: env(safe-area-inset-top, 0px);
+  margin-top: -8px;
+}
+
+.react-datepicker-popper[data-placement^=bottom] .react-datepicker__triangle::before,
+.react-datepicker-popper[data-placement^=bottom] .react-datepicker__triangle::after {
+  border-top: none;
+  border-bottom-color: #f0f0f0;
+}
+
+.react-datepicker-popper[data-placement^=bottom] .react-datepicker__triangle::after {
+  top: env(safe-area-inset-top, 0px);
+}
+
+.react-datepicker-popper[data-placement^=bottom] .react-datepicker__triangle::before {
+  top: -1px;
+  border-bottom-color: #aeaeae;
+}
+
+.react-datepicker-popper[data-placement^=top] .react-datepicker__triangle {
+  bottom: 0;
+  margin-bottom: -8px;
+}
+
+.react-datepicker-popper[data-placement^=top] .react-datepicker__triangle::before,
+.react-datepicker-popper[data-placement^=top] .react-datepicker__triangle::after {
+  border-bottom: none;
+  border-top-color: var(--primary-white);
+}
+
+.react-datepicker-popper[data-placement^=top] .react-datepicker__triangle::after {
+  bottom: 0;
+}
+
+.react-datepicker-popper[data-placement^=top] .react-datepicker__triangle::before {
+  bottom: -1px;
+  border-top-color: #aeaeae;
+}
+
+.react-datepicker-wrapper {
+  display: inline-block;
+  padding: 0;
+  border: 0;
+  width: 100%;
+}
+
+.react-datepicker {
+  font-family: "Helvetica Neue", helvetica, arial, sans-serif;
+  font-size: 0.8rem;
+  background-color: var(--primary-white);
+  color: #000;
+  border: 1px solid #aeaeae;
+  border-radius: 0.3rem;
+  display: inline-block;
+  position: relative;
+}
+
+.react-datepicker--time-only .react-datepicker__triangle {
+  left: 35px;
+}
+
+.react-datepicker--time-only .react-datepicker__time-container {
+  border-left: env(safe-area-inset-left, 0px);
+}
+
+.react-datepicker--time-only .react-datepicker__time,
+.react-datepicker--time-only .react-datepicker__time-box {
+  border-bottom-left-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem;
+}
+
+.react-datepicker__triangle {
+  position: absolute;
+  left: 50px;
+}
+
+.react-datepicker-popper {
+  z-index: 1;
+}
+
+.react-datepicker-popper[data-placement^=bottom] {
+  padding-top: 10px;
+}
+
+.react-datepicker-popper[data-placement=bottom-end] .react-datepicker__triangle,
+.react-datepicker-popper[data-placement=top-end] .react-datepicker__triangle {
+  left: auto;
+  right: 50px;
+}
+
+.react-datepicker-popper[data-placement^=top] {
+  padding-bottom: 10px;
+}
+
+.react-datepicker-popper[data-placement^=right] {
+  padding-left: 8px;
+}
+
+.react-datepicker-popper[data-placement^=right] .react-datepicker__triangle {
+  left: auto;
+  right: 42px;
+}
+
+.react-datepicker-popper[data-placement^=left] {
+  padding-right: 8px;
+}
+
+.react-datepicker-popper[data-placement^=left] .react-datepicker__triangle {
+  left: 42px;
+  right: auto;
+}
+
+.react-datepicker__header {
+  text-align: center;
+  background-color: #f0f0f0;
+  border-bottom: 1px solid #aeaeae;
+  border-top-left-radius: 0.3rem;
+  padding: 8px 0;
+  position: relative;
+}
+
+.react-datepicker__header--time {
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.react-datepicker__header--time:not(.react-datepicker__header--time--only) {
+  border-top-left-radius: 0;
+}
+
+.react-datepicker__header:not(.react-datepicker__header--has-time-select) {
+  border-top-right-radius: 0.3rem;
+}
+
+.react-datepicker__year-dropdown-container--select,
+.react-datepicker__month-dropdown-container--select,
+.react-datepicker__month-year-dropdown-container--select,
+.react-datepicker__year-dropdown-container--scroll,
+.react-datepicker__month-dropdown-container--scroll,
+.react-datepicker__month-year-dropdown-container--scroll {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+.react-datepicker__current-month,
+.react-datepicker-time__header,
+.react-datepicker-year-header {
+  margin-top: env(safe-area-inset-top, 0px);
+  color: #000;
+  font-weight: bold;
+  font-size: 0.944rem;
+}
+
+.react-datepicker-time__header {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.react-datepicker__navigation {
+  align-items: center;
+  background: none;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  position: absolute;
+  top: 2px;
+  padding: 0;
+  border: none;
+  z-index: 1;
+  height: 32px;
+  width: 32px;
+  text-indent: -999em;
+  overflow: hidden;
+}
+
+.react-datepicker__navigation--previous {
+  left: 2px;
+}
+
+.react-datepicker__navigation--next {
+  right: 2px;
+}
+
+.react-datepicker__navigation--next--with-time:not(.react-datepicker__navigation--next--with-today-button) {
+  right: 85px;
+}
+
+.react-datepicker__navigation--years {
+  position: relative;
+  top: env(safe-area-inset-top, 0px);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.react-datepicker__navigation--years-previous {
+  top: 4px;
+}
+
+.react-datepicker__navigation--years-upcoming {
+  top: -4px;
+}
+
+.react-datepicker__navigation:hover *::before {
+  border-color: #a6a6a6;
+}
+
+.react-datepicker__navigation-icon {
+  position: relative;
+  top: -1px;
+  font-size: 20px;
+  width: 0;
+}
+
+.react-datepicker__navigation-icon--next {
+  left: -2px;
+}
+
+.react-datepicker__navigation-icon--next::before {
+  transform: rotate(45deg);
+  left: -7px;
+}
+
+.react-datepicker__navigation-icon--previous {
+  right: -2px;
+}
+
+.react-datepicker__navigation-icon--previous::before {
+  transform: rotate(225deg);
+  right: -7px;
+}
+
+.react-datepicker__month-container {
+  float: left;
+}
+
+.react-datepicker__year {
+  margin: 0.4rem;
+  text-align: center;
+}
+
+.react-datepicker__year-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 180px;
+}
+
+.react-datepicker__year .react-datepicker__year-text {
+  display: inline-block;
+  width: 4rem;
+  margin: 2px;
+}
+
+.react-datepicker__month {
+  margin: 0.4rem;
+  text-align: center;
+}
+
+.react-datepicker__month .react-datepicker__month-text,
+.react-datepicker__month .react-datepicker__quarter-text {
+  display: inline-block;
+  width: 4rem;
+  margin: 2px;
+}
+
+.react-datepicker__input-time-container {
+  clear: both;
+  width: 100%;
+  float: left;
+  margin: 5px 0 10px 15px;
+  text-align: left;
+}
+
+.react-datepicker__input-time-container .react-datepicker-time__caption {
+  display: inline-block;
+}
+
+.react-datepicker__input-time-container .react-datepicker-time__input-container {
+  display: inline-block;
+}
+
+.react-datepicker__input-time-container .react-datepicker-time__input-container .react-datepicker-time__input {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.react-datepicker__input-time-container .react-datepicker-time__input-container .react-datepicker-time__input input {
+  width: auto;
+}
+
+.react-datepicker__input-time-container .react-datepicker-time__input-container .react-datepicker-time__input input[type=time]::-webkit-inner-spin-button,
+.react-datepicker__input-time-container .react-datepicker-time__input-container .react-datepicker-time__input input[type=time]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.react-datepicker__input-time-container .react-datepicker-time__input-container .react-datepicker-time__input input[type=time] {
+  -moz-appearance: textfield;
+}
+
+.react-datepicker__input-time-container .react-datepicker-time__input-container .react-datepicker-time__delimiter {
+  margin-left: 5px;
+  display: inline-block;
+}
+
+.react-datepicker__time-container {
+  float: right;
+  border-left: 1px solid #aeaeae;
+  width: 85px;
+}
+
+.react-datepicker__time-container--with-today-button {
+  display: inline;
+  border: 1px solid #aeaeae;
+  border-radius: 0.3rem;
+  position: absolute;
+  right: -87px;
+  top: env(safe-area-inset-top, 0px);
+}
+
+.react-datepicker__time-container .react-datepicker__time {
+  position: relative;
+  background: white;
+  border-bottom-right-radius: 0.3rem;
+}
+
+.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box {
+  width: 85px;
+  overflow-x: hidden;
+  margin: 0 auto;
+  text-align: center;
+  border-bottom-right-radius: 0.3rem;
+}
+
+.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list {
+  list-style: none;
+  margin: 0;
+  height: calc(195px + 0.85rem);
+  overflow-y: scroll;
+  padding-right: 0;
+  padding-left: env(safe-area-inset-left, 0px);
+  width: 100%;
+  box-sizing: content-box;
+}
+
+.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item {
+  height: 30px;
+  padding: 5px 10px;
+  white-space: nowrap;
+}
+
+.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item:hover {
+  cursor: pointer;
+  background-color: #f0f0f0;
+}
+
+.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item--selected {
+  background-color: #216ba5;
+  color: white;
+  font-weight: bold;
+}
+
+.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item--selected:hover {
+  background-color: #216ba5;
+}
+
+.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item--disabled {
+  color: var(--gray-lightest);
+}
+
+.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item--disabled:hover {
+  cursor: default;
+  background-color: transparent;
+}
+
+.react-datepicker__week-number {
+  color: var(--gray-lightest);
+  display: inline-block;
+  width: 1.7rem;
+  line-height: 1.7rem;
+  text-align: center;
+  margin: 0.166rem;
+}
+
+.react-datepicker__week-number.react-datepicker__week-number--clickable {
+  cursor: pointer;
+}
+
+.react-datepicker__week-number.react-datepicker__week-number--clickable:hover {
+  border-radius: 0.3rem;
+  background-color: #f0f0f0;
+}
+
+.react-datepicker__day-names,
+.react-datepicker__week {
+  white-space: nowrap;
+}
+
+.react-datepicker__day-names {
+  margin-bottom: -8px;
+}
+
+.react-datepicker__day-name,
+.react-datepicker__day,
+.react-datepicker__time-name {
+  color: #000;
+  display: inline-block;
+  width: 1.7rem;
+  line-height: 1.7rem;
+  text-align: center;
+  margin: 0.166rem;
+}
+
+.react-datepicker__month--selected,
+.react-datepicker__month--in-selecting-range,
+.react-datepicker__month--in-range,
+.react-datepicker__quarter--selected,
+.react-datepicker__quarter--in-selecting-range,
+.react-datepicker__quarter--in-range {
+  border-radius: 0.3rem;
+  background-color: #216ba5;
+  color: var(--primary-white);
+}
+
+.react-datepicker__month--selected:hover,
+.react-datepicker__month--in-selecting-range:hover,
+.react-datepicker__month--in-range:hover,
+.react-datepicker__quarter--selected:hover,
+.react-datepicker__quarter--in-selecting-range:hover,
+.react-datepicker__quarter--in-range:hover {
+  background-color: #1d5d90;
+}
+
+.react-datepicker__month--disabled,
+.react-datepicker__quarter--disabled {
+  color: var(--gray-lightest);
+  pointer-events: none;
+}
+
+.react-datepicker__month--disabled:hover,
+.react-datepicker__quarter--disabled:hover {
+  cursor: default;
+  background-color: transparent;
+}
+
+.react-datepicker__day,
+.react-datepicker__month-text,
+.react-datepicker__quarter-text,
+.react-datepicker__year-text {
+  cursor: pointer;
+}
+
+.react-datepicker__day:hover,
+.react-datepicker__month-text:hover,
+.react-datepicker__quarter-text:hover,
+.react-datepicker__year-text:hover {
+  border-radius: 0.3rem;
+  background-color: #f0f0f0;
+}
+
+.react-datepicker__day--today,
+.react-datepicker__month-text--today,
+.react-datepicker__quarter-text--today,
+.react-datepicker__year-text--today {
+  font-weight: bold;
+}
+
+.react-datepicker__day--highlighted,
+.react-datepicker__month-text--highlighted,
+.react-datepicker__quarter-text--highlighted,
+.react-datepicker__year-text--highlighted {
+  border-radius: 0.3rem;
+  background-color: #3dcc4a;
+  color: var(--primary-white);
+}
+
+.react-datepicker__day--highlighted:hover,
+.react-datepicker__month-text--highlighted:hover,
+.react-datepicker__quarter-text--highlighted:hover,
+.react-datepicker__year-text--highlighted:hover {
+  background-color: #32be3f;
+}
+
+.react-datepicker__day--highlighted-custom-1,
+.react-datepicker__month-text--highlighted-custom-1,
+.react-datepicker__quarter-text--highlighted-custom-1,
+.react-datepicker__year-text--highlighted-custom-1 {
+  color: magenta;
+}
+
+.react-datepicker__day--highlighted-custom-2,
+.react-datepicker__month-text--highlighted-custom-2,
+.react-datepicker__quarter-text--highlighted-custom-2,
+.react-datepicker__year-text--highlighted-custom-2 {
+  color: green;
+}
+
+.react-datepicker__day--selected,
+.react-datepicker__day--in-selecting-range,
+.react-datepicker__day--in-range,
+.react-datepicker__month-text--selected,
+.react-datepicker__month-text--in-selecting-range,
+.react-datepicker__month-text--in-range,
+.react-datepicker__quarter-text--selected,
+.react-datepicker__quarter-text--in-selecting-range,
+.react-datepicker__quarter-text--in-range,
+.react-datepicker__year-text--selected,
+.react-datepicker__year-text--in-selecting-range,
+.react-datepicker__year-text--in-range {
+  border-radius: 0.3rem;
+  background-color: #216ba5;
+  color: var(--primary-white);
+}
+
+.react-datepicker__day--selected:hover,
+.react-datepicker__day--in-selecting-range:hover,
+.react-datepicker__day--in-range:hover,
+.react-datepicker__month-text--selected:hover,
+.react-datepicker__month-text--in-selecting-range:hover,
+.react-datepicker__month-text--in-range:hover,
+.react-datepicker__quarter-text--selected:hover,
+.react-datepicker__quarter-text--in-selecting-range:hover,
+.react-datepicker__quarter-text--in-range:hover,
+.react-datepicker__year-text--selected:hover,
+.react-datepicker__year-text--in-selecting-range:hover,
+.react-datepicker__year-text--in-range:hover {
+  background-color: #1d5d90;
+}
+
+.react-datepicker__day--keyboard-selected,
+.react-datepicker__month-text--keyboard-selected,
+.react-datepicker__quarter-text--keyboard-selected,
+.react-datepicker__year-text--keyboard-selected {
+  border-radius: 0.3rem;
+  background-color: #bad9f1;
+  color: rgb(0, 0, 0);
+}
+
+.react-datepicker__day--keyboard-selected:hover,
+.react-datepicker__month-text--keyboard-selected:hover,
+.react-datepicker__quarter-text--keyboard-selected:hover,
+.react-datepicker__year-text--keyboard-selected:hover {
+  background-color: #1d5d90;
+}
+
+.react-datepicker__day--in-selecting-range:not(.react-datepicker__day--in-range,
+.react-datepicker__month-text--in-range,
+.react-datepicker__quarter-text--in-range,
+.react-datepicker__year-text--in-range),
+.react-datepicker__month-text--in-selecting-range:not(.react-datepicker__day--in-range,
+.react-datepicker__month-text--in-range,
+.react-datepicker__quarter-text--in-range,
+.react-datepicker__year-text--in-range),
+.react-datepicker__quarter-text--in-selecting-range:not(.react-datepicker__day--in-range,
+.react-datepicker__month-text--in-range,
+.react-datepicker__quarter-text--in-range,
+.react-datepicker__year-text--in-range),
+.react-datepicker__year-text--in-selecting-range:not(.react-datepicker__day--in-range,
+.react-datepicker__month-text--in-range,
+.react-datepicker__quarter-text--in-range,
+.react-datepicker__year-text--in-range) {
+  background-color: rgba(33, 107, 165, 0.5);
+}
+
+.react-datepicker__month--selecting-range .react-datepicker__day--in-range:not(.react-datepicker__day--in-selecting-range,
+.react-datepicker__month-text--in-selecting-range,
+.react-datepicker__quarter-text--in-selecting-range,
+.react-datepicker__year-text--in-selecting-range),
+.react-datepicker__month--selecting-range .react-datepicker__month-text--in-range:not(.react-datepicker__day--in-selecting-range,
+.react-datepicker__month-text--in-selecting-range,
+.react-datepicker__quarter-text--in-selecting-range,
+.react-datepicker__year-text--in-selecting-range),
+.react-datepicker__month--selecting-range .react-datepicker__quarter-text--in-range:not(.react-datepicker__day--in-selecting-range,
+.react-datepicker__month-text--in-selecting-range,
+.react-datepicker__quarter-text--in-selecting-range,
+.react-datepicker__year-text--in-selecting-range),
+.react-datepicker__month--selecting-range .react-datepicker__year-text--in-range:not(.react-datepicker__day--in-selecting-range,
+.react-datepicker__month-text--in-selecting-range,
+.react-datepicker__quarter-text--in-selecting-range,
+.react-datepicker__year-text--in-selecting-range) {
+  background-color: #f0f0f0;
+  color: #000;
+}
+
+.react-datepicker__day--disabled,
+.react-datepicker__month-text--disabled,
+.react-datepicker__quarter-text--disabled,
+.react-datepicker__year-text--disabled {
+  cursor: default;
+  color: var(--gray-lightest);
+}
+
+.react-datepicker__day--disabled:hover,
+.react-datepicker__month-text--disabled:hover,
+.react-datepicker__quarter-text--disabled:hover,
+.react-datepicker__year-text--disabled:hover {
+  background-color: transparent;
+}
+
+.react-datepicker__month-text.react-datepicker__month--selected:hover,
+.react-datepicker__month-text.react-datepicker__month--in-range:hover,
+.react-datepicker__month-text.react-datepicker__quarter--selected:hover,
+.react-datepicker__month-text.react-datepicker__quarter--in-range:hover,
+.react-datepicker__quarter-text.react-datepicker__month--selected:hover,
+.react-datepicker__quarter-text.react-datepicker__month--in-range:hover,
+.react-datepicker__quarter-text.react-datepicker__quarter--selected:hover,
+.react-datepicker__quarter-text.react-datepicker__quarter--in-range:hover {
+  background-color: #216ba5;
+}
+
+.react-datepicker__month-text:hover,
+.react-datepicker__quarter-text:hover {
+  background-color: #f0f0f0;
+}
+
+.react-datepicker__input-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.react-datepicker__input-container .react-datepicker__calendar-icon {
+  position: absolute;
+  padding: 0.5rem;
+}
+
+.react-datepicker__view-calendar-icon input {
+  padding: 6px 10px 5px 25px;
+}
+
+.react-datepicker__year-read-view,
+.react-datepicker__month-read-view,
+.react-datepicker__month-year-read-view {
+  border: 1px solid transparent;
+  border-radius: 0.3rem;
+  position: relative;
+}
+
+.react-datepicker__year-read-view:hover,
+.react-datepicker__month-read-view:hover,
+.react-datepicker__month-year-read-view:hover {
+  cursor: pointer;
+}
+
+.react-datepicker__year-read-view:hover .react-datepicker__year-read-view--down-arrow,
+.react-datepicker__year-read-view:hover .react-datepicker__month-read-view--down-arrow,
+.react-datepicker__month-read-view:hover .react-datepicker__year-read-view--down-arrow,
+.react-datepicker__month-read-view:hover .react-datepicker__month-read-view--down-arrow,
+.react-datepicker__month-year-read-view:hover .react-datepicker__year-read-view--down-arrow,
+.react-datepicker__month-year-read-view:hover .react-datepicker__month-read-view--down-arrow {
+  border-top-color: #b3b3b3;
+}
+
+.react-datepicker__year-read-view--down-arrow,
+.react-datepicker__month-read-view--down-arrow,
+.react-datepicker__month-year-read-view--down-arrow {
+  transform: rotate(135deg);
+  right: -16px;
+  top: env(safe-area-inset-top, 0px);
+}
+
+.react-datepicker__year-dropdown,
+.react-datepicker__month-dropdown,
+.react-datepicker__month-year-dropdown {
+  background-color: #f0f0f0;
+  position: absolute;
+  width: 50%;
+  left: 25%;
+  top: 30px;
+  z-index: 1;
+  text-align: center;
+  border-radius: 0.3rem;
+  border: 1px solid #aeaeae;
+}
+
+.react-datepicker__year-dropdown:hover,
+.react-datepicker__month-dropdown:hover,
+.react-datepicker__month-year-dropdown:hover {
+  cursor: pointer;
+}
+
+.react-datepicker__year-dropdown--scrollable,
+.react-datepicker__month-dropdown--scrollable,
+.react-datepicker__month-year-dropdown--scrollable {
+  height: 150px;
+  overflow-y: scroll;
+}
+
+.react-datepicker__year-option,
+.react-datepicker__month-option,
+.react-datepicker__month-year-option {
+  line-height: 20px;
+  width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.react-datepicker__year-option:first-of-type,
+.react-datepicker__month-option:first-of-type,
+.react-datepicker__month-year-option:first-of-type {
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
+}
+
+.react-datepicker__year-option:last-of-type,
+.react-datepicker__month-option:last-of-type,
+.react-datepicker__month-year-option:last-of-type {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  border-bottom-left-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem;
+}
+
+.react-datepicker__year-option:hover,
+.react-datepicker__month-option:hover,
+.react-datepicker__month-year-option:hover {
+  background-color: var(--gray-lightest);
+}
+
+.react-datepicker__year-option:hover .react-datepicker__navigation--years-upcoming,
+.react-datepicker__month-option:hover .react-datepicker__navigation--years-upcoming,
+.react-datepicker__month-year-option:hover .react-datepicker__navigation--years-upcoming {
+  border-bottom-color: #b3b3b3;
+}
+
+.react-datepicker__year-option:hover .react-datepicker__navigation--years-previous,
+.react-datepicker__month-option:hover .react-datepicker__navigation--years-previous,
+.react-datepicker__month-year-option:hover .react-datepicker__navigation--years-previous {
+  border-top-color: #b3b3b3;
+}
+
+.react-datepicker__year-option--selected,
+.react-datepicker__month-option--selected,
+.react-datepicker__month-year-option--selected {
+  position: absolute;
+  left: 15px;
+}
+
+.react-datepicker__close-icon {
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  padding: 0 6px 0 0;
+  position: absolute;
+  top: env(safe-area-inset-top, 0px);
+  right: 0;
+  height: 100%;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.react-datepicker__close-icon::after {
+  cursor: pointer;
+  background-color: #216ba5;
+  color: var(--primary-white);
+  border-radius: 50%;
+  height: 16px;
+  width: 16px;
+  padding: 2px;
+  font-size: 12px;
+  line-height: 1;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+  content: "×";
+}
+
+.react-datepicker__today-button {
+  background: #f0f0f0;
+  border-top: 1px solid #aeaeae;
+  cursor: pointer;
+  text-align: center;
+  font-weight: bold;
+  padding: 5px 0;
+  clear: left;
+}
+
+.react-datepicker__portal {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  left: env(safe-area-inset-left, 0px);
+  top: env(safe-area-inset-top, 0px);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  z-index: 2147483647;
+}
+
+.react-datepicker__portal .react-datepicker__day-name,
+.react-datepicker__portal .react-datepicker__day,
+.react-datepicker__portal .react-datepicker__time-name {
+  width: 3rem;
+  line-height: 3rem;
+}
+
+@media (max-width: 400px), (max-height: 550px) {
+  .react-datepicker__portal .react-datepicker__day-name,
+  .react-datepicker__portal .react-datepicker__day,
+  .react-datepicker__portal .react-datepicker__time-name {
+    width: 2rem;
+    line-height: 2rem;
+  }
+}
+.react-datepicker__portal .react-datepicker__current-month,
+.react-datepicker__portal .react-datepicker-time__header {
+  font-size: 1.44rem;
+}
+
+.react-datepicker__children-container {
+  width: 13.8rem;
+  margin: 0.4rem;
+  padding-right: 0.2rem;
+  padding-left: 0.2rem;
+  height: auto;
+}
+
+.react-datepicker__aria-live {
+  position: absolute;
+  -webkit-clip-path: circle(0);
+          clip-path: circle(0);
+  border: 0;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  width: 1px;
+  white-space: nowrap;
+}
+
+.react-datepicker__calendar-icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.125em;
+}
+
+.date-picker {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 260px;
+  z-index: 4;
+  cursor: pointer;
+}
+.date-picker__icon {
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  right: 15px;
+  top: 14px;
+  color: #404040;
+  pointer-events: none;
+  transition: color 0.3s ease-in-out;
+}
+.date-picker:hover .date-picker__icon {
+  color: var(--primary-blue);
+}
+.date-picker__time-header {
+  font-weight: bold;
+  text-align: center;
+  font-size: 1rem;
+  color: var(--text-black);
+}
+
+.react-datepicker {
+  background: #ffffff;
+  border: 1px solid #f3f4f4;
+  box-shadow: 0px 12px 32px rgba(15, 31, 46, 0.08);
+  border-radius: 12px;
+  width: 320px;
+  font-family: var(--font-secondary) !important;
+}
+
+.react-datepicker-wrapper {
+  display: block;
+}
+
+.react-datepicker-popper[data-placement^=right] {
+  margin-left: 10px;
+}
+.react-datepicker-popper[data-placement^=right] .react-datepicker__triangle {
+  margin-left: -10px;
+  position: absolute;
+  left: -10px;
+  top: 35px;
+}
+.react-datepicker-popper[data-placement^=right] .react-datepicker__triangle, .react-datepicker-popper[data-placement^=right] .react-datepicker__triangle:before {
+  box-sizing: content-box;
+  position: absolute;
+  border: 10px solid transparent;
+  border-right-color: var(--text-gray-light);
+  height: 0;
+  width: 1px;
+}
+.react-datepicker-popper[data-placement^=right] .react-datepicker__triangle:before {
+  content: "";
+  z-index: -1;
+  border-width: 10px;
+  border-right-color: var(--text-gray-light);
+  top: -10px;
+  left: -11px;
+}
+
+.react-datepicker-popper[data-placement^=bottom] .react-datepicker__triangle {
+  border-bottom-color: var(--text-gray-light);
+}
+.react-datepicker-popper[data-placement^=bottom] .react-datepicker__triangle:before {
+  border-bottom-color: var(--text-black);
+}
+
+.react-datepicker__month-container {
+  width: 320px;
+}
+
+.react-datepicker__input-container {
+  width: 100%;
+  font-size: 0.875rem;
+  letter-spacing: -0.45px;
+  line-height: 20px;
+}
+.react-datepicker__input-container [type=text] {
+  min-height: 42px;
+  padding-left: 8px !important;
+}
+.react-datepicker__input-container [type=text]:focus, .react-datepicker__input-container [type=text]:hover {
+  border-color: #b2b2b2;
+}
+
+.react-datepicker--time-only {
+  width: auto;
+}
+
+.react-datepicker__month .react-datepicker__month-text,
+.react-datepicker__month .react-datepicker__quarter-text {
+  padding: 10px 0;
+  font-size: 14px;
+}
+
+.react-datepicker__header {
+  background: none;
+  border: 0;
+  padding: 0;
+  padding: 20px 24px 8px;
+}
+
+.react-datepicker__navigation {
+  border: 0;
+  width: 24px;
+  height: 24px;
+  top: 26px;
+}
+.react-datepicker__navigation:before {
+  display: block;
+  width: 10px;
+  height: 20px;
+}
+
+.react-datepicker__navigation--previous {
+  left: 30px;
+}
+
+.react-datepicker__navigation--next {
+  right: 30px;
+}
+
+.react-datepicker__day--keyboard-selected,
+.react-datepicker__month-text--keyboard-selected,
+.react-datepicker__quarter-text--keyboard-selected,
+.react-datepicker__year-text--keyboard-selected {
+  background: var(--primary-blue);
+  color: #fff !important;
+  border-radius: 6px;
+  font-weight: 700;
+}
+
+.react-datepicker__current-month {
+  color: var(--text-black);
+  font-size: var(--font-p);
+  letter-spacing: -0.6px;
+  line-height: 41px;
+  margin: 14px 0;
+}
+
+.react-datepicker__day-name,
+.react-datepicker__day {
+  width: 2.5em;
+  height: 2.5em;
+  line-height: 2.5em;
+  font-weight: 800;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: var(--text-black);
+}
+
+.react-datepicker__day--outside-month {
+  color: var(--text-gray-light);
+}
+
+.react-datepicker__day:hover {
+  background-color: rgba(0, 0, 0, 0.1490196078);
+  color: var(--text-black);
+}
+
+.react-datepicker__day--selected,
+.react-datepicker__day--in-selecting-range,
+.react-datepicker__day--in-range {
+  background: var(--primary-blue);
+  color: #fff !important;
+}
+
+.react-datepicker__day--selected:hover,
+.react-datepicker__day--in-selecting-range:hover,
+.react-datepicker__day--in-range:hover {
+  background: rgba(0, 0, 0, 0.1490196078);
+}
+
+.react-datepicker__year-dropdown-container--select select,
+.react-datepicker__month-dropdown-container--select select,
+.react-datepicker__month-year-dropdown-container--select select,
+.react-datepicker__year-dropdown-container--scroll select,
+.react-datepicker__month-dropdown-container--scroll select,
+.react-datepicker__month-year-dropdown-container--scroll select {
+  padding: 10px 32px 10px 10px !important;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.0509803922) !important;
+  min-width: 100px;
+  font-size: 14px !important;
+  margin-bottom: 1rem;
+}
+
+.react-datepicker__day--disabled,
+.react-datepicker__month-text--disabled,
+.react-datepicker__quarter-text--disabled,
+.react-datepicker__year-text--disabled {
+  color: var(--text-gray-light) !important;
+  cursor: not-allowed;
+}
+
+.react-datepicker__month {
+  margin: 0.4rem 0.4rem 24px;
+  text-align: center;
+}
+
+.rsw-ce {
+  background: #fff;
+  padding: 18px 16px !important;
+}
+.rsw-ce i {
+  font-style: italic;
+}
+.rsw-ce b {
+  font-weight: 800;
+}
+.rsw-ce ol {
+  list-style-type: decimal;
+  padding-left: 20px;
+}
+.rsw-ce ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+.rsw-ce a {
+  color: var(--primary-blue);
+  text-decoration: underline;
+}
+
+.rsw-toolbar {
+  padding: 6px 16px;
+  gap: 8px;
+  width: 100%;
+  background: #f9fafa !important;
+  border-radius: 12px 12px 0px 0px;
+  border-color: #e7e9eb !important;
+}
+@media (max-width: 768px) {
+  .rsw-toolbar {
+    overflow-x: auto;
+  }
+}
+
+.rsw-editor {
+  border: 1px solid #e7e9eb !important;
+  border-radius: 12px !important;
+  display: flex;
+  flex-direction: column;
+  min-height: 300px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.rsw_label {
+  font-size: var(--font-p);
+  font-weight: var(--font-weight-regular);
+  letter-spacing: var(--letter-spacing-regular);
+  line-height: 1.65;
+  font-weight: 600;
+}
+
+.rsw-btn {
+  background: transparent;
+  border: 0;
+  color: #222;
+  cursor: pointer;
+  font-size: 1em;
+  height: -moz-fit-content !important;
+  height: fit-content !important;
+  outline: none;
+  padding: 8px !important;
+  border-radius: 6px;
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+}
+.rsw-btn[data-active=true] {
+  background: #e1f0ff !important;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;/*# sourceMappingURL=index.css.map */
