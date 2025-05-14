@@ -1,6 +1,9 @@
-import React, { useContext, useEffect, useState, useRef } from "react"
+import React, { useContext, useEffect, useState, useRef, useCallback } from "react"
 import { debounce } from "lodash"
+import { toast } from "sonner"
+
 import { AuthContext } from "@/context/AuthContext"
+import { Pagination } from "@/components/shared"
 import {
 	Table,
 	TableBody,
@@ -10,8 +13,6 @@ import {
 	TableHeader,
 	TableRow,
 } from "@/components/ui/table"
-import { Pagination } from "@/components/shared"
-import { toast } from "sonner"
 
 interface User {
 	id: number
@@ -43,28 +44,31 @@ export default function UserData() {
 	const { pageSize, totalCount, currentPage } = data?.pagination || {}
 
 	// Fetch users from the database
-	const fetchUsersFromDb = async (searchTerm: string = "", pageNumber: number = 1) => {
-		setLoading(true)
-		try {
-			const response = await getUsersFrmDb(searchTerm, pageNumber)
-			if (response.status === "success") {
-				setData(response.data)
-				console.log(response.data.data)
+	const fetchUsersFromDb = useCallback(
+		async (searchTerm: string = "", pageNumber: number = 1) => {
+			setLoading(true)
+			try {
+				const response = await getUsersFrmDb(searchTerm, pageNumber)
+				if (response.status === "success") {
+					setData(response.data)
+					console.log(response.data.data)
+				}
+				setLoading(false)
+			} catch (error: any) {
+				setLoading(false)
+				toast.error(error.message, {
+					description: "Unable to load users at this time",
+					action: {
+						label: "Undo",
+						onClick: () => console.log("Undo"),
+					},
+					position: "top-right",
+				})
+				console.log("error", error)
 			}
-			setLoading(false)
-		} catch (error: any) {
-			setLoading(false)
-			toast.error(error.message, {
-				description: "Unable to load users at this time",
-				action: {
-					label: "Undo",
-					onClick: () => console.log("Undo"),
-				},
-				position: "top-right",
-			})
-			console.log("error", error)
-		}
-	}
+		},
+		[getUsersFrmDb]
+	)
 
 	const handleSearchDebounce = useRef(
 		debounce(async (value: string) => {
@@ -80,7 +84,7 @@ export default function UserData() {
 
 	useEffect(() => {
 		fetchUsersFromDb("", 1)
-	}, [])
+	}, [fetchUsersFromDb])
 
 	const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
 		const { value } = event.target
