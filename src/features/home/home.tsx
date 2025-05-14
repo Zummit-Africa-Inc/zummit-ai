@@ -70,6 +70,32 @@ export const Home = () => {
 						</div>
 					</div>
 				</section>
+
+
+				<section className="flex flex-col w-screen items-center bg-[#460D38] text-white py-20">
+					<div className="mx-auto w-screen items-center justify-around flex flex-col lg:flex-row max-w-7xl gap-9 px-8">
+						<div>
+							<Image
+								src="/zummit-quantum.webp"
+								width={500}
+								height={100}
+								alt="{testimonial.name}"
+								className="rounded-[20px] w-full" />
+						</div>
+						<div>
+							<h2 className="text-4xl leading-[49px] md:text-6xl lg:leading-[82px] lg:w-[500px] font-bold sm:text-5xl">
+								Quantumzyme Signs MOU With Zummit Africa...
+							</h2>
+							<Link href="/mou" target="_blank">
+								<button className="hover:bg-gray-100 mt-4 rounded-xl bg-white px-8 py-3 text-xl font-semibold uppercase text-pink-950 sm:px-10 sm:py-5">
+									READ MORE
+								</button>
+							</Link>
+						</div>
+					</div>
+				</section>
+
+
 				<section className="lg;gap-[72px] container mx-auto flex flex-col items-center gap-[33px] py-20 lg:gap-[71px] lg:py-[53px]">
 					<p className="text-lg font-semibold lg:text-[38px]">Our Services and Offerings</p>
 					<div className="flex w-full flex-wrap items-center justify-center gap-6 lg:gap-9">
@@ -90,6 +116,10 @@ export const Home = () => {
 						))}
 					</div>
 				</section>
+
+
+
+
 				<section className="lg;gap-[72px] container mx-auto flex flex-col items-center gap-[33px] px-4 py-20 lg:gap-[71px] lg:px-0 lg:py-[53px]">
 					<p className="text-lg font-semibold lg:text-[38px]">
 						Some Milestones of Zummit Africa
@@ -121,6 +151,8 @@ export const Home = () => {
 						))}
 					</div>
 				</section>
+
+
 
 				<section className="w-full bg-neutral-900 p-6 lg:py-[56px]">
 					<div className="container mx-auto flex flex-col items-center gap-5 rounded-[18px] bg-white py-[22px] lg:gap-[50px] lg:py-[50px]">
