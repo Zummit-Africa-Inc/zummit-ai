@@ -311,6 +311,7 @@ export const InstructorLedContent = ({
 							</div>
 						</section>
 					</section>
+					
 					<section className="flex w-screen flex-col items-center bg-[#EDEDFA] py-20">
 						<div className="mx-auto flex max-w-7xl flex-col px-8">
 							<div className="mb-10 flex flex-col items-center justify-center text-center">
@@ -349,11 +350,12 @@ export const InstructorLedContent = ({
 						</div>
 					</section>
 
+
 					<section className="flex w-screen flex-col items-center bg-[#460D38] py-32 text-center text-white">
 						<div className="mx-auto max-w-5xl px-8">
 							<h2 className="text-4xl font-bold">Ready to Begin Your AI and Data Career?</h2>
 							<p className="mt-8 max-w-3xl text-xl">
-								Join the May 2025 cohort and learn from expert instructors. Enroll now and
+								Join the January 2025 cohort and learn from expert instructors. Enroll now and
 								unlock your career potential in AI and Data Science!
 							</p>
 							<Link href="#payment">
