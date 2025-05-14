@@ -70,8 +70,7 @@ export const InstructorLedContent = ({
 								</span>
 								<h1 className="mt-0 text-4xl font-bold leading-[49px] md:mt-8 md:text-6xl lg:leading-[82px]">
 									Kickstart Your Career and Master In-Demand{" "}
-									<span className="italic text-fuchsia-950">AI & Data</span> Skills in Just 3
-									Months!
+									<span className="italic text-fuchsia-950">AI & Data</span> Skills in Just 60 Days!
 								</h1>
 								<p className="mt-4 max-w-[400px] text-lg  leading-relaxed  md:mt-8 md:max-w-3xl md:text-2xl">
 									Designed for beginners, this course will help you master essential AI and Data
@@ -294,7 +293,7 @@ export const InstructorLedContent = ({
 
 											{plan.isPopular && (
 												<span className="mt-1.5 text-center text-base font-medium italic leading-loose tracking-normal text-pink-950">
-													Classes start January 2025
+													Classes start May 2025
 												</span>
 											)}
 											{plan.save && (
@@ -311,6 +310,28 @@ export const InstructorLedContent = ({
 								</div>
 							</div>
 						</section>
+					</section>
+					<section className="flex flex-col w-screen items-center bg-[#460D38] text-white py-20">
+						<div className="mx-auto w-screen items-center justify-around flex flex-col lg:flex-row max-w-7xl gap-9 px-8">
+							<div>
+								<Image
+									src="/zummit-quantum.webp"
+									width={500}
+									height={100}
+									alt="{testimonial.name}"
+									className="rounded-[20px] w-full" />
+							</div>
+							<div>
+								<h2 className="text-4xl leading-[49px] md:text-6xl lg:leading-[82px] lg:w-[500px] font-bold sm:text-5xl">
+									Quantumzyme Signs MOU With Zummit Africa...
+								</h2>
+								<Link href="https://www.nasdaq.com/press-release/quantumzyme-signs-mou-zummit-africa-establish-centre-excellence-ai-green-chemistry" target="_blank">
+								<button className="hover:bg-gray-100 mt-4 rounded-xl bg-white px-8 py-3 text-xl font-semibold uppercase text-pink-950 sm:px-10 sm:py-5">
+									READ MORE
+								</button>
+								</Link>
+							</div>
+						</div>
 					</section>
 					<section className="flex w-screen flex-col items-center bg-[#EDEDFA] py-20">
 						<div className="mx-auto flex max-w-7xl flex-col px-8">
@@ -350,6 +371,7 @@ export const InstructorLedContent = ({
 						</div>
 					</section>
 
+
 					<section className="flex w-screen flex-col items-center bg-[#460D38] py-32 text-center text-white">
 						<div className="mx-auto max-w-5xl px-8">
 							<h2 className="text-4xl font-bold">Ready to Begin Your AI and Data Career?</h2>
@@ -363,7 +385,7 @@ export const InstructorLedContent = ({
 								</button>
 							</Link>
 							<p className="mt-4 text-sm italic tracking-wide">
-								Secure Your Spot Before January 2025!
+								Secure Your Spot Before May 2025!
 							</p>
 						</div>
 					</section>
